@@ -21,7 +21,7 @@ function StyleCard({ title, image }: { title: string; image: string }) {
 
 export function StylesSection() {
   return (
-    <section className="py-32 max-w-[85%] mx-auto textured-bg">
+    <section className="pt-[5rem] pb-[3.5rem] max-w-[85%] mx-auto textured-bg">
       <div className="mb-12 border-l-4 border-primary pl-8">
         <span className="font-[family-name:var(--font-inter)] text-primary subtitle text-sm uppercase tracking-widest">
           NUESTROS ESTILOS

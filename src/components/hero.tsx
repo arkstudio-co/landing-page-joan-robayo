@@ -20,12 +20,22 @@ export function Hero() {
           EN MEDELLÍN
         </h1>
         <div className="flex flex-col md:flex-row gap-8 justify-center mt-12">
-          <button className="bg-gold text-black px-10 py-5 font-[family-name:var(--font-inter)] text-xs uppercase tracking-widest hover:bg-[#e0ab75] transition-colors">
+          <a
+            href="https://wa.me/573146148297?text=Hola!%20quiero%20cotizar%20mi%20proximo%20tattoo"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-gold text-black px-10 py-5 font-[family-name:var(--font-inter)] text-xs uppercase tracking-widest hover:bg-[#e0ab75] transition-colors inline-block"
+          >
             Agenda tu cita
-          </button>
-          <button className="border border-gold text-gold px-10 py-5 font-[family-name:var(--font-inter)] text-xs uppercase tracking-widest hover:bg-gold/10 transition-colors">
+          </a>
+          <a
+            href="https://wa.me/573146148297?text=Hola!%20voy%20en%20camino%20a%20tu%20estudio"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="border border-gold text-gold px-10 py-5 font-[family-name:var(--font-inter)] text-xs uppercase tracking-widest hover:bg-gold/10 transition-colors inline-block"
+          >
             Walk-ins
-          </button>
+          </a>
         </div>
       </div>
     </section>

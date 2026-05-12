@@ -18,23 +18,47 @@ export const CATEGORIES = [
 
 export interface Testimonial {
   name: string;
-  role: string;
   text: string;
   rating: number;
+  photoUri?: string;
 }
 
 export const TESTIMONIALS: Testimonial[] = [
   {
-    name: "Mateo Garcés",
-    role: "Coleccionista de Arte",
-    text: "\"La atención al detalle en JoanRobayo Tattoo no tiene comparación. Mi pieza neotradicional sanó perfectamente y es una verdadera obra de arte.\"",
+    name: "María clara Montoya Builes",
+    text: "Conozco el trabajo de Joan desde muchos años atrás y siempre, siempre voy a considerarlo de los mejores tatuadores de la ciudad de Medellín. Su arte es de admirar. Es delicado y presta atención al detalle.",
     rating: 5,
+    photoUri: "https://lh3.googleusercontent.com/a/ACg8ocIDDJeQgoCTC6KYtv5Da7872yDKZXGpQ9EZh-TZLcbpvxd4ew=w64-h64-c-rp-mo-br100",
   },
   {
-    name: "Valeria Duque",
-    role: "Diseñadora de Joyas",
-    text: "\"Increíble estudio en Medellín. Todo el proceso fue profesional, higiénico y sobre todo, muy artístico. Definitivamente volveré.\"",
+    name: "Johan Franco",
+    text: "Sin duda la mejor experiencia. Todo el profesionalismo, confianza y talento en Joan con su capacidad artistica y sumado a los años desarrollando su técnica",
     rating: 5,
+    photoUri: "https://lh3.googleusercontent.com/a-/ALV-UjVqDeY11OdducHcIAckf3daIDVU-Ii6BOvJw4CieZOvhh-PI-3z=w64-h64-c-rp-mo-br100",
+  },
+  {
+    name: "Jose Manuel Arias",
+    text: "Mos mejores piezas en NeoTradi las tengo gracias a Joan siempre impecable su trabajo",
+    rating: 5,
+    photoUri: "https://lh3.googleusercontent.com/a-/ALV-UjXgx_P4Xa-vwQ50Sl3ehQdWZjePrKmCaDQ9QEHcvZ374m3x_V8=w64-h64-c-rp-mo-br100",
+  },
+  {
+    name: "Sergio Escobar",
+    text: "The best in Colombia! 100% happy with the results of my tattoo!!",
+    rating: 5,
+    photoUri: "https://lh3.googleusercontent.com/a-/ALV-UjXmOeOZxuZg4vRzuUNZtFTlSRPM5pTIogcKoYY1W6Yya3Ez9vY=w64-h64-c-rp-mo-br100",
+  },
+  {
+    name: "BANY SOSA",
+    text: "Para mí es el mejor artista neotradicional de Medellín, recomendadisimo",
+    rating: 5,
+    photoUri: "https://lh3.googleusercontent.com/a-/ALV-UjVAhhTL8xN8oya33chJRfD4zNREy6ySxbdIQv8WsFEsogvm9fwJ=w64-h64-c-rp-mo-br100",
+  },
+  {
+    name: "yuleimy grisales",
+    text: "Lo mejor del mundo, mi tatuador de confianza. 100% recomendado",
+    rating: 5,
+    photoUri: "https://lh3.googleusercontent.com/a-/ALV-UjV0v2iMxR3LnmXSfpfIkJR4sieWJPapbcUiKvIBzo4JYoVgn9UH=w64-h64-c-rp-mo-br100",
   },
 ];
 
