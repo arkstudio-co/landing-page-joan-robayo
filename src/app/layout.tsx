@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Cinzel, Playfair_Display, Inter, Manrope, Noto_Serif } from "next/font/google";
 import "./globals.css";
-import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 
 const cinzel = Cinzel({
@@ -104,7 +103,6 @@ export default function RootLayout({
             }),
           }}
         />
-        <Header />
         {children}
         <Footer />
       </body>

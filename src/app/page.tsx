@@ -1,3 +1,4 @@
+import { Header } from "@/components/header";
 import { Hero } from "@/components/hero";
 import { CategoryNav } from "@/components/category-nav";
 import { StylesSection } from "@/components/styles-section";
@@ -9,7 +10,9 @@ import { ContactSection } from "@/components/contact-section";
 
 export default function Home() {
   return (
-    <main>
+    <>
+      <Header />
+      <main>
       <Hero />
       <CategoryNav />
       <StylesSection />
@@ -19,5 +22,6 @@ export default function Home() {
       <BlogSection />
       <ContactSection />
     </main>
+    </>
   );
 }

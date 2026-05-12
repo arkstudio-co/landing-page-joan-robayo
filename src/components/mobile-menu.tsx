@@ -3,7 +3,13 @@
 import { useState, useCallback, useEffect } from "react";
 import { NAV_LINKS } from "@/lib/constants";
 
-export function MobileMenu() {
+interface NavLink {
+  label: string;
+  href: string;
+}
+
+export function MobileMenu({ links }: { links?: readonly NavLink[] }) {
+  const navLinks = links ?? NAV_LINKS;
   const [isOpen, setIsOpen] = useState(false);
 
   const toggle = useCallback(() => setIsOpen((prev) => !prev), []);
@@ -50,7 +56,7 @@ export function MobileMenu() {
             : "opacity-0 pointer-events-none"
         }`}
       >
-        {NAV_LINKS.map((link) => (
+        {navLinks.map((link) => (
           <a
             key={link.label}
             href={link.href}
