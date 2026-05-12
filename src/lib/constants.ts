@@ -1,7 +1,7 @@
 export const NAV_LINKS = [
-  { label: "Portfolio", href: "#" },
-  { label: "Aftercare", href: "#" },
-  { label: "Contact", href: "#" },
+  { label: "Home", href: "#gallery" },
+  { label: "Blog", href: "#blog" },
+  { label: "Contact", href: "#contact" },
 ] as const;
 
 export const STYLES = [
@@ -27,7 +27,7 @@ export const TESTIMONIALS: Testimonial[] = [
   {
     name: "Mateo Garcés",
     role: "Coleccionista de Arte",
-    text: "\"La atención al detalle en Oscuro no tiene comparación. Mi pieza neotradicional sanó perfectamente y es una verdadera obra de arte.\"",
+    text: "\"La atención al detalle en JoanRobayo Tattoo no tiene comparación. Mi pieza neotradicional sanó perfectamente y es una verdadera obra de arte.\"",
     rating: 5,
   },
   {

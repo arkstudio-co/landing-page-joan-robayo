@@ -19,7 +19,7 @@ function BlogCard({ title, image }: { title: string; image: string }) {
 
 export function BlogSection() {
   return (
-    <section className="py-32 textured-bg">
+    <section id="blog" className="py-32 textured-bg">
       <div className="max-w-[85%] mx-auto">
         <div className="mb-16 border-l-4 border-primary pl-8">
           <h2 className="text-6xl text-on-surface uppercase main-title">

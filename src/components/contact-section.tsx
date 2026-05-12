@@ -59,7 +59,7 @@ export function ContactSection() {
   };
 
   return (
-    <section className="py-32 mx-auto bg-[#080808] w-full">
+    <section id="contact" className="py-32 mx-auto bg-[#080808] w-full">
       <div className="max-w-[85%] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-24 items-start">
         <div>
           <span className="font-[family-name:var(--font-inter)] text-primary uppercase subtitle text-sm tracking-widest">

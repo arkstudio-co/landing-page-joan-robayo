@@ -35,7 +35,7 @@ const notoSerif = Noto_Serif({
 });
 
 export const metadata: Metadata = {
-  title: "OSCURO MEDELLÍN | Tatuajes en Medellín",
+  title: "JoanRobayo Tattoo | Tatuajes en Medellín",
   description:
     "Especialistas en Realismo, Neotradicional y Fineline. Tatuajes sólidos y duraderos en Medellín, Colombia.",
 };

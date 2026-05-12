@@ -6,7 +6,7 @@ export function Header() {
       <nav className="flex justify-between items-center h-24 px-16 max-w-[1440px] mx-auto">
         <div className="text-gold font-[family-name:var(--font-noto-serif)]">
           <img
-            alt="OSCURO MEDELLÍN Logo"
+            alt="JoanRobayo Tattoo Logo"
             className="h-16 w-auto object-contain"
             src="/images/logo.png"
           />
@@ -22,9 +22,14 @@ export function Header() {
             </a>
           ))}
         </div>
-        <button className="bg-gold text-black px-8 py-3 font-[family-name:var(--font-inter)] text-xs uppercase tracking-widest scale-95 active:opacity-80 transition-transform hover:bg-[#e0ab75]">
+        <a
+          href="https://wa.me/573146148297?text=Hola!%20quiero%20cotizar%20mi%20proximo%20tattoo"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="bg-gold text-black px-8 py-3 font-[family-name:var(--font-inter)] text-xs uppercase tracking-widest scale-95 active:opacity-80 transition-transform hover:bg-[#e0ab75] inline-block"
+        >
           Book Appointment
-        </button>
+        </a>
       </nav>
     </header>
   );

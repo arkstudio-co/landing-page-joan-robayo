@@ -1,4 +1,4 @@
-# Sesión 001 — OSCURO MEDELLÍN Landing Page
+# Sesión 001 — JoanRobayo Tattoo Landing Page
 
 **Fecha:** 11/05/2026
 **Stack:** Next.js 16, React 19, Tailwind CSS v4, TypeScript
@@ -8,7 +8,7 @@
 
 ## Qué se creó
 
-Proyecto Next.js desde cero con `create-next-app`. Landing page de 8 secciones para estudio de tatuajes OSCURO MEDELLÍN.
+Proyecto Next.js desde cero con `create-next-app`. Landing page de 8 secciones para estudio de tatuajes JoanRobayo Tattoo.
 
 ### Estructura del proyecto
 

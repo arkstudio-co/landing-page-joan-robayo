@@ -22,7 +22,7 @@ function CategoryCard({ title, image }: { title: string; image: string }) {
 
 export function CategoryNav() {
   return (
-    <section className="bg-black pt-24 pb-0">
+    <section id="gallery" className="bg-black pt-24 pb-0">
       <div className="grid grid-cols-1 md:grid-cols-3 w-full">
         {CATEGORIES.map((cat) => (
           <CategoryCard key={cat.title} title={cat.title} image={cat.image} />

@@ -6,7 +6,7 @@ export function Footer() {
       <div className="flex flex-col items-center justify-center text-center px-16 space-y-12">
         <div>
           <img
-            alt="OSCURO MEDELLÍN"
+            alt="JoanRobayo Tattoo"
             className="h-28 w-auto grayscale invert opacity-80"
             src="/images/logo.png"
           />
