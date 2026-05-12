@@ -18,6 +18,7 @@ export const metadata: Metadata = {
 
 const articles = [
   {
+    slug: "bases-comportamiento-adecuado-estudio",
     category: "Cultura & Protocolo",
     title: "Bases para un comportamiento adecuado en el estudio",
     excerpt:
@@ -25,6 +26,7 @@ const articles = [
     image: "/images/blog-bases.png",
   },
   {
+    slug: "consejos-antes-de-hacerte-tattoo",
     category: "Preparación",
     title: "Consejos antes de hacerte un tatuaje",
     excerpt:
@@ -32,6 +34,7 @@ const articles = [
     image: "/images/blog-consejos.png",
   },
   {
+    slug: "cuidar-tatuaje-manera-correcta",
     category: "Cuidados",
     title: "Cómo cuidar tu tatuaje de una manera correcta",
     excerpt:
@@ -94,7 +97,7 @@ export default function BlogPage() {
                 </p>
                 <a
                   className="inline-flex items-center gap-2 text-gold font-[family-name:var(--font-inter)] text-[0.7rem] uppercase tracking-widest pt-2 group/link"
-                  href="#"
+                  href={`/blog/${article.slug}`}
                 >
                   Leer m&aacute;s
                   <span className="group-hover/link:translate-x-1 transition-transform inline-block">

@@ -1,9 +1,12 @@
 import Image from "next/image";
+import Link from "next/link";
 import { BLOG_POSTS } from "@/lib/constants";
 
-function BlogCard({ title, image }: { title: string; image: string }) {
+type BlogCardProps = (typeof BLOG_POSTS)[number];
+
+function BlogCard({ title, image, slug }: BlogCardProps) {
   return (
-    <div className="group cursor-pointer">
+    <Link href={`/blog/${slug}`} className="group block">
       <div className="relative aspect-square overflow-hidden mb-6 border border-primary/10">
         <Image
           alt={title}
@@ -16,7 +19,7 @@ function BlogCard({ title, image }: { title: string; image: string }) {
       <h3 className="subtitle text-xl leading-relaxed">
         {title}
       </h3>
-    </div>
+    </Link>
   );
 }
 
@@ -31,7 +34,7 @@ export function BlogSection() {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-20">
           {BLOG_POSTS.map((post) => (
-            <BlogCard key={post.title} title={post.title} image={post.image} />
+            <BlogCard key={post.slug} {...post} />
           ))}
         </div>
         <div className="text-center pt-8">

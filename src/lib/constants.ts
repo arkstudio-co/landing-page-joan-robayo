@@ -73,14 +73,17 @@ export const PORTFOLIO_IMAGES = Array.from({ length: 16 }, (_, i) =>
 
 export const BLOG_POSTS = [
   {
+    slug: "bases-comportamiento-adecuado-estudio",
     title: "Bases para un comportamiento adecuado en el estudio",
     image: "/images/blog-1.jpg.png",
   },
   {
-    title: "Consejos antes de hacerte un tattoo",
+    slug: "consejos-antes-de-hacerte-tattoo",
+    title: "Consejos antes de hacerte un tatuaje",
     image: "/images/blog-2.jpg.png",
   },
   {
+    slug: "cuidar-tatuaje-manera-correcta",
     title: "Como cuidar tu tatuaje de una manera correcta",
     image: "/images/blog-3.jpg.png",
   },
