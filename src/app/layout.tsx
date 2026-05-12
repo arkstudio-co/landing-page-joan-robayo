@@ -38,6 +38,29 @@ export const metadata: Metadata = {
   title: "JoanRobayo Tattoo | Tatuajes en Medellín",
   description:
     "Especialistas en Realismo, Neotradicional y Fineline. Tatuajes sólidos y duraderos en Medellín, Colombia.",
+  keywords: [
+    "tatuajes Medellín",
+    "tatuador Medellín",
+    "realismo Medellín",
+    "neotradicional Medellín",
+    "fineline Medellín",
+    "tattoo studio Medellín",
+    "Joan Robayo",
+  ],
+  openGraph: {
+    title: "JoanRobayo Tattoo | Tatuajes en Medellín",
+    description:
+      "Especialistas en Realismo, Neotradicional y Fineline. Tatuajes sólidos y duraderos en Medellín, Colombia.",
+    locale: "es_CO",
+    type: "website",
+    siteName: "JoanRobayo Tattoo",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "JoanRobayo Tattoo | Tatuajes en Medellín",
+    description:
+      "Especialistas en Realismo, Neotradicional y Fineline. Tatuajes sólidos y duraderos en Medellín, Colombia.",
+  },
 };
 
 export default function RootLayout({
@@ -51,6 +74,36 @@ export default function RootLayout({
       className={`${cinzel.variable} ${playfair.variable} ${inter.variable} ${manrope.variable} ${notoSerif.variable} dark`}
     >
       <body className="bg-background text-on-background min-h-screen flex flex-col">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "TattooParlor",
+              name: "JoanRobayo Tattoo",
+              description:
+                "Especialistas en Realismo, Neotradicional y Fineline. Tatuajes sólidos y duraderos en Medellín, Colombia.",
+              url: "https://joanrobayotattoo.com",
+              telephone: "+57 3146148297",
+              email: "joansr91@gmail.com",
+              address: {
+                "@type": "PostalAddress",
+                addressLocality: "Medellín",
+                addressRegion: "Antioquia",
+                addressCountry: "CO",
+              },
+              openingHoursSpecification: [
+                {
+                  "@type": "OpeningHoursSpecification",
+                  dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+                  opens: "10:00",
+                  closes: "20:00",
+                },
+              ],
+              priceRange: "$$",
+            }),
+          }}
+        />
         <Header />
         {children}
         <Footer />

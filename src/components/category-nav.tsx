@@ -1,12 +1,15 @@
+import Image from "next/image";
 import { CATEGORIES } from "@/lib/constants";
 
 function CategoryCard({ title, image }: { title: string; image: string }) {
   return (
     <div className="relative group overflow-hidden aspect-[4/5]">
-      <img
+      <Image
         alt={`${title} Section`}
-        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+        fill
+        className="object-cover transition-transform duration-700 group-hover:scale-110"
         src={image}
+        sizes="(max-width: 768px) 100vw, 33vw"
       />
       <div className="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-colors duration-500" />
       <div className="absolute inset-0 flex items-end justify-center pb-12">

@@ -1,17 +1,20 @@
+import Image from "next/image";
 import { STYLES } from "@/lib/constants";
 
 function StyleCard({ title, image }: { title: string; image: string }) {
   return (
     <div className="group relative overflow-hidden shadow-2xl transition-transform duration-500 hover:-translate-y-2">
-      <div className="aspect-[3/4] overflow-hidden">
-        <img
+      <div className="relative aspect-[3/4] overflow-hidden">
+        <Image
           alt={title}
-          className="w-full h-full object-cover group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700 ease-out rounded-[15px]"
+          fill
+          className="object-cover group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700 ease-out rounded-[15px]"
           src={image}
+          sizes="(max-width: 768px) 100vw, 33vw"
         />
       </div>
       <div className="p-8 border-t border-primary/10 text-center">
-        <h3 className="text-4xl text-primary main-title uppercase">
+        <h3 className="text-2xl md:text-4xl text-primary main-title uppercase">
           {title}
         </h3>
       </div>
@@ -26,7 +29,7 @@ export function StylesSection() {
         <span className="font-[family-name:var(--font-inter)] text-primary subtitle text-sm uppercase tracking-widest">
           NUESTROS ESTILOS
         </span>
-        <h2 className="text-6xl text-on-surface mt-2 uppercase main-title">
+        <h2 className="text-4xl md:text-6xl text-on-surface mt-2 uppercase main-title">
           TATUAJES SÓLIDOS Y DURADEROS
         </h2>
       </div>

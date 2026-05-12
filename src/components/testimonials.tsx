@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useRef, useState, useEffect, useCallback } from "react";
 import { TESTIMONIALS } from "@/lib/constants";
 
@@ -31,9 +32,11 @@ function TestimonialCard({
         {text}
       </p>
       <div className="flex items-center gap-3">
-        <img
-          src={photoUri}
+        <Image
+          src={photoUri ?? ""}
           alt={name}
+          width={48}
+          height={48}
           className="w-12 h-12 rounded-full object-cover border-2 border-primary/20 shrink-0"
         />
         <div>
@@ -164,7 +167,7 @@ export function Testimonials() {
           <span className="font-[family-name:var(--font-inter)] text-primary uppercase subtitle text-sm tracking-widest">
             TESTIMONIOS
           </span>
-          <h2 className="text-6xl text-on-surface mt-4 uppercase main-title">
+          <h2 className="text-4xl md:text-6xl text-on-surface mt-4 uppercase main-title">
             LO QUE DICEN NUESTROS CLIENTES
           </h2>
         </div>

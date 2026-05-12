@@ -110,18 +110,6 @@ body {
   display: none;
 }
 
-.carousel-item {
-  width: 375px;
-  flex-shrink: 0;
-  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-  padding: 0 1rem;
-}
-
-.carousel-item:hover {
-  transform: scale(1.15);
-  z-index: 10;
-}
-
 .textured-bg {
   position: relative;
 }
@@ -130,11 +118,10 @@ body {
   content: "";
   position: absolute;
   inset: 0;
-  background-image: url("https://lh3.googleusercontent.com/aida/ADBb0ugT75qAnUPmea-s4pMNjbAW9yxnmNr9e-RFeAz_jMM4-0vQLrH51MRoq0JoyjOQRNS8zpiofrrnwEkMKcEUzyFb4KFWT3jYT0d4Dg-SBOhw9tNRH5jtDlo_EVQvCH5-3BNi7skroLpZ2uYgcU3Wo2LKUUsUdAUHVhF9EgVZEFFNmGM29HXj30PFjYNOADJGsHpjG60zvuEA8R3l_917GgnqAY_eL2-7aG3ranNUUxI7EyeUqwCR-o9u26_vmJXBh5WybsoBQYea");
+  background: radial-gradient(ellipse at 20% 50%, rgba(206, 152, 97, 0.06) 0%, transparent 60%),
+              radial-gradient(ellipse at 80% 20%, rgba(206, 152, 97, 0.04) 0%, transparent 50%),
+              radial-gradient(ellipse at 50% 80%, rgba(206, 152, 97, 0.03) 0%, transparent 50%);
   background-attachment: fixed;
-  background-size: cover;
-  background-position: center;
-  opacity: 0.08;
   pointer-events: none;
   z-index: 0;
 }

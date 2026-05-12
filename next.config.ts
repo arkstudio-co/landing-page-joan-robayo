@@ -8,6 +8,8 @@ const nextConfig: NextConfig = {
         hostname: "lh3.googleusercontent.com",
       },
     ],
+    qualities: [75],
+    formats: ["image/avif", "image/webp"],
   },
 };
 

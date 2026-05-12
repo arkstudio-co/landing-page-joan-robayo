@@ -96,8 +96,8 @@ export const CONTACT_INFO = {
 export const FORMSPREE_ENDPOINT = "https://formspree.io/f/meennjyn";
 
 export const FOOTER_LINKS = [
-  { label: "Instagram", href: "#" },
-  { label: "WhatsApp", href: "#" },
+  { label: "Instagram", href: "https://www.instagram.com/joanrobayo/" },
+  { label: "WhatsApp", href: "https://wa.me/573146148297?text=Hola!%20Quiero%20cotizar%20un%20tattoo" },
   { label: "Privacy Policy", href: "#" },
   { label: "Studio Guidelines", href: "#" },
 ] as const;

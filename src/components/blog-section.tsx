@@ -1,13 +1,16 @@
+import Image from "next/image";
 import { BLOG_POSTS } from "@/lib/constants";
 
 function BlogCard({ title, image }: { title: string; image: string }) {
   return (
     <div className="group cursor-pointer">
-      <div className="aspect-square overflow-hidden mb-6 border border-primary/10">
-        <img
+      <div className="relative aspect-square overflow-hidden mb-6 border border-primary/10">
+        <Image
           alt={title}
-          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0 rounded-[15px]"
+          fill
+          className="object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0 rounded-[15px]"
           src={image}
+          sizes="(max-width: 768px) 100vw, 33vw"
         />
       </div>
       <h3 className="subtitle text-xl leading-relaxed">
@@ -19,10 +22,10 @@ function BlogCard({ title, image }: { title: string; image: string }) {
 
 export function BlogSection() {
   return (
-    <section id="blog" className="py-32 textured-bg">
+    <section id="blog" className="py-20 textured-bg">
       <div className="max-w-[85%] mx-auto">
         <div className="mb-16 border-l-4 border-primary pl-8">
-          <h2 className="text-6xl text-on-surface uppercase main-title">
+          <h2 className="text-4xl md:text-6xl text-on-surface uppercase main-title">
             BLOG
           </h2>
         </div>
@@ -32,7 +35,7 @@ export function BlogSection() {
           ))}
         </div>
         <div className="text-center pt-8">
-          <p className="main-title text-5xl md:text-6xl text-on-surface">
+          <p className="main-title text-3xl md:text-6xl text-on-surface">
             Transformemos tu idea en un tattoo increíble
           </p>
         </div>

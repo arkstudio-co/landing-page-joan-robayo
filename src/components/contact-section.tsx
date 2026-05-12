@@ -59,13 +59,13 @@ export function ContactSection() {
   };
 
   return (
-    <section id="contact" className="py-32 mx-auto bg-[#080808] w-full">
+    <section id="contact" className="py-20 mx-auto bg-[#080808] w-full">
       <div className="max-w-[85%] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-24 items-start">
         <div>
           <span className="font-[family-name:var(--font-inter)] text-primary uppercase subtitle text-sm tracking-widest">
             VISÍTANOS
           </span>
-          <h2 className="text-6xl text-on-surface mt-4 mb-12 main-title leading-tight">
+          <h2 className="text-4xl md:text-6xl text-on-surface mt-4 mb-12 main-title leading-tight">
             Tu próximo tatuaje comienza aquí
           </h2>
           <div className="space-y-12">

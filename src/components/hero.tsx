@@ -1,20 +1,25 @@
+import Image from "next/image";
+
 export function Hero() {
   return (
     <section className="relative h-[90vh] flex items-center justify-center overflow-hidden pt-24">
       <div className="absolute inset-0 z-0">
-        <img
+        <Image
           alt="Hero Tattoo Art"
-          className="w-full h-full object-cover"
+          fill
+          className="object-cover"
           src="/images/hero.jpg.png"
+          sizes="100vw"
+          preload
         />
         <div className="absolute inset-0 hero-gradient" />
         <div className="absolute inset-0 hero-left-overlay" />
       </div>
-      <div className="relative z-10 text-center px-16 max-w-5xl mt-48">
+      <div className="relative z-10 text-center px-4 md:px-16 max-w-5xl mt-28 md:mt-48">
         <span className="font-[family-name:var(--font-inter)] text-primary mb-2 block subtitle text-sm tracking-widest">
           Especialistas en Realismo, Neotradicional y Fineline.
         </span>
-        <h1 className="text-6xl mb-6 text-on-surface headline-shadow uppercase main-title leading-[1.1]">
+        <h1 className="text-4xl md:text-6xl mb-6 text-on-surface headline-shadow uppercase main-title leading-[1.1]">
           TATÚATE CON EXPERTOS
           <br />
           EN MEDELLÍN
