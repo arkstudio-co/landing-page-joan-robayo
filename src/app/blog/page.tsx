@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 import { BlogHeader } from "@/components/blog-header";
 import { BlogSubscription } from "@/components/blog-subscription";
 
@@ -56,7 +57,7 @@ export default function BlogPage() {
             fill
             className="object-cover"
             alt="Interior de estudio de tatuaje boutique en Medellín con muebles de roble oscuro, sillas vintage de cuero y detalles dorados bajo iluminación dramática"
-            src="/images/foto-principal-blog.jpg"
+            src="/images/hero-blog.jpg"
             sizes="100vw"
             preload
             quality={90}
@@ -74,37 +75,36 @@ export default function BlogPage() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           {articles.map((article) => (
             <article key={article.title} className="group cursor-pointer">
-              <div className="overflow-hidden rounded-[15px] mb-6 relative aspect-[4/5]">
-                <Image
-                  fill
-                  className="object-cover transition-transform duration-700 group-hover:scale-110"
-                  alt={article.title}
-                  src={article.image}
-                  sizes="(max-width: 768px) 100vw, 33vw"
-                  quality={85}
-                />
-                <div className="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-colors duration-300" />
-              </div>
-              <div className="space-y-4">
-                <span className="font-[family-name:var(--font-inter)] text-gold text-[0.65rem] tracking-widest uppercase">
-                  {article.category}
-                </span>
-                <h2 className="font-[family-name:var(--font-cinzel)] text-2xl text-white group-hover:text-gold transition-colors leading-tight">
-                  {article.title}
-                </h2>
-                <p className="font-[family-name:var(--font-playfair)] italic text-gray-400 text-lg leading-relaxed">
-                  {article.excerpt}
-                </p>
-                <a
-                  className="inline-flex items-center gap-2 text-gold font-[family-name:var(--font-inter)] text-[0.7rem] uppercase tracking-widest pt-2 group/link"
-                  href={`/blog/${article.slug}`}
-                >
-                  Leer m&aacute;s
-                  <span className="group-hover/link:translate-x-1 transition-transform inline-block">
-                    &rarr;
+              <Link href={`/blog/${article.slug}`} className="block">
+                <div className="overflow-hidden rounded-[15px] mb-6 relative aspect-[4/5]">
+                  <Image
+                    fill
+                    className="object-cover transition-transform duration-700 group-hover:scale-110"
+                    alt={article.title}
+                    src={article.image}
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                    quality={85}
+                  />
+                  <div className="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-colors duration-300" />
+                </div>
+                <div className="space-y-4">
+                  <span className="font-[family-name:var(--font-inter)] text-gold text-[0.65rem] tracking-widest uppercase">
+                    {article.category}
                   </span>
-                </a>
-              </div>
+                  <h2 className="font-[family-name:var(--font-cinzel)] text-2xl text-white group-hover:text-gold transition-colors leading-tight">
+                    {article.title}
+                  </h2>
+                  <p className="font-[family-name:var(--font-playfair)] italic text-gray-400 text-lg leading-relaxed">
+                    {article.excerpt}
+                  </p>
+                  <span className="inline-flex items-center gap-2 text-gold font-[family-name:var(--font-inter)] text-[0.7rem] uppercase tracking-widest pt-2">
+                    Leer m&aacute;s
+                    <span className="group-hover:translate-x-1 transition-transform inline-block">
+                      &rarr;
+                    </span>
+                  </span>
+                </div>
+              </Link>
             </article>
           ))}
         </div>

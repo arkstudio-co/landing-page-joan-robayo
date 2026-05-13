@@ -50,12 +50,12 @@ const ARTICLES = {
     heroAlt: "Interior de estudio de tatuaje boutique en Medellín con iluminación cálida y detalles dorados",
     bodyImages: [
       {
-        src: "/images/consejos-1.jpg",
-        alt: "Close up of a black and grey neotraditional tattoo on an arm, showing clean linework and soft shading",
+        src: "/images/consejos-4.jpg",
+        alt: "Diseño de tatuaje geométrico en el antebrazo con líneas precisas y sombreado limpio",
       },
       {
-        src: "/images/consejos-3.jpg",
-        alt: "A macro shot focusing on the delicate process of cleaning a fresh tattoo with a soft cloth and clear soap",
+        src: "/images/consejos-5.png",
+        alt: "Primer plano de un tatuaje fresco mostrando los detalles de la línea y la saturación del color",
       },
     ],
   },
