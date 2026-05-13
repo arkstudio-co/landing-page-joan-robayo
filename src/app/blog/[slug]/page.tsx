@@ -28,15 +28,15 @@ const ARTICLES = {
     category: "Cuidados",
     date: "",
     readTime: "",
-    heroImage: "https://lh3.googleusercontent.com/aida-public/AB6AXuBzQFl54lHTAOT1WFnYhgR4TtuDwplmSSjj7mPjYvoK2Ybe3xElcmgUXr301Sd0qW9fBcybMBl4AM6_3-FwJspdn8lzVvMOyBZomw2vZRufbkJOJRBC0L2goWCI8JDsi685HwzVc0QWvOhWpvYpJvTO8pCzrGar1hnMCyEy1Taj-i0u12sgEzJwbsZpz-AP1KIYqCT1ukc2C27j9tU6FEtHRM79jOb-QqkTVjHKB_b6_WgF26bBtQFzHfVadqPqco7tyW6AxU6fWg",
-    heroAlt: "A cinematic, low-light shot of a tattoo artist's workstation with sterile equipment and specialized skin balms",
+    heroImage: "/images/hero-cuidados2.jpg",
+    heroAlt: "Interior de estudio de tatuaje boutique con iluminación cálida y detalles dorados",
     bodyImages: [
       {
-        src: "https://lh3.googleusercontent.com/aida-public/AB6AXuBC542y30yfY3jODxHSeI0Cy7l_dyQd1SmWspznFUqkZqRwNkJXvbXq29HwiwutNsYH_UwASYXirz86-hRJMsiXL7BRc41DejnPx4bU4FRKIvZpegsKGtWN4UJD_Ddd2ISYwKmPmBWnE1RjKaDOn6ViT8u2MIl64UsQ26dAJLuW9wRQ7Xmq1Fvv4qHdxMEGbbfSfrUraqjUmtu_XuqA2pC3GlZ_t5jwlbop4ex3S32cwBJIo_xhK8YVMHNLOD0EJdMRt9NA01obaw",
+        src: "/images/consejos-1.jpg",
         alt: "Close up of a black and grey neotraditional tattoo on an arm, showing clean linework and soft shading",
       },
       {
-        src: "https://lh3.googleusercontent.com/aida-public/AB6AXuCFT0xlN1PxjXCjRGYLtcgFHAxKReo87Lu7ObYzXqT4-qSI42YrpXHi370iPbTIFmCoRnewvnh5C6I_YBDge-nmA8_-jOhojq-hNZg5YJsKDIEGjgdFAWT1yhugvwrAOsfPSZefrtuLYiGOunJxNj9OcRlL8xD6luU2RR0UpesKGcw85nWiC11_unvkrfoFUn5t2m3ipVMibMHUB8h8Yr5bZPH6EcCcKFS1eG-cYEZAuOID8ugBoiZ367pzTWm1StaAMAv0mRcWXg",
+        src: "/images/consejos-3.jpg",
         alt: "A macro shot focusing on the delicate process of cleaning a fresh tattoo with a soft cloth and clear soap",
       },
     ],
@@ -44,8 +44,8 @@ const ARTICLES = {
   "consejos-antes-de-hacerte-tattoo": {
     title: "Consejos antes de hacerte un tatuaje",
     category: "Preparación",
-    date: "",
-    readTime: "",
+    date: "20 Noviembre, 2024",
+    readTime: "6 min",
     heroImage: "/images/foto-principal-consejos.jpg",
     heroAlt: "Interior de estudio de tatuaje boutique en Medellín con iluminación cálida y detalles dorados",
     bodyImages: [
@@ -80,7 +80,58 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 type Article = (typeof ARTICLES)[Slug];
 
 function ArticleBody({ slug, article }: { slug: string; article: Article }) {
-  if (slug === "cuidar-tatuaje-manera-correcta" || slug === "consejos-antes-de-hacerte-tattoo") {
+  if (slug === "consejos-antes-de-hacerte-tattoo") {
+    return (
+      <article className="w-[85%] mx-auto max-w-5xl">
+        <div className="flex flex-col md:flex-row gap-16">
+          <div className="flex-1 space-y-12">
+            <div className="font-playfair text-body-lg md:text-2xl italic text-on-surface-variant leading-relaxed">
+              Tatuarse es una experiencia única, en cada tatuaje vives una experiencia diferente y difícil de repetir, puede complicarse en algunos momentos, pero es emocionante y vibrante.
+            </div>
+            <div className="font-playfair text-body-lg text-on-surface/90 space-y-8 first-letter:text-7xl first-letter:font-cinzel first-letter:text-primary first-letter:float-left first-letter:mr-4 first-letter:mt-2">
+              <p>Cuando tengas tu diseño listo y ya hayas escogido el lugar correcto en tu cuerpo, asegúrate de prepararte muy bien para el día de tu cita. Recibe de la mejor manera estos consejos que damos a continuación y síguelos, para que tu experiencia sea mucho mas cómoda y para que puedas disfrutar cada momento.</p>
+              <h2 className="font-cinzel text-headline-md text-primary pt-8 border-t border-outline-variant/30 text-center">Antes de hacerse un tatuaje, esto es lo que debe tener en cuenta</h2>
+              <h3 className="font-cinzel text-xl text-primary tracking-widest uppercase">Sin alcohol, sin café</h3>
+              <p>2 días antes de tu tan anhelada cita, evita consumir alcohol y cafeína. Dado que estas dos bebidas diluyen la sangre y alteran el sistema nervioso, podrían provocar un aumento del sangrado durante el proceso.</p>
+              <h3 className="font-cinzel text-xl text-primary tracking-widest uppercase">Hidratarse</h3>
+              <p>Una semana antes de su cita, asegúrate de mantenerte hidratado bebiendo mucha agua durante el día. Debes tener en cuenta que un cuerpo hidratado acelera el proceso de curación y facilita una buena sanidad del tattoo.</p>
+              <div className="bg-surface-container-low p-10 border-l-4 border-primary italic my-12">
+                El día de la cita, como muy bien, manténgase bien alimentado durante la sesión y manténgase hidratado, antes, durante y después del tattoo. La mala alimentación puede causar una disminución de las defensas y reflejarse en mareos y niveles bajos de azúcar en la sangre. Lo anterior hará que la experiencia sea muy dolorosa.
+              </div>
+              <h3 className="font-cinzel text-xl text-primary tracking-widest uppercase">Sin aspirina</h3>
+              <p>Suspenda el consumo de aspirina durante 2 días antes de su cita. La aspirina tiende a diluir la sangre y aumenta el sangrado. A menos que sea necesario, consuma normalmente, de lo contrario, evite ingerir este medicamento 2 días antes del tattoo.</p>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 my-12">
+                {article.bodyImages.map((img, i) => (
+                  <div key={i} className="relative h-64 rounded-lg overflow-hidden">
+                    <Image fill className="object-cover" alt={img.alt} src={img.src} sizes="(max-width: 768px) 100vw, 50vw" />
+                  </div>
+                ))}
+              </div>
+              <h3 className="font-cinzel text-xl text-primary tracking-widest uppercase">Vístase cómodo</h3>
+              <p>Cuando vaya a tatuarse, asegúrese de que su ropa sea lo mas cómoda posible, holgada, transpirable y que el área donde se va a tatuar sea completamente asequible. Si va a tatuarse sus manos o piernas, bastará con camisetas sin mangas o pantalones cortos. Para áreas más complicadas como la espalda o el pecho asegúrese de que su camiseta se pueda sujetar fácilmente.</p>
+              <h3 className="font-cinzel text-xl text-primary tracking-widest uppercase">Hidrate la piel</h3>
+              <p>Una semana antes del tattoo hidrate su piel de manera constante, bastará con aplicar crema de manos y evitar el sol directo en la piel.</p>
+              <div className="pt-12 text-center">
+                <p className="font-playfair text-xl italic mb-8">Esperamos que estos consejos te ayuden a tener la mejor experiencia posible.</p>
+                <div className="inline-flex flex-col items-center gap-6">
+                  <a
+                    href="https://wa.me/573146148297?text=Hola!%20Quiero%20cotizar%20mi%20nuevo%20tattoo"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-gold text-black px-12 py-4 font-cinzel text-xl tracking-widest hover:bg-white hover:scale-105 transition-all duration-500 shadow-[0_0_30px_rgba(206,152,97,0.2)]"
+                  >
+                    Agenda tu cita
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+    );
+  }
+
+  if (slug === "cuidar-tatuaje-manera-correcta") {
     return (
       <article className="w-[85%] max-w-5xl mx-auto py-20 font-playfair text-lg leading-relaxed text-on-background">
         <div className="mb-16 bg-surface-container-low p-8 rounded-xl border-l-4 border-primary">
