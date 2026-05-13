@@ -2,7 +2,10 @@ import Image from "next/image";
 import { NAV_LINKS } from "@/lib/constants";
 import { MobileMenu } from "./mobile-menu";
 
-export function Header() {
+export function Header({ contactHref = "#contact" }: { contactHref?: string }) {
+  const links = NAV_LINKS.map((link) =>
+    link.label === "Contact" ? { ...link, href: contactHref } : link
+  );
   return (
     <header className="bg-black/95 backdrop-blur-sm border-b border-gold/20 shadow-[0_4px_20px_rgba(206,152,97,0.1)] fixed top-0 w-full z-50">
       <nav className="flex justify-between items-center h-24 px-4 md:px-16 max-w-[1440px] mx-auto">
@@ -16,7 +19,7 @@ export function Header() {
           />
         </div>
         <div className="hidden md:flex items-center space-x-12">
-          {NAV_LINKS.map((link) => (
+          {links.map((link) => (
             <a
               key={link.label}
               href={link.href}

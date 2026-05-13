@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { Header } from "@/components/header";
+import { BlogSubscription } from "@/components/blog-subscription";
 
 const ARTICLES = {
   "bases-comportamiento-adecuado-estudio": {
@@ -44,15 +46,19 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
   const article = ARTICLES[slug as Slug];
   if (!article) {
     return (
+      <>
+      <Header contactHref="#subscribe" />
       <main className="pt-32 pb-20 text-center">
         <h1 className="font-cinzel text-4xl text-gold">Artículo no encontrado</h1>
         <Link href="/blog" className="text-gray-400 hover:text-gold mt-8 inline-block">Volver al blog</Link>
       </main>
-    );
+      </>);
   }
 
   return (
-    <main className="pt-24 pb-20">
+    <>
+      <Header contactHref="#subscribe" />
+      <main className="pt-24 pb-20">
       {/* Hero Section */}
       <section className="relative w-full h-[716px] overflow-hidden mb-section-gap">
         <div className="absolute inset-0 bg-black/40 z-10" />
@@ -82,19 +88,6 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
       {/* Article Content */}
       <article className="w-[85%] mx-auto max-w-5xl">
         <div className="flex flex-col md:flex-row gap-16">
-          {/* Share Rail */}
-          <aside className="hidden md:flex flex-col gap-6 sticky top-32 h-fit">
-            <div className="w-px h-12 bg-outline-variant mx-auto" />
-            <button className="text-outline hover:text-primary transition-colors">
-              <span className="material-symbols-outlined">share</span>
-            </button>
-            <button className="text-outline hover:text-primary transition-colors">
-              <span className="material-symbols-outlined">favorite</span>
-            </button>
-            <button className="text-outline hover:text-primary transition-colors">
-              <span className="material-symbols-outlined">bookmark</span>
-            </button>
-          </aside>
 
           {/* Body Text */}
           <div className="flex-1 space-y-12">
@@ -169,7 +162,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
                 <p className="font-playfair text-xl italic mb-8">Esperamos haber sido de ayuda en este viaje, gracias por leer.</p>
                 <div className="inline-flex flex-col items-center gap-6">
                   <a
-                    href="https://wa.me/573146148297?text=Hola!%20quiero%20cotizar%20mi%20proximo%20tattoo"
+                    href="https://wa.me/573146148297?text=Hola!%20Quiero%20cotizar%20mi%20nuevo%20tattoo"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="bg-gold text-black px-12 py-4 font-cinzel text-xl tracking-widest hover:bg-white hover:scale-105 transition-all duration-500 shadow-[0_0_30px_rgba(206,152,97,0.2)]"
@@ -182,6 +175,8 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
           </div>
         </div>
       </article>
+
+      <BlogSubscription />
     </main>
-  );
+    </>);
 }
