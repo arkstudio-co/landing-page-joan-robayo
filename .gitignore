@@ -39,6 +39,9 @@ yarn-error.log*
 # large media files
 /public/videos/
 
+# agent workspace
+/.opencode/
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts
