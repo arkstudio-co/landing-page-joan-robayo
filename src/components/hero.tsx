@@ -15,31 +15,37 @@ export function Hero() {
         <div className="absolute inset-0 hero-gradient" />
         <div className="absolute inset-0 hero-left-overlay" />
       </div>
-      <div className="relative z-10 text-center px-4 md:px-16 max-w-5xl mt-28 md:mt-48">
+      <div className="relative z-10 text-center px-4 md:px-16 max-w-5xl mt-24 md:mt-40">
         <span className="font-[family-name:var(--font-inter)] text-primary mb-2 block subtitle text-sm tracking-widest">
-          Especialistas en Realismo, Neotradicional y Fineline.
+          Especialistas en Realismo, Neotradicional y Fineline
         </span>
-        <h1 className="text-4xl md:text-6xl mb-6 text-on-surface headline-shadow uppercase main-title leading-[1.1]">
+        <h1 className="text-4xl md:text-6xl mb-4 text-on-surface headline-shadow uppercase main-title leading-[1.1]">
           TATÚATE CON EXPERTOS
           <br />
           EN MEDELLÍN
         </h1>
-        <div className="flex flex-col md:flex-row gap-8 justify-center mt-12">
+        <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-gold/30 rounded-full px-4 py-2 mb-8">
+          <span className="text-gold text-sm">★★★★★</span>
+          <span className="text-on-surface/80 text-sm font-[family-name:var(--font-inter)]">
+            5.0 en Google
+          </span>
+        </div>
+        <div className="flex flex-col md:flex-row gap-6 justify-center">
           <a
             href="https://wa.me/573146148297?text=Hola!%20quiero%20cotizar%20mi%20proximo%20tattoo"
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-gold text-black px-10 py-5 font-[family-name:var(--font-inter)] text-xs uppercase tracking-widest hover:bg-[#e0ab75] transition-colors inline-block"
+            className="bg-gold text-black px-10 py-5 font-[family-name:var(--font-inter)] text-xs uppercase tracking-widest hover:bg-[#e0ab75] transition-colors inline-block text-center"
           >
-            Agenda tu cita
+            Agenda tu cita gratis
           </a>
           <a
-            href="https://wa.me/573146148297?text=Hola!%20voy%20en%20camino%20a%20tu%20estudio"
+            href="https://wa.me/573146148297?text=Hola!%20quiero%20saber%20m%C3%A1s%20sobre%20sus%20servicios"
             target="_blank"
             rel="noopener noreferrer"
-            className="border border-gold text-gold px-10 py-5 font-[family-name:var(--font-inter)] text-xs uppercase tracking-widest hover:bg-gold/10 transition-colors inline-block"
+            className="border border-gold text-gold px-10 py-5 font-[family-name:var(--font-inter)] text-xs uppercase tracking-widest hover:bg-gold/10 transition-colors inline-block text-center"
           >
-            Walk-ins
+            Escríbenos
           </a>
         </div>
       </div>

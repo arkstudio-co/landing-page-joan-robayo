@@ -104,3 +104,77 @@ export const FOOTER_LINKS = [
   { label: "Privacy Policy", href: "#" },
   { label: "Studio Guidelines", href: "#" },
 ] as const;
+
+export const SOCIAL_PROOF_STATS = [
+  { number: "14+", label: "Años de experiencia" },
+  { number: "1.000+", label: "Tatuajes realizados" },
+  { number: "5.0", label: "Estrellas en Google" },
+  { number: "100%", label: "Clientes felices" },
+] as const;
+
+export const HOW_IT_WORKS_STEPS = [
+  {
+    step: 1,
+    title: "Cuéntanos tu idea",
+    description:
+      "Agenda una consulta gratis y cuéntanos lo que tienes en mente. Sin compromiso, solo conversamos sobre tu proyecto.",
+  },
+  {
+    step: 2,
+    title: "Diseñamos juntos",
+    description:
+      "Creamos un diseño único y personalizado para ti. Ajustamos cada detalle hasta que sea exactamente lo que quieres.",
+  },
+  {
+    step: 3,
+    title: "Tatuaje profesional",
+    description:
+      "Ejecutamos tu tatuaje con los más altos estándares de higiene y calidad en nuestro estudio en El Poblado, Medellín.",
+  },
+  
+] as const;
+
+export const FAQ_ITEMS = [
+  {
+    question: "¿Duele hacerse un tatuaje?",
+    answer:
+      "La sensación varía según la zona del cuerpo y tu umbral de dolor. La mayoría lo describe como una molestia soportable. Usamos técnicas y equipos modernos para minimizar las molestias. Además, zonas con más carne duelen menos que áreas óseas.",
+  },
+  {
+    question: "¿Cómo sé qué estilo de tatuaje me queda mejor?",
+    answer:
+      "Durante tu consulta gratis analizamos tu idea, la zona del cuerpo y el resultado que buscas. Te recomendamos el estilo que mejor se adapte: realismo, neotradicional o línea fina. También podemos combinar estilos.",
+  },
+  {
+    question: "¿Cuánto tiempo dura una sesión?",
+    answer:
+      "Depende del tamaño y complejidad del diseño. Una sesión típica dura entre 2 y 4 horas. Los trabajos grandes pueden requerir múltiples sesiones con intervalos de 2 a 4 semanas para permitir la cicatrización.",
+  },
+  {
+    question: "¿Cómo cuido mi tatuaje después?",
+    answer:
+      "Te daremos instrucciones detalladas por escrito. Lo básico: mantenerlo limpio, hidratado con crema especial, evitar el sol, no rascar, no sumergir en agua (piscina, mar, tina) durante las primeras 2-3 semanas.",
+  },
+  {
+    question: "¿Aceptan pagos con tarjeta?",
+    answer:
+      "Sí, aceptamos efectivo y transferencias bancarias. Consulta los métodos de pago disponibles al momento de agendar tu cita.",
+  },
+] as const;
+
+export interface PricingTier {
+  title: string;
+  description: string;
+  price: string;
+  popular?: boolean;
+  features: string[];
+}
+
+export const PRICING_TIERS: PricingTier[] = [
+  {
+    title: "minimal",
+    description: "Tatuajes pequeños y minimalistas. Ideal para tu primer diseño o detalles sutiles.",
+    price: "Desde $200.000 COP",
+    features: ["Diseño personalizado", "1 sesión", "Línea fina", "Revisión gratuita"],
+  },
+] as const;
