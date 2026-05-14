@@ -7,13 +7,13 @@ function CategoryCard({ title, image }: { title: string; image: string }) {
       <Image
         alt={`${title} Section`}
         fill
-        className="object-cover transition-transform duration-700 group-hover:scale-110"
+        className="object-cover transition-transform duration-700 group-hover:scale-110 opacity-70"
         src={image}
         sizes="(max-width: 768px) 100vw, 33vw"
       />
       <div className="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-colors duration-500" />
       <div className="absolute inset-0 flex items-end justify-center pb-12">
-        <div className="bg-white w-[70%] text-center shadow-2xl py-2">
+        <div className="bg-white/70 w-[70%] text-center shadow-2xl py-2">
           <h3 className="text-black main-title text-2xl tracking-[0.2em]">
             {title}
           </h3>

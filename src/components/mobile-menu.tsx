@@ -71,7 +71,7 @@ export function MobileMenu({ links }: { links?: readonly NavLink[] }) {
           target="_blank"
           rel="noopener noreferrer"
           onClick={close}
-          className="bg-gold text-black px-10 py-4 font-[family-name:var(--font-inter)] text-sm uppercase tracking-widest hover:bg-[#e0ab75] transition-colors mt-4"
+          className="bg-[#9CB198] text-black px-10 py-4 font-[family-name:var(--font-inter)] text-sm uppercase tracking-widest hover:bg-[#acc8a6] transition-colors mt-4 rounded-xl"
         >
           Book Appointment
         </a>
@@ -79,3 +79,4 @@ export function MobileMenu({ links }: { links?: readonly NavLink[] }) {
     </>
   );
 }
+

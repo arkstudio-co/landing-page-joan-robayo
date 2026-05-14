@@ -32,7 +32,7 @@ export function HowItWorks() {
           <span className="text-gold text-sm uppercase tracking-widest font-[family-name:var(--font-inter)]">
             Así funciona
           </span>
-          <h2 className="text-3xl md:text-4xl main-title text-on-surface mt-3 uppercase">
+          <h2 className="text-2xl md:text-4xl main-title text-on-surface mt-3 uppercase">
             Tu tatuaje en 3 pasos
           </h2>
           <p className="text-on-surface/60 mt-4 max-w-2xl mx-auto font-[family-name:var(--font-manrope)]">

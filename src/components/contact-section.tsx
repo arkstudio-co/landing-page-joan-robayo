@@ -65,35 +65,35 @@ export function ContactSection() {
           <span className="font-[family-name:var(--font-inter)] text-primary uppercase subtitle text-sm tracking-widest">
             VISÍTANOS
           </span>
-          <h2 className="text-4xl md:text-6xl text-on-surface mt-4 mb-12 main-title leading-tight">
+          <h2 className="text-2xl md:text-4xl text-on-surface mt-4 mb-12 main-title leading-tight">
             Tu próximo tatuaje comienza aquí
           </h2>
           <div className="space-y-12">
             <div className="flex gap-6">
               <LocationIcon />
               <div>
-                <h4 className="text-2xl text-on-surface mb-2 main-title uppercase">
+                <h4 className="text-2xl text-white mb-2 main-title uppercase">
                   UBICACIÓN
                 </h4>
-                <p className="text-xl subtitle">{CONTACT_INFO.address}</p>
+                <p className="text-xl text-white">{CONTACT_INFO.address}</p>
               </div>
             </div>
             <div className="flex gap-6">
               <ScheduleIcon />
               <div>
-                <h4 className="text-2xl text-on-surface mb-2 main-title uppercase">
+                <h4 className="text-2xl text-white mb-2 main-title uppercase">
                   HORARIOS
                 </h4>
-                <p className="text-xl subtitle whitespace-pre-line">{CONTACT_INFO.hours}</p>
+                <p className="text-xl text-white whitespace-pre-line">{CONTACT_INFO.hours}</p>
               </div>
             </div>
             <div className="flex gap-6">
               <MailIcon />
               <div>
-                <h4 className="text-2xl text-on-surface mb-2 main-title uppercase">
+                <h4 className="text-2xl text-white mb-2 main-title uppercase">
                   CONTACTO
                 </h4>
-                <p className="text-xl subtitle">
+                <p className="text-xl text-white">
                   {CONTACT_INFO.email}
                   <br />
                   {CONTACT_INFO.phone}
@@ -104,7 +104,7 @@ export function ContactSection() {
         </div>
         <div className="p-12 border border-gold/10 shadow-2xl bg-black/40">
           <h3 className="text-3xl text-on-surface mb-10 uppercase text-center main-title">
-            DEJANOS TUS DATOS Y NOS PONDREMOS EN CONTACTO
+            DÉJANOS TUS DATOS Y NOS PONDREMOS EN CONTACTO
           </h3>
           <form className="space-y-8" onSubmit={handleSubmit}>
             <div>
@@ -169,7 +169,7 @@ export function ContactSection() {
             </div>
             <div className="pt-4">
               <button
-                className="w-full bg-gold text-black py-5 font-[family-name:var(--font-inter)] text-xs uppercase tracking-[0.2em] hover:bg-[#e0ab75] transition-colors disabled:opacity-50"
+                className="w-full bg-[#9CB198] text-black py-5 font-[family-name:var(--font-inter)] text-xs uppercase tracking-[0.2em] hover:bg-[#acc8a6] transition-colors disabled:opacity-50 rounded-xl"
                 type="submit"
                 disabled={status === "sending"}
               >
@@ -192,3 +192,4 @@ export function ContactSection() {
     </section>
   );
 }
+

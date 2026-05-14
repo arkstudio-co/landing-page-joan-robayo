@@ -14,7 +14,7 @@ function StyleCard({ title, image }: { title: string; image: string }) {
         />
       </div>
       <div className="p-8 border-t border-primary/10 text-center">
-        <h3 className="text-2xl md:text-4xl text-primary main-title uppercase">
+        <h3 className="text-xl md:text-2xl text-white main-title uppercase">
           {title}
         </h3>
       </div>
@@ -29,7 +29,7 @@ export function StylesSection() {
         <span className="font-[family-name:var(--font-inter)] text-primary subtitle text-sm uppercase tracking-widest">
           NUESTROS ESTILOS
         </span>
-        <h2 className="text-4xl md:text-6xl text-on-surface mt-2 uppercase main-title">
+        <h2 className="text-2xl md:text-4xl text-on-surface mt-2 uppercase main-title">
           TATUAJES SÓLIDOS Y DURADEROS
         </h2>
       </div>

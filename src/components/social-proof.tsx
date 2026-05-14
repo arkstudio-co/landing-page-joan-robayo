@@ -10,11 +10,11 @@ export function SocialProof() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
           {SOCIAL_PROOF_STATS.map((stat) => (
             <div key={stat.label} className="text-center">
-              <div className="text-3xl md:text-4xl font-bold main-title text-gold mb-2">
+              <div className="text-3xl md:text-4xl font-bold main-title text-white mb-2">
                 {stat.number}
               </div>
 
-              <div className="text-on-surface/60 text-sm uppercase tracking-wider font-[family-name:var(--font-inter)]">
+              <div className="text-white text-sm uppercase tracking-wider font-[family-name:var(--font-inter)]">
                 {stat.label}
               </div>
             </div>

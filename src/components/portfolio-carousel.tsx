@@ -93,11 +93,11 @@ export function PortfolioCarousel() {
   return (
     <section className="py-20 overflow-hidden bg-black border-y border-primary/10">
       <div className="max-w-[85%] mx-auto text-center mb-10">
-        <h2 className="text-4xl md:text-6xl text-on-surface mb-4 uppercase main-title">
+        <h2 className="text-2xl md:text-4xl text-on-surface mb-4 uppercase main-title">
           ¿Estás en Medellín o piensas visitarnos?
         </h2>
         <p className="text-sm uppercase tracking-widest subtitle">
-          escribenos, recibe una asesoría y aparta tu cita con nosotros
+          Escríbenos, recibe una asesoría y aparta tu cita con nosotros
         </p>
       </div>
       <div className="relative select-none max-w-[90%] mx-auto group">
@@ -149,7 +149,7 @@ export function PortfolioCarousel() {
           href="https://wa.me/573146148297?text=Hola!%20quiero%20agendar%20una%20asesor%C3%ADa"
           target="_blank"
           rel="noopener noreferrer"
-          className="bg-gold text-black px-12 py-5 font-[family-name:var(--font-inter)] text-xs uppercase tracking-widest hover:bg-[#e0ab75] transition-all transform hover:scale-105 active:scale-95 shadow-lg inline-block"
+          className="bg-[#9CB198] text-black px-12 py-5 font-[family-name:var(--font-inter)] text-xs uppercase tracking-widest hover:bg-[#acc8a6] transition-all transform hover:scale-105 active:scale-95 shadow-lg inline-block rounded-xl"
         >
           Agenda una asesoría
         </a>
@@ -157,3 +157,4 @@ export function PortfolioCarousel() {
     </section>
   );
 }
+

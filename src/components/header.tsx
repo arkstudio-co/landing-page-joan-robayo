@@ -34,7 +34,7 @@ export function Header({ contactHref = "#contact" }: { contactHref?: string }) {
             href="https://wa.me/573146148297?text=Hola!%20quiero%20cotizar%20mi%20proximo%20tattoo"
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-gold text-black px-8 py-3 font-[family-name:var(--font-inter)] text-xs uppercase tracking-widest scale-95 active:opacity-80 transition-transform hover:bg-[#e0ab75] inline-block"
+            className="bg-[#9CB198] text-black px-8 py-3 font-[family-name:var(--font-inter)] text-xs uppercase tracking-widest scale-95 active:opacity-80 transition-transform hover:bg-[#acc8a6] inline-block rounded-xl"
           >
             Book Appointment
           </a>
@@ -44,3 +44,4 @@ export function Header({ contactHref = "#contact" }: { contactHref?: string }) {
     </header>
   );
 }
+

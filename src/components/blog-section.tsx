@@ -16,7 +16,7 @@ function BlogCard({ title, image, slug }: BlogCardProps) {
           sizes="(max-width: 768px) 100vw, 33vw"
         />
       </div>
-      <h3 className="subtitle text-xl leading-relaxed">
+      <h3 className="text-white text-xl leading-relaxed">
         {title}
       </h3>
     </Link>
@@ -28,7 +28,7 @@ export function BlogSection() {
     <section id="blog" className="py-20 textured-bg">
       <div className="max-w-[85%] mx-auto">
         <div className="mb-16 border-l-4 border-primary pl-8">
-          <h2 className="text-4xl md:text-6xl text-on-surface uppercase main-title">
+          <h2 className="text-2xl md:text-4xl text-on-surface uppercase main-title">
             BLOG
           </h2>
         </div>
@@ -38,7 +38,7 @@ export function BlogSection() {
           ))}
         </div>
         <div className="text-center pt-8">
-          <p className="main-title text-3xl md:text-6xl text-on-surface">
+          <p className="main-title text-2xl md:text-4xl text-on-surface">
             Transformemos tu idea en un tattoo increíble
           </p>
         </div>

@@ -55,7 +55,7 @@ export function BlogSubscription() {
             required
           />
           <button
-            className="border border-gold text-gold px-8 py-4 font-[family-name:var(--font-inter)] text-[0.7rem] uppercase tracking-widest hover:bg-gold hover:text-black transition-all disabled:opacity-50"
+            className="border border-gold text-gold px-8 py-4 font-[family-name:var(--font-inter)] text-[0.7rem] uppercase tracking-widest hover:bg-gold hover:text-black transition-all disabled:opacity-50 rounded-xl"
             type="submit"
             disabled={status === "sending"}
           >

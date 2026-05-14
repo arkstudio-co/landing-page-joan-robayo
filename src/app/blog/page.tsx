@@ -23,7 +23,7 @@ const articles = [
     category: "Cultura & Protocolo",
     title: "Bases para un comportamiento adecuado en el estudio",
     excerpt:
-      "Este articulo te dará una idea de como lograr entre todos un ambiente de respeto y amistad en nuestro estudio...",
+      "Este artículo te dará una idea de cómo lograr entre todos un ambiente de respeto y amistad en nuestro estudio...",
     image: "/images/blog-bases.png",
   },
   {
@@ -88,16 +88,16 @@ export default function BlogPage() {
                   <div className="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-colors duration-300" />
                 </div>
                 <div className="space-y-4">
-                  <span className="font-[family-name:var(--font-inter)] text-gold text-[0.65rem] tracking-widest uppercase">
+                  <span className="font-[family-name:var(--font-inter)] text-white text-[0.65rem] tracking-widest uppercase">
                     {article.category}
                   </span>
-                  <h2 className="font-[family-name:var(--font-cinzel)] text-2xl text-white group-hover:text-gold transition-colors leading-tight">
+                  <h2 className="font-[family-name:var(--font-cinzel)] text-2xl text-white group-hover:text-white/80 transition-colors leading-tight">
                     {article.title}
                   </h2>
                   <p className="font-[family-name:var(--font-playfair)] italic text-gray-400 text-lg leading-relaxed">
                     {article.excerpt}
                   </p>
-                  <span className="inline-flex items-center gap-2 text-gold font-[family-name:var(--font-inter)] text-[0.7rem] uppercase tracking-widest pt-2">
+                  <span className="inline-flex items-center gap-2 text-white font-[family-name:var(--font-inter)] text-[0.7rem] uppercase tracking-widest pt-2">
                     Leer m&aacute;s
                     <span className="group-hover:translate-x-1 transition-transform inline-block">
                       &rarr;
@@ -112,14 +112,14 @@ export default function BlogPage() {
 
       <section className="py-32 bg-[#121212] border-y border-gold/10">
         <div className="w-[85%] max-w-[1440px] mx-auto text-center max-w-2xl">
-          <h3 className="font-[family-name:var(--font-playfair)] italic text-3xl md:text-4xl text-gold mb-10 leading-relaxed">
+          <h3 className="font-[family-name:var(--font-playfair)] italic text-3xl md:text-4xl text-white mb-10 leading-relaxed">
             Transformemos tu idea en un tattoo incre&iacute;ble
           </h3>
           <a
             href="https://wa.me/573146148297?text=Hola!%20quiero%20cotizar%20mi%20proximo%20tattoo"
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-gold text-black px-10 py-4 font-[family-name:var(--font-inter)] text-[0.8rem] uppercase tracking-[0.2em] hover:bg-white transition-all shadow-[0_0_30px_rgba(206,152,97,0.2)] inline-block"
+            className="bg-[#9CB198] text-black px-10 py-4 font-[family-name:var(--font-inter)] text-[0.8rem] uppercase tracking-[0.2em] hover:bg-[#acc8a6] transition-all shadow-[0_0_30px_rgba(206,152,97,0.2)] inline-block rounded-xl"
           >
             Agenda tu cita
           </a>
@@ -130,3 +130,4 @@ export default function BlogPage() {
     </>
   );
 }
+

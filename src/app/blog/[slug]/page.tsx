@@ -88,17 +88,17 @@ function ArticleBody({ slug, article }: { slug: string; article: Article }) {
             <div className="font-playfair text-body-lg md:text-2xl italic text-on-surface-variant leading-relaxed">
               Tatuarse es una experiencia única, en cada tatuaje vives una experiencia diferente y difícil de repetir, puede complicarse en algunos momentos, pero es emocionante y vibrante.
             </div>
-            <div className="font-playfair text-body-lg text-on-surface/90 space-y-8 first-letter:text-7xl first-letter:font-cinzel first-letter:text-primary first-letter:float-left first-letter:mr-4 first-letter:mt-2">
+            <div className="font-playfair text-body-lg text-on-surface/90 space-y-8 first-letter:text-7xl first-letter:font-cinzel first-letter:text-white first-letter:float-left first-letter:mr-4 first-letter:mt-2">
               <p>Cuando tengas tu diseño listo y ya hayas escogido el lugar correcto en tu cuerpo, asegúrate de prepararte muy bien para el día de tu cita. Recibe de la mejor manera estos consejos que damos a continuación y síguelos, para que tu experiencia sea mucho mas cómoda y para que puedas disfrutar cada momento.</p>
-              <h2 className="font-cinzel text-headline-md text-primary pt-8 border-t border-outline-variant/30 text-center">Antes de hacerse un tatuaje, esto es lo que debe tener en cuenta</h2>
-              <h3 className="font-cinzel text-xl text-primary tracking-widest uppercase">Sin alcohol, sin café</h3>
+              <h2 className="font-cinzel text-headline-md text-white pt-8 border-t border-outline-variant/30 text-center">Antes de hacerse un tatuaje, esto es lo que debe tener en cuenta</h2>
+              <h3 className="font-cinzel text-xl text-white tracking-widest uppercase">Sin alcohol, sin café</h3>
               <p>2 días antes de tu tan anhelada cita, evita consumir alcohol y cafeína. Dado que estas dos bebidas diluyen la sangre y alteran el sistema nervioso, podrían provocar un aumento del sangrado durante el proceso.</p>
-              <h3 className="font-cinzel text-xl text-primary tracking-widest uppercase">Hidratarse</h3>
+              <h3 className="font-cinzel text-xl text-white tracking-widest uppercase">Hidratarse</h3>
               <p>Una semana antes de su cita, asegúrate de mantenerte hidratado bebiendo mucha agua durante el día. Debes tener en cuenta que un cuerpo hidratado acelera el proceso de curación y facilita una buena sanidad del tattoo.</p>
               <div className="bg-surface-container-low p-10 border-l-4 border-primary italic my-12">
                 El día de la cita, como muy bien, manténgase bien alimentado durante la sesión y manténgase hidratado, antes, durante y después del tattoo. La mala alimentación puede causar una disminución de las defensas y reflejarse en mareos y niveles bajos de azúcar en la sangre. Lo anterior hará que la experiencia sea muy dolorosa.
               </div>
-              <h3 className="font-cinzel text-xl text-primary tracking-widest uppercase">Sin aspirina</h3>
+              <h3 className="font-cinzel text-xl text-white tracking-widest uppercase">Sin aspirina</h3>
               <p>Suspenda el consumo de aspirina durante 2 días antes de su cita. La aspirina tiende a diluir la sangre y aumenta el sangrado. A menos que sea necesario, consuma normalmente, de lo contrario, evite ingerir este medicamento 2 días antes del tattoo.</p>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8 my-12">
                 {article.bodyImages.map((img, i) => (
@@ -107,9 +107,9 @@ function ArticleBody({ slug, article }: { slug: string; article: Article }) {
                   </div>
                 ))}
               </div>
-              <h3 className="font-cinzel text-xl text-primary tracking-widest uppercase">Vístase cómodo</h3>
+              <h3 className="font-cinzel text-xl text-white tracking-widest uppercase">Vístase cómodo</h3>
               <p>Cuando vaya a tatuarse, asegúrese de que su ropa sea lo mas cómoda posible, holgada, transpirable y que el área donde se va a tatuar sea completamente asequible. Si va a tatuarse sus manos o piernas, bastará con camisetas sin mangas o pantalones cortos. Para áreas más complicadas como la espalda o el pecho asegúrese de que su camiseta se pueda sujetar fácilmente.</p>
-              <h3 className="font-cinzel text-xl text-primary tracking-widest uppercase">Hidrate la piel</h3>
+              <h3 className="font-cinzel text-xl text-white tracking-widest uppercase">Hidrate la piel</h3>
               <p>Una semana antes del tattoo hidrate su piel de manera constante, bastará con aplicar crema de manos y evitar el sol directo en la piel.</p>
               <div className="pt-12 text-center">
                 <p className="font-playfair text-xl italic mb-8">Esperamos que estos consejos te ayuden a tener la mejor experiencia posible.</p>
@@ -118,7 +118,7 @@ function ArticleBody({ slug, article }: { slug: string; article: Article }) {
                     href="https://wa.me/573146148297?text=Hola!%20Quiero%20cotizar%20mi%20nuevo%20tattoo"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="bg-gold text-black px-12 py-4 font-cinzel text-xl tracking-widest hover:bg-white hover:scale-105 transition-all duration-500 shadow-[0_0_30px_rgba(206,152,97,0.2)]"
+                    className="bg-[#9CB198] text-black px-12 py-4 font-cinzel text-xl tracking-widest hover:bg-[#acc8a6] hover:scale-105 transition-all duration-500 shadow-[0_0_30px_rgba(206,152,97,0.2)] rounded-xl"
                   >
                     Agenda tu cita
                   </a>
@@ -153,7 +153,7 @@ function ArticleBody({ slug, article }: { slug: string; article: Article }) {
               return (
                 <li key={i} className={`flex items-start gap-3 ${isBold ? "mt-4" : ""}`}>
                   <svg className="w-5 h-5 text-primary shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
-                  <span className={isBold ? "font-bold text-primary" : ""}>{label}</span>
+                  <span className={isBold ? "font-bold text-white" : ""}>{label}</span>
                 </li>
               );
             })}
@@ -162,21 +162,21 @@ function ArticleBody({ slug, article }: { slug: string; article: Article }) {
 
         <p className="mb-8">El tiempo que tardará nuestro tatuaje en curar, depende mucho del tamaño, estilo y duración de la sesión realizada, un tatuaje corto (en términos de tiempo) curará más rápido que uno que tarde mas tiempo en realizarse. Todo este proceso de curación se da en cuatro etapas, que te explicaremos a continuación.</p>
         <p className="mb-8">Tus hábitos de limpieza, tanto como los hábitos alimenticios, y de cuidado en general, jugarán un roll muy importante en el proceso. Éste artículo, te advierte de la probabilidad de infecciones o reacciones contrarias del cuerpo, si te surge algún inconveniente, consulta a tu tatuador o médico, o no dudes en escribirnos, nosotros de asesoramos con gusto.</p>
-        <p className="mb-12 font-bold text-xl italic text-primary">Lee con atención y sigue paso a paso las recomendaciones.</p>
+        <p className="mb-12 font-bold text-xl italic text-white">Lee con atención y sigue paso a paso las recomendaciones.</p>
 
         <div className="my-16 grid grid-cols-1 md:grid-cols-2 gap-8">
           <div className="relative h-[400px] rounded-[15px] overflow-hidden grayscale hover:grayscale-0 transition-all duration-700">
             <Image fill className="object-cover" alt={article.bodyImages[0].alt} src={article.bodyImages[0].src} sizes="(max-width: 768px) 100vw, 50vw" />
           </div>
           <div className="flex flex-col justify-center">
-            <h3 className="font-cinzel text-2xl text-primary mb-6 italic">¡ Tu tatuaje no curará en un mes !</h3>
+            <h3 className="font-cinzel text-2xl text-white mb-6 italic">¡ Tu tatuaje no curará en un mes !</h3>
             <p>La parte externa de la piel, conocida como epidermis, después de hacerte tu nuevo tattoo, tardará mas o menos de 2 a 3 semanas en sanar. No creas que cuando esto pase ya terminó el proceso de curación, ya que debajo de la epidermis, el proceso de curación y adaptación es mucho mas lento y tardará más o menos 6 meses en culminar completamente, a continuación, te explicamos por qué.</p>
           </div>
         </div>
 
         <p className="mb-8">La piel en los tatuajes más grandes tarda más en recuperarse y ciertos factores, como Retirar las costras, no hidratar tu piel con cremas, usar una losión o crema con alcohol o no ponerte bloqueador solar pueden retrasar el proceso de curación y dañar el tattoo como tal.</p>
 
-        <h2 className="font-cinzel text-3xl text-primary font-bold mt-16 mb-8 uppercase tracking-widest">Estas son las etapas reales de curación</h2>
+        <h2 className="font-cinzel text-3xl text-white font-bold mt-16 mb-8 uppercase tracking-widest">Estas son las etapas reales de curación</h2>
         <p className="mb-12">Para hablar de una curación completa del tatuaje, debemos abordar de principio a fin, lo que sería la sanidad total del tatuaje. En este blog hablaremos de 4 etapas principales para un correcto tratamiento del tattoo. En cada etapa hay una forma de cuidarlo que tiene unos pequeños cambios entre cada etapa.</p>
 
         <div className="space-y-16">
@@ -186,12 +186,12 @@ function ArticleBody({ slug, article }: { slug: string; article: Article }) {
             { title: "Tercer y Cuarta Semanas", text: "En esta etapa, tu piel estará reseca y experimentarás picazón fuerte. Todas las señales de enrojecimiento habrán desaparecido, si no es así, consulta a tu tatuador, medico o no dudes en hablarnos, con gusto te brindaremos una asesoría, podría tratarse de una infección." },
           ].map((section, i) => (
             <section key={i}>
-              <h3 className="font-cinzel text-2xl text-primary mb-4">{section.title}</h3>
+              <h3 className="font-cinzel text-2xl text-white mb-4">{section.title}</h3>
               <p>{section.text}</p>
             </section>
           ))}
           <section>
-            <h3 className="font-cinzel text-2xl text-primary mb-4">Entre el segundo y sexto mes</h3>
+            <h3 className="font-cinzel text-2xl text-white mb-4">Entre el segundo y sexto mes</h3>
             <p>La picazón y el enrojecimiento deberían haber disminuido en este punto, y el tatuaje puede parecer completamente curado, aunque es inteligente continuar con el cuidado. La atención a largo plazo del tatuaje incluye mantener la piel hidratada, usar protector solar o ropa protectora contra el sol y mantener limpio el tatuaje. Recuerda que la piscina, el sol y el alcohol son los factores que más perjudican tu tatuaje.</p>
             <p className="mt-4">En este momento puede parecer que tu tattoo ha perdido vivacidad y color, pero esto se debe a que, naturalmente la piel ha formado una capa de piel deshidratada y nueva como respuesta al procedimiento realizado.</p>
           </section>
@@ -199,22 +199,22 @@ function ArticleBody({ slug, article }: { slug: string; article: Article }) {
 
         <div className="my-20 p-1 bg-gradient-to-r from-orange-900/50 via-primary/50 to-orange-900/50 rounded-xl">
           <div className="bg-surface p-12 rounded-lg text-center">
-            <h2 className="font-cinzel text-3xl text-primary mb-6">¿Puedo reducir el tiempo de cicatrización del tattoo?</h2>
+            <h2 className="font-cinzel text-3xl text-white mb-6">¿Puedo reducir el tiempo de cicatrización del tattoo?</h2>
             <p className="mb-6">No. Debemos armarnos de paciencia y cuidar al máximo nuestra piel. Dicho esto te daremos unos tips para mejorar el procedimiento, lee con atención y sigue paso a paso las recomendaciones adicionales</p>
           </div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-16 mt-20">
           <div>
-            <h3 className="font-cinzel text-xl text-primary mb-4">Protector Solar</h3>
+            <h3 className="font-cinzel text-xl text-white mb-4">Protector Solar</h3>
             <p>Los rayos Uv es uno de los factores más dañinos para nuestra piel, cuanto más si se trata de un tattoo recién hecho. Puede entre otras cosas, bajar los tonos y colores del tattoo. Aplica siempre protector solar y utiliza ropa cómoda para que no se adhiera a la piel herida.</p>
           </div>
           <div>
-            <h3 className="font-cinzel text-xl text-primary mb-4">Apósitos o vendaje</h3>
+            <h3 className="font-cinzel text-xl text-white mb-4">Apósitos o vendaje</h3>
             <p>No pongas apósito o vendaje después de las primeras 24 horas de hecho tu tatuaje. Tu piel necesita oxigenarse y el vendaje es únicamente para evitar infecciones inmediatas o bacterias del ambiente que puedan afectar tu piel. Vendarlo después de este tiempo puede generar humedad adicional, y falta de oxigeno lo que puede retrasar el proceso de curación además puede abrir heridas entre otras cosas.</p>
           </div>
           <div className="md:col-span-2">
-            <h3 className="font-cinzel text-xl text-primary mb-4">Lavar muy bien</h3>
+            <h3 className="font-cinzel text-xl text-white mb-4">Lavar muy bien</h3>
             <p className="mb-4">Para lavar la zona debes utilizar agua fría. No uses agua caliente, no uses agua tibia, ésta puede herir mucho más la piel y abrir los poros. Usa agua limpia o estéril y lava con poco jabón mínimo 3 veces al día.</p>
             <p>Antes de comenzar a lavar, asegúrate que tus manos están muy limpias. Procura lavar con jabón neutro sin olor, libre de alcohol. Utiliza abundante agua y sécalo con una toalla limpia, suavemente. Después de esto déjalo un momento sin crema.</p>
           </div>
@@ -222,22 +222,22 @@ function ArticleBody({ slug, article }: { slug: string; article: Article }) {
             <Image fill className="object-cover" alt={article.bodyImages[1].alt} src={article.bodyImages[1].src} sizes="(max-width: 768px) 100vw, 50vw" />
           </div>
           <div>
-            <h3 className="font-cinzel text-xl text-primary mb-4">Uso de la crema adecuada</h3>
+            <h3 className="font-cinzel text-xl text-white mb-4">Uso de la crema adecuada</h3>
             <p className="mb-4">No uses productos hechos a base de petróleo, como la vaselina, o productos muy espesos, ya que se hará muy difícil remover la crema en cada lavada y esto hará que se acumule la crema en el tattoo.</p>
             <p>Usa productos que contengan vitamina A y D la primera semana. Después puedes cambiarla a una crema hidratante más ligera libre de alcohol y fragancias.</p>
           </div>
           <div>
-            <h3 className="font-cinzel text-xl text-primary mb-4">No rasques y no arranques la costra</h3>
+            <h3 className="font-cinzel text-xl text-white mb-4">No rasques y no arranques la costra</h3>
             <p>Evita las costras lavando muy bien la zona del tattoo. Si estas aparecen, no las arranques, la formación de costras es una parte normal del proceso de curación, y arrancárselas, puede retrasar el proceso de curación, además de afectar la integridad del tatuaje o provocar una cicatrización incorrecta.</p>
           </div>
           <div>
-            <h3 className="font-cinzel text-xl text-primary mb-4">No utilices productos con fragancia</h3>
+            <h3 className="font-cinzel text-xl text-white mb-4">No utilices productos con fragancia</h3>
             <p>Es importante resaltar que debes evitar completamente el uso de productos con olores fuertes, tanto el jabón como la crema humectante. Incluso el shampoo, un gel de baño o un acondicionador que utilices podría afectar la zona.</p>
           </div>
         </div>
 
         <section className="mt-24 p-12 bg-surface-container-high border border-primary/20 rounded-xl">
-          <h2 className="font-cinzel text-3xl text-primary mb-8 border-b border-primary/20 pb-4">¿Está tu tattoo curando correctamente?</h2>
+          <h2 className="font-cinzel text-3xl text-white mb-8 border-b border-primary/20 pb-4">¿Está tu tattoo curando correctamente?</h2>
           <div className="space-y-6">
             <p>Si experimentas fiebre o escalofríos puede ser un indicador de infección. Debes consultar a tu médico o en su defecto a tu tatuador.</p>
             <p>Si el enrojecimiento en la zona se prolonga por mucho tiempo, de forma persistente, es una mala señal, debes seguir los consejos de curación, paso a paso, que dimos anteriormente.</p>
@@ -260,7 +260,7 @@ function ArticleBody({ slug, article }: { slug: string; article: Article }) {
             Todos los días vemos personas entrar y salir del estudio donde trabajamos, realmente podemos resaltar que la gran mayoría son personas muy educadas, atentas y dispuestas a cumplir las recomendaciones sobre el comportamiento adecuado en la sala.
           </div>
 
-          <div className="font-playfair text-body-lg text-on-surface/90 space-y-8 first-letter:text-7xl first-letter:font-cinzel first-letter:text-primary first-letter:float-left first-letter:mr-4 first-letter:mt-2">
+          <div className="font-playfair text-body-lg text-on-surface/90 space-y-8 first-letter:text-7xl first-letter:font-cinzel first-letter:text-white first-letter:float-left first-letter:mr-4 first-letter:mt-2">
             <p>Realmente agradecemos esos gestos de amabilidad que los acompañan y que no dan a entender que vivimos en una ciudad bastante amable y comprensible.</p>
 
             <p>Sin embargo, en este pequeño blog, abordaremos un tema muy relacionado a lo dicho anteriormente, y es el comportamiento en el estudio. Debido a que no hay un código escrito que nos muestre el adecuado comportamiento en una sala de tatuajes, no todas las personas son propicias a acoger las normas regulares dentro de ella.</p>
@@ -269,15 +269,15 @@ function ArticleBody({ slug, article }: { slug: string; article: Article }) {
               Siguiendo los consejos que expondremos a continuación, todos podremos disfrutar de una gran experiencia en el estudio, ya seas cliente, tatuador o acompañante.
             </div>
 
-            <h2 className="font-cinzel text-headline-md text-primary pt-8 border-t border-outline-variant/30">Pilares del Respeto Mutuo</h2>
+            <h2 className="font-cinzel text-headline-md text-white pt-8 border-t border-outline-variant/30">Pilares del Respeto Mutuo</h2>
 
-            <p><strong className="font-cinzel text-primary tracking-wider">LA AMABILIDAD</strong> es un pilar fundamental dentro de nuestra sociedad y cultura. Sea amable y educado cuando esté en un estudio de tatuajes. Estoy seguro que de nuestra parte, recibirá un trato amable y respetuoso.</p>
+            <p><strong className="font-cinzel text-white tracking-wider">LA AMABILIDAD</strong> es un pilar fundamental dentro de nuestra sociedad y cultura. Sea amable y educado cuando esté en un estudio de tatuajes. Estoy seguro que de nuestra parte, recibirá un trato amable y respetuoso.</p>
 
-            <p>Si eres <strong className="text-primary">MENOR DE EDAD</strong> evita frecuentar los salones de tatuaje, muy probablemente en este momento, no es el lugar para ti. Por otro lado, si eres adulto, evita traer a algún menor de edad, será indispensable tu responsabilidad en este aspecto.</p>
+            <p>Si eres <strong className="text-white">MENOR DE EDAD</strong> evita frecuentar los salones de tatuaje, muy probablemente en este momento, no es el lugar para ti. Por otro lado, si eres adulto, evita traer a algún menor de edad, será indispensable tu responsabilidad en este aspecto.</p>
 
-            <h2 className="font-cinzel text-headline-md text-primary pt-8 border-t border-outline-variant/30">Preparación y Criterio Artístico</h2>
+            <h2 className="font-cinzel text-headline-md text-white pt-8 border-t border-outline-variant/30">Preparación y Criterio Artístico</h2>
 
-            <p><strong className="text-primary">PIENSA</strong> muy bien que tatuaje quieres hacerte, planifica con tiempo tus referentes y recursos visuales. Llegar con ideas vagas solo generará pérdida de tiempo. Tu tatuador te dará bases más sólidas sobre las cuales trabajar para hacer juntos una gran pieza.</p>
+            <p><strong className="text-white">PIENSA</strong> muy bien que tatuaje quieres hacerte, planifica con tiempo tus referentes y recursos visuales. Llegar con ideas vagas solo generará pérdida de tiempo. Tu tatuador te dará bases más sólidas sobre las cuales trabajar para hacer juntos una gran pieza.</p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 my-12">
               {article.bodyImages.map((img, i) => (
@@ -289,16 +289,16 @@ function ArticleBody({ slug, article }: { slug: string; article: Article }) {
 
             <p>Es bueno tener una idea de la parte del cuerpo, el tamaño y el estilo. Trata de no ignorar los consejos profesionales, ya que serán de gran ayuda para obtener los mejores resultados.</p>
 
-            <p><strong className="text-primary uppercase tracking-widest">No te sientas aludido</strong> o incómodo si el tatuador sugiere cambios al diseño. Un profesional tendrá el criterio suficiente para recomendarte lo que es funcional para tu cuerpo.</p>
+            <p><strong className="text-white uppercase tracking-widest">No te sientas aludido</strong> o incómodo si el tatuador sugiere cambios al diseño. Un profesional tendrá el criterio suficiente para recomendarte lo que es funcional para tu cuerpo.</p>
 
-            <h2 className="font-cinzel text-headline-md text-primary pt-8 border-t border-outline-variant/30">Protocolo de Salud e Higiene</h2>
+            <h2 className="font-cinzel text-headline-md text-white pt-8 border-t border-outline-variant/30">Protocolo de Salud e Higiene</h2>
 
             <p>Asegúrate de estar aseado y limpio para tu cita. No solo será más fácil tatuarte, sino que también será un bonito gesto de tu parte llegar libre de malos olores.</p>
 
-            <p><strong className="text-primary">NO consumas alcohol</strong> o sustancias psicoactivas antes de tu cita. Puedes alterar el sangrado, aumentar el nivel de dolor e incomodar a tu tatuador.</p>
+            <p><strong className="text-white">NO consumas alcohol</strong> o sustancias psicoactivas antes de tu cita. Puedes alterar el sangrado, aumentar el nivel de dolor e incomodar a tu tatuador.</p>
 
             <div className="bg-surface-container-highest p-8 rounded-xl border border-primary/10 space-y-4">
-              <div className="flex items-center gap-3 text-primary">
+              <div className="flex items-center gap-3 text-white">
                 <span className="material-symbols-outlined">info</span>
                 <span className="font-label-caps">Importante</span>
               </div>
@@ -309,13 +309,13 @@ function ArticleBody({ slug, article }: { slug: string; article: Article }) {
               </ul>
             </div>
 
-            <p>Si te sientes <strong className="text-primary">MAREADO</strong>, comunícate inmediatamente. Tu salud está por encima de todo. Es mejor parar por un momento hasta que tu cuerpo esté estable.</p>
+            <p>Si te sientes <strong className="text-white">MAREADO</strong>, comunícate inmediatamente. Tu salud está por encima de todo. Es mejor parar por un momento hasta que tu cuerpo esté estable.</p>
 
-            <h2 className="font-cinzel text-headline-md text-primary pt-8 border-t border-outline-variant/30">El Espacio del Estudio</h2>
+            <h2 className="font-cinzel text-headline-md text-white pt-8 border-t border-outline-variant/30">El Espacio del Estudio</h2>
 
             <p>Ven a tu cita sin acompañante y evita traer menores de edad. Un estudio no es un lugar adecuado para ellos por los equipos peligrosos y la naturaleza del procedimiento, que puede resultar traumática para un niño.</p>
 
-            <p>Así mismo, <strong className="text-primary">evita llevar mascotas</strong>. Por asepsia y esterilidad, no es el lugar adecuado para ellas, a pesar de nuestro amor por los animales.</p>
+            <p>Así mismo, <strong className="text-white">evita llevar mascotas</strong>. Por asepsia y esterilidad, no es el lugar adecuado para ellas, a pesar de nuestro amor por los animales.</p>
 
             <div className="pt-12 text-center">
               <p className="font-playfair text-xl italic mb-8">Esperamos haber sido de ayuda en este viaje, gracias por leer.</p>
@@ -324,7 +324,7 @@ function ArticleBody({ slug, article }: { slug: string; article: Article }) {
                   href="https://wa.me/573146148297?text=Hola!%20Quiero%20cotizar%20mi%20nuevo%20tattoo"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-gold text-black px-12 py-4 font-cinzel text-xl tracking-widest hover:bg-white hover:scale-105 transition-all duration-500 shadow-[0_0_30px_rgba(206,152,97,0.2)]"
+                  className="bg-[#9CB198] text-black px-12 py-4 font-cinzel text-xl tracking-widest hover:bg-[#acc8a6] hover:scale-105 transition-all duration-500 shadow-[0_0_30px_rgba(206,152,97,0.2)] rounded-xl"
                 >
                   Agenda tu cita
                 </a>
@@ -345,8 +345,8 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
       <>
       <Header contactHref="#subscribe" />
       <main className="pt-32 pb-20 text-center">
-        <h1 className="font-cinzel text-4xl text-gold">Artículo no encontrado</h1>
-        <Link href="/blog" className="text-gray-400 hover:text-gold mt-8 inline-block">Volver al blog</Link>
+        <h1 className="font-cinzel text-4xl text-white">Artículo no encontrado</h1>
+        <Link href="/blog" className="text-gray-400 hover:text-white mt-8 inline-block">Volver al blog</Link>
       </main>
       </>);
   }
@@ -391,3 +391,6 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
     </main>
     </>);
 }
+
+
+

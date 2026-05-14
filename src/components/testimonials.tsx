@@ -28,7 +28,7 @@ function TestimonialCard({
           <StarIcon key={i} />
         ))}
       </div>
-      <p className="text-lg italic mb-6 subtitle leading-relaxed line-clamp-4">
+      <p className="text-lg italic mb-6 text-white leading-relaxed line-clamp-4">
         {text}
       </p>
       <div className="flex items-center gap-3">
@@ -40,7 +40,7 @@ function TestimonialCard({
           className="w-12 h-12 rounded-full object-cover border-2 border-primary/20 shrink-0"
         />
         <div>
-          <h4 className="text-xl text-on-surface main-title uppercase leading-tight">
+          <h4 className="text-xl text-white main-title uppercase leading-tight">
             {name}
           </h4>
         </div>
@@ -167,7 +167,7 @@ export function Testimonials() {
           <span className="font-[family-name:var(--font-inter)] text-primary uppercase subtitle text-sm tracking-widest">
             TESTIMONIOS
           </span>
-          <h2 className="text-4xl md:text-6xl text-on-surface mt-4 uppercase main-title">
+          <h2 className="text-2xl md:text-4xl text-on-surface mt-4 uppercase main-title">
             LO QUE DICEN NUESTROS CLIENTES
           </h2>
         </div>

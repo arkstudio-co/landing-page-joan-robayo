@@ -2,11 +2,11 @@ export function TattooCulture() {
   return (
     <section className="w-full flex flex-col md:flex-row items-stretch bg-black overflow-hidden">
       <div className="w-full md:w-1/2 flex flex-col justify-center items-center text-center p-12 lg:p-24 aspect-square">
-        <h2 className="main-title text-4xl md:text-5xl lg:text-6xl text-on-surface uppercase mb-8 leading-tight">
+        <h2 className="main-title text-2xl md:text-4xl text-on-surface uppercase mb-8 leading-tight">
           DONDE EL TATUAJE SE CONVIERTE EN CULTURA
         </h2>
-        <p className="subtitle text-xl md:text-2xl leading-relaxed max-w-lg">
-          si estas en medellín y buscas un lugar seguro, atención personalizada y un tattoo de calidad, escribenos y cotiza tu tattoo.
+        <p className="text-white text-xl md:text-2xl leading-relaxed max-w-lg">
+          Si estás en Medellín y buscas un lugar seguro, atención personalizada y un tattoo de calidad, escríbenos y cotiza tu tattoo.
         </p>
       </div>
       <div className="w-full md:w-1/2 relative aspect-square">

@@ -16,7 +16,7 @@ export function PricingSection() {
           <span className="text-gold text-sm uppercase tracking-widest font-[family-name:var(--font-inter)]">
             Inversión
           </span>
-          <h2 className="text-3xl md:text-4xl main-title text-on-surface mt-3 uppercase">
+          <h2 className="text-2xl md:text-4xl main-title text-on-surface mt-3 uppercase">
             Precios transparentes
           </h2>
           <p className="text-on-surface/60 mt-4 max-w-2xl mx-auto font-[family-name:var(--font-manrope)]">
@@ -52,7 +52,7 @@ export function PricingSection() {
                 href={`https://wa.me/573146148297?text=Hola!%20quiero%20cotizar%20un%20tatuaje%20tama%C3%B1o%20${encodeURIComponent(tier.title.toLowerCase())}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="block text-center bg-gold text-black py-4 font-[family-name:var(--font-inter)] text-xs uppercase tracking-widest hover:bg-[#e0ab75] transition-colors"
+                className="block text-center bg-[#9CB198] text-black py-4 font-[family-name:var(--font-inter)] text-xs uppercase tracking-widest hover:bg-[#acc8a6] transition-colors rounded-xl"
               >
                 Cotizar {tier.title.toLowerCase()}
               </a>
@@ -63,3 +63,4 @@ export function PricingSection() {
     </section>
   );
 }
+

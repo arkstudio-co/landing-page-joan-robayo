@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Cinzel, Playfair_Display, Inter, Manrope, Noto_Serif } from "next/font/google";
 import "./globals.css";
 import { Footer } from "@/components/footer";
+import { WhatsAppButton } from "@/components/whatsapp-button";
 
 const cinzel = Cinzel({
   subsets: ["latin"],
@@ -104,6 +105,7 @@ export default function RootLayout({
           }}
         />
         {children}
+        <WhatsAppButton />
         <Footer />
       </body>
     </html>

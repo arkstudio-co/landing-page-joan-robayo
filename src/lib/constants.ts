@@ -25,7 +25,7 @@ export interface Testimonial {
 
 export const TESTIMONIALS: Testimonial[] = [
   {
-    name: "María clara Montoya Builes",
+    name: "María Clara Montoya Builes",
     text: "Conozco el trabajo de Joan desde muchos años atrás y siempre, siempre voy a considerarlo de los mejores tatuadores de la ciudad de Medellín. Su arte es de admirar. Es delicado y presta atención al detalle.",
     rating: 5,
     photoUri: "https://lh3.googleusercontent.com/a/ACg8ocIDDJeQgoCTC6KYtv5Da7872yDKZXGpQ9EZh-TZLcbpvxd4ew=w64-h64-c-rp-mo-br100",
@@ -37,8 +37,8 @@ export const TESTIMONIALS: Testimonial[] = [
     photoUri: "https://lh3.googleusercontent.com/a-/ALV-UjVqDeY11OdducHcIAckf3daIDVU-Ii6BOvJw4CieZOvhh-PI-3z=w64-h64-c-rp-mo-br100",
   },
   {
-    name: "Jose Manuel Arias",
-    text: "Mos mejores piezas en NeoTradi las tengo gracias a Joan siempre impecable su trabajo",
+    name: "José Manuel Arias",
+    text: "Mis mejores piezas en NeoTradi las tengo gracias a Joan, siempre impecable su trabajo",
     rating: 5,
     photoUri: "https://lh3.googleusercontent.com/a-/ALV-UjXgx_P4Xa-vwQ50Sl3ehQdWZjePrKmCaDQ9QEHcvZ374m3x_V8=w64-h64-c-rp-mo-br100",
   },
@@ -49,13 +49,13 @@ export const TESTIMONIALS: Testimonial[] = [
     photoUri: "https://lh3.googleusercontent.com/a-/ALV-UjXmOeOZxuZg4vRzuUNZtFTlSRPM5pTIogcKoYY1W6Yya3Ez9vY=w64-h64-c-rp-mo-br100",
   },
   {
-    name: "BANY SOSA",
-    text: "Para mí es el mejor artista neotradicional de Medellín, recomendadisimo",
+    name: "Bany Sosa",
+    text: "Para mí es el mejor artista neotradicional de Medellín, recomendadísimo",
     rating: 5,
     photoUri: "https://lh3.googleusercontent.com/a-/ALV-UjVAhhTL8xN8oya33chJRfD4zNREy6ySxbdIQv8WsFEsogvm9fwJ=w64-h64-c-rp-mo-br100",
   },
   {
-    name: "yuleimy grisales",
+    name: "Yuleimy Grisales",
     text: "Lo mejor del mundo, mi tatuador de confianza. 100% recomendado",
     rating: 5,
     photoUri: "https://lh3.googleusercontent.com/a-/ALV-UjV0v2iMxR3LnmXSfpfIkJR4sieWJPapbcUiKvIBzo4JYoVgn9UH=w64-h64-c-rp-mo-br100",
@@ -84,7 +84,7 @@ export const BLOG_POSTS = [
   },
   {
     slug: "cuidar-tatuaje-manera-correcta",
-    title: "Como cuidar tu tatuaje de una manera correcta",
+    title: "Cómo cuidar tu tatuaje de una manera correcta",
     image: "/images/blog-3.jpg.png",
   },
 ] as const;
