@@ -1,7 +1,7 @@
 export function TattooCulture() {
   return (
     <section className="w-full flex flex-col md:flex-row items-stretch bg-black overflow-hidden">
-      <div className="w-full md:w-1/2 flex flex-col justify-center items-center text-center p-12 lg:p-24 aspect-square">
+      <div className="w-full md:w-1/2 flex flex-col justify-center items-center text-center p-6 md:p-12 lg:p-24">
         <h2 className="main-title text-2xl md:text-4xl text-on-surface uppercase mb-8 leading-tight">
           DONDE EL TATUAJE SE CONVIERTE EN CULTURA
         </h2>
@@ -17,7 +17,11 @@ export function TattooCulture() {
           muted
           playsInline
         >
-          <source src="/videos/videotattoojoan.mov" />
+          <source src="/videos/videotattoojoan-mp4.mp4" type="video/mp4" />
+          <source src="/videos/videotattoojoan.mov" type="video/quicktime" />
+          <p className="text-white p-4">
+            Tu navegador no soporta la reproducción de video.
+          </p>
         </video>
         <div className="absolute inset-0 bg-black/20" />
       </div>

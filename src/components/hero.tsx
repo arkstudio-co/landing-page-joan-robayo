@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export function Hero() {
   return (
-    <section className="relative h-[90vh] flex items-center overflow-hidden pt-24">
+    <section className="relative min-h-dvh md:h-[90vh] flex items-center overflow-hidden pt-24">
       <div className="absolute inset-0 z-0">
         <Image
           alt="Hero Tattoo Art"
@@ -15,7 +15,7 @@ export function Hero() {
         <div className="absolute inset-0 hero-gradient" />
         <div className="absolute inset-0 hero-left-overlay" />
       </div>
-      <div className="relative z-10 text-left px-4 md:px-16 w-1/2 mt-24 md:mt-40">
+      <div className="relative z-10 text-left px-4 md:px-16 w-full md:w-1/2 mt-24 md:mt-40">
         <span className="font-[family-name:var(--font-inter)] text-primary mb-2 block subtitle text-sm tracking-widest">
           Especialistas en Realismo, Neotradicional y Fineline
         </span>

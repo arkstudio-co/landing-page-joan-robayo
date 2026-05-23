@@ -75,17 +75,17 @@ export const BLOG_POSTS = [
   {
     slug: "bases-comportamiento-adecuado-estudio",
     title: "Bases para un comportamiento adecuado en el estudio",
-    image: "/images/blog-1.jpg.png",
+    image: "/images/blog-bases.png",
   },
   {
     slug: "consejos-antes-de-hacerte-tattoo",
     title: "Consejos antes de hacerte un tatuaje",
-    image: "/images/blog-2.jpg.png",
+    image: "/images/blog-consejos.png",
   },
   {
     slug: "cuidar-tatuaje-manera-correcta",
     title: "Cómo cuidar tu tatuaje de una manera correcta",
-    image: "/images/blog-3.jpg.png",
+    image: "/images/blog-cuidados.png",
   },
 ] as const;
 

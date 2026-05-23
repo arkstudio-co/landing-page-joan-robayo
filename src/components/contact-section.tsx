@@ -60,7 +60,7 @@ export function ContactSection() {
 
   return (
     <section id="contact" className="py-20 mx-auto bg-[#080808] w-full">
-      <div className="max-w-[85%] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-24 items-start">
+      <div className="max-w-[85%] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-start">
         <div>
           <span className="font-[family-name:var(--font-inter)] text-primary uppercase subtitle text-sm tracking-widest">
             VISÍTANOS
@@ -102,7 +102,7 @@ export function ContactSection() {
             </div>
           </div>
         </div>
-        <div className="p-12 border border-gold/10 shadow-2xl bg-black/40">
+        <div className="p-6 md:p-12 border border-gold/10 shadow-2xl bg-black/40">
           <h3 className="text-3xl text-on-surface mb-10 uppercase text-center main-title">
             DÉJANOS TUS DATOS Y NOS PONDREMOS EN CONTACTO
           </h3>
