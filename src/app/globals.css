@@ -4,6 +4,17 @@ html {
   scroll-behavior: smooth;
 }
 
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
 @theme inline {
   --color-primary: #f6bb81;
   --color-on-primary: #492900;
@@ -13,7 +24,11 @@ html {
   --color-on-surface: #e2e2e2;
   --color-surface-container: #1f1f1f;
   --color-surface-container-high: #2a2a2a;
+  --color-surface-container-low: #1a1a1a;
   --color-gold: #ce9861;
+  --color-btn-bg: #d4a76a;
+  --color-btn-bg-hover: #dfb77c;
+  --color-btn-text: #1a1a1a;
 
   --font-label-caps: var(--font-inter);
   --font-headline-lg: var(--font-noto-serif);

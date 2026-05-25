@@ -108,7 +108,7 @@ export function ContactSection() {
           </h3>
           <form className="space-y-8" onSubmit={handleSubmit}>
             <div>
-              <label className="block text-[10px] text-gray-500 uppercase tracking-widest mb-2 font-[family-name:var(--font-inter)]">
+              <label className="block text-[10px] text-gray-400 uppercase tracking-widest mb-2 font-[family-name:var(--font-inter)]">
                 Nombre
               </label>
               <input
@@ -121,7 +121,7 @@ export function ContactSection() {
             </div>
             <div className="grid grid-cols-2 gap-8">
               <div>
-                <label className="block text-[10px] text-gray-500 uppercase tracking-widest mb-2 font-[family-name:var(--font-inter)]">
+                <label className="block text-[10px] text-gray-400 uppercase tracking-widest mb-2 font-[family-name:var(--font-inter)]">
                   País
                 </label>
                 <input
@@ -132,7 +132,7 @@ export function ContactSection() {
                 />
               </div>
               <div>
-                <label className="block text-[10px] text-gray-500 uppercase tracking-widest mb-2 font-[family-name:var(--font-inter)]">
+                <label className="block text-[10px] text-gray-400 uppercase tracking-widest mb-2 font-[family-name:var(--font-inter)]">
                   Celular
                 </label>
                 <input
@@ -144,7 +144,7 @@ export function ContactSection() {
               </div>
             </div>
             <div>
-              <label className="block text-[10px] text-gray-500 uppercase tracking-widest mb-2 font-[family-name:var(--font-inter)]">
+              <label className="block text-[10px] text-gray-400 uppercase tracking-widest mb-2 font-[family-name:var(--font-inter)]">
                 Correo
               </label>
               <input
@@ -156,7 +156,7 @@ export function ContactSection() {
               />
             </div>
             <div>
-              <label className="block text-[10px] text-gray-500 uppercase tracking-widest mb-2 font-[family-name:var(--font-inter)]">
+              <label className="block text-[10px] text-gray-400 uppercase tracking-widest mb-2 font-[family-name:var(--font-inter)]">
                 Describe el tattoo que quieres hacerte
               </label>
               <textarea
@@ -169,7 +169,7 @@ export function ContactSection() {
             </div>
             <div className="pt-4">
               <button
-                className="w-full bg-[#9CB198] text-black py-5 font-[family-name:var(--font-inter)] text-xs uppercase tracking-[0.2em] hover:bg-[#acc8a6] transition-colors disabled:opacity-50 rounded-xl"
+                className="w-full bg-btn-bg text-btn-text py-5 font-[family-name:var(--font-inter)] text-xs uppercase tracking-[0.2em] hover:bg-btn-bg-hover transition-colors disabled:opacity-50 rounded-xl"
                 type="submit"
                 disabled={status === "sending"}
               >

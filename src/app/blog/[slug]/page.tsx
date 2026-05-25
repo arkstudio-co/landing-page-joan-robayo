@@ -118,7 +118,7 @@ function ArticleBody({ slug, article }: { slug: string; article: Article }) {
                     href="https://wa.me/573146148297?text=Hola!%20Quiero%20cotizar%20mi%20nuevo%20tattoo"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="bg-[#9CB198] text-black px-12 py-4 font-cinzel text-xl tracking-widest hover:bg-[#acc8a6] hover:scale-105 transition-all duration-500 shadow-[0_0_30px_rgba(206,152,97,0.2)] rounded-xl"
+                    className="bg-btn-bg text-btn-text px-12 py-4 font-cinzel text-xl tracking-widest hover:bg-btn-bg-hover hover:scale-105 transition-all duration-500 shadow-[0_0_30px_rgba(206,152,97,0.2)] rounded-xl"
                   >
                     Agenda tu cita
                   </a>
@@ -324,7 +324,7 @@ function ArticleBody({ slug, article }: { slug: string; article: Article }) {
                   href="https://wa.me/573146148297?text=Hola!%20Quiero%20cotizar%20mi%20nuevo%20tattoo"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-[#9CB198] text-black px-12 py-4 font-cinzel text-xl tracking-widest hover:bg-[#acc8a6] hover:scale-105 transition-all duration-500 shadow-[0_0_30px_rgba(206,152,97,0.2)] rounded-xl"
+                  className="bg-btn-bg text-btn-text px-12 py-4 font-cinzel text-xl tracking-widest hover:bg-btn-bg-hover hover:scale-105 transition-all duration-500 shadow-[0_0_30px_rgba(206,152,97,0.2)] rounded-xl"
                 >
                   Agenda tu cita
                 </a>

@@ -29,7 +29,7 @@ export function Hero() {
             href="https://wa.me/573146148297?text=Hola!%20quiero%20cotizar%20mi%20proximo%20tattoo"
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-[#9CB198] text-black px-10 py-5 font-[family-name:var(--font-inter)] text-xs uppercase tracking-widest hover:bg-[#acc8a6] transition-colors inline-block text-center rounded-xl"
+            className="bg-btn-bg text-btn-text px-10 py-5 font-[family-name:var(--font-inter)] text-xs uppercase tracking-widest hover:bg-btn-bg-hover transition-colors inline-block text-center rounded-xl"
           >
             Agenda tu cita gratis
           </a>

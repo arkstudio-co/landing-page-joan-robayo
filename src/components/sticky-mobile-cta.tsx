@@ -22,7 +22,7 @@ export function StickyMobileCTA() {
         href="https://wa.me/573146148297?text=Hola!%20quiero%20cotizar%20mi%20proximo%20tattoo"
         target="_blank"
         rel="noopener noreferrer"
-        className="block w-full bg-[#9CB198] text-black text-center py-4 font-body text-xs uppercase tracking-[0.2em] hover:bg-[#acc8a6] transition-colors rounded-xl"
+        className="block w-full bg-btn-bg text-btn-text text-center py-4 font-body text-xs uppercase tracking-[0.2em] hover:bg-btn-bg-hover transition-colors rounded-xl"
       >
         Agenda tu cita gratis
       </a>

@@ -50,16 +50,20 @@ function TestimonialCard({
 }
 
 export function Testimonials() {
+  const ITEM_GAP = 32;
   const items = [...TESTIMONIALS, ...TESTIMONIALS];
   const trackRef = useRef<HTMLDivElement>(null);
   const [isDragging, setIsDragging] = useState(false);
   const offsetRef = useRef(0);
   const halfRef = useRef(0);
+  const DRAG_THRESHOLD = 8;
+
   const dragState = useRef({
     startX: 0,
     startOffset: 0,
     isDown: false,
     isTouch: false,
+    moved: false,
   });
   const animFrameRef = useRef<number>(0);
 
@@ -93,11 +97,33 @@ export function Testimonials() {
     return () => cancelAnimationFrame(animFrameRef.current);
   }, [applyOffset]);
 
+  const CARD_WIDTH = 380 + ITEM_GAP;
+
+  const handleKeyDown = useCallback((e: React.KeyboardEvent) => {
+    if (e.key === "ArrowLeft") {
+      e.preventDefault();
+      offsetRef.current -= CARD_WIDTH;
+      if (halfRef.current > 0 && offsetRef.current <= -halfRef.current) {
+        offsetRef.current += halfRef.current;
+      }
+      applyOffset();
+    }
+    if (e.key === "ArrowRight") {
+      e.preventDefault();
+      offsetRef.current += CARD_WIDTH;
+      if (halfRef.current > 0 && offsetRef.current > 0) {
+        offsetRef.current -= halfRef.current;
+      }
+      applyOffset();
+    }
+  }, [applyOffset]);
+
   const handleMouseDown = useCallback((e: React.MouseEvent) => {
     if (dragState.current.isTouch) return;
     dragState.current.isDown = true;
     dragState.current.startX = e.pageX;
     dragState.current.startOffset = offsetRef.current;
+    dragState.current.moved = false;
     setIsDragging(true);
   }, []);
 
@@ -105,6 +131,8 @@ export function Testimonials() {
     if (!dragState.current.isDown || dragState.current.isTouch) return;
     e.preventDefault();
     const delta = e.pageX - dragState.current.startX;
+    if (!dragState.current.moved && Math.abs(delta) < DRAG_THRESHOLD) return;
+    dragState.current.moved = true;
     offsetRef.current = dragState.current.startOffset + delta;
     applyOffset();
   }, [applyOffset]);
@@ -126,12 +154,15 @@ export function Testimonials() {
     dragState.current.isDown = true;
     dragState.current.startX = e.touches[0].pageX;
     dragState.current.startOffset = offsetRef.current;
+    dragState.current.moved = false;
     setIsDragging(true);
   }, []);
 
   const handleTouchMove = useCallback((e: React.TouchEvent) => {
     if (!dragState.current.isDown) return;
     const delta = e.touches[0].pageX - dragState.current.startX;
+    if (!dragState.current.moved && Math.abs(delta) < DRAG_THRESHOLD) return;
+    dragState.current.moved = true;
     offsetRef.current = dragState.current.startOffset + delta;
     applyOffset();
   }, [applyOffset]);
@@ -169,7 +200,7 @@ export function Testimonials() {
             className={`flex gap-8 will-change-transform ${
               isDragging ? "cursor-grabbing" : "cursor-grab"
             }`}
-            style={{ transform: "translateX(0px)" }}
+            style={{ transform: "translateX(0px)", touchAction: "pan-y" }}
             onMouseDown={handleMouseDown}
             onMouseMove={handleMouseMove}
             onMouseUp={handleMouseUp}
@@ -177,6 +208,10 @@ export function Testimonials() {
             onTouchStart={handleTouchStart}
             onTouchMove={handleTouchMove}
             onTouchEnd={handleTouchEnd}
+            onKeyDown={handleKeyDown}
+            tabIndex={0}
+            role="region"
+            aria-label="Testimonios de clientes"
           >
             {items.map((r, i) => (
               <TestimonialCard key={`${r.name}-${i}`} {...r} />

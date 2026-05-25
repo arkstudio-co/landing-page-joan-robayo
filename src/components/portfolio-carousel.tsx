@@ -17,12 +17,17 @@ export function PortfolioCarousel() {
   const offsetRef = useRef(0);
   const animFrameRef = useRef(0);
   const lastTimeRef = useRef(0);
+  const DRAG_THRESHOLD = 8;
+
   const dragState = useRef({
     startX: 0,
     startOffset: 0,
     isDown: false,
     isTouch: false,
+    moved: false,
   });
+
+  const CARD_STEP = ITEM_WIDTH + GAP;
 
   const applyOffset = useCallback(() => {
     if (!trackRef.current) return;
@@ -60,6 +65,7 @@ export function PortfolioCarousel() {
     dragState.current.isDown = true;
     dragState.current.startX = e.pageX;
     dragState.current.startOffset = offsetRef.current;
+    dragState.current.moved = false;
     setIsDragging(true);
   }, []);
 
@@ -67,6 +73,8 @@ export function PortfolioCarousel() {
     if (!dragState.current.isDown || dragState.current.isTouch) return;
     e.preventDefault();
     const delta = e.pageX - dragState.current.startX;
+    if (!dragState.current.moved && Math.abs(delta) < DRAG_THRESHOLD) return;
+    dragState.current.moved = true;
     offsetRef.current = dragState.current.startOffset + delta;
     applyOffset();
   }, [applyOffset]);
@@ -88,12 +96,15 @@ export function PortfolioCarousel() {
     dragState.current.isDown = true;
     dragState.current.startX = e.touches[0].pageX;
     dragState.current.startOffset = offsetRef.current;
+    dragState.current.moved = false;
     setIsDragging(true);
   }, []);
 
   const handleTouchMove = useCallback((e: React.TouchEvent) => {
     if (!dragState.current.isDown) return;
     const delta = e.touches[0].pageX - dragState.current.startX;
+    if (!dragState.current.moved && Math.abs(delta) < DRAG_THRESHOLD) return;
+    dragState.current.moved = true;
     offsetRef.current = dragState.current.startOffset + delta;
     applyOffset();
   }, [applyOffset]);
@@ -105,6 +116,25 @@ export function PortfolioCarousel() {
       dragState.current.isTouch = false;
     }, 400);
   }, []);
+
+  const handleKeyDown = useCallback((e: React.KeyboardEvent) => {
+    if (e.key === "ArrowLeft") {
+      e.preventDefault();
+      offsetRef.current -= CARD_STEP;
+      if (offsetRef.current <= -SET_WIDTH * 2) {
+        offsetRef.current += SET_WIDTH;
+      }
+      applyOffset();
+    }
+    if (e.key === "ArrowRight") {
+      e.preventDefault();
+      offsetRef.current += CARD_STEP;
+      if (offsetRef.current > 0) {
+        offsetRef.current -= SET_WIDTH;
+      }
+      applyOffset();
+    }
+  }, [applyOffset]);
 
   return (
     <section className="py-20 overflow-hidden bg-black border-y border-primary/10">
@@ -122,15 +152,20 @@ export function PortfolioCarousel() {
           className={`flex gap-4 will-change-transform ${
             isDragging ? "cursor-grabbing" : "cursor-grab"
           }`}
+          style={{ touchAction: "pan-y" }}
           onMouseDown={handleMouseDown}
           onMouseMove={handleMouseMove}
           onMouseUp={handleMouseUp}
           onMouseLeave={handleMouseLeave}
-          onTouchStart={handleTouchStart}
-          onTouchMove={handleTouchMove}
-          onTouchEnd={handleTouchEnd}
-        >
-          {items.map((src, i) => (
+            onTouchStart={handleTouchStart}
+            onTouchMove={handleTouchMove}
+            onTouchEnd={handleTouchEnd}
+            onKeyDown={handleKeyDown}
+            tabIndex={0}
+            role="region"
+            aria-label="Portafolio de trabajos"
+          >
+            {items.map((src, i) => (
             <div
               key={i}
               className="flex-none w-[375px] h-[525px] relative"
@@ -151,7 +186,7 @@ export function PortfolioCarousel() {
           href="https://wa.me/573146148297?text=Hola!%20quiero%20agendar%20una%20asesor%C3%ADa"
           target="_blank"
           rel="noopener noreferrer"
-          className="bg-[#9CB198] text-black px-12 py-5 font-[family-name:var(--font-inter)] text-xs uppercase tracking-widest hover:bg-[#acc8a6] transition-all transform hover:scale-105 active:scale-95 shadow-lg inline-block rounded-xl"
+          className="bg-btn-bg text-btn-text px-12 py-5 font-[family-name:var(--font-inter)] text-xs uppercase tracking-widest hover:bg-btn-bg-hover transition-all transform hover:scale-105 active:scale-95 shadow-lg inline-block rounded-xl"
         >
           Agenda una asesoría
         </a>

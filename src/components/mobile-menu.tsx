@@ -39,8 +39,8 @@ export function MobileMenu({ links }: { links?: readonly NavLink[] }) {
   const overlay = (
     <div
       onClick={close}
-      className={`fixed inset-0 z-50 bg-black/98 flex flex-col items-center justify-center gap-12 transition-all duration-500 ${
-        isOpen
+className={`fixed inset-0 z-50 bg-black/98 flex flex-col items-center justify-center gap-12 transition-all duration-300 ${
+          isOpen
           ? "opacity-100 pointer-events-auto"
           : "opacity-0 pointer-events-none"
       }`}
@@ -60,7 +60,7 @@ export function MobileMenu({ links }: { links?: readonly NavLink[] }) {
         target="_blank"
         rel="noopener noreferrer"
         onClick={(e) => { e.stopPropagation(); close(); }}
-        className="bg-[#9CB198] text-black px-10 py-4 font-[family-name:var(--font-inter)] text-sm uppercase tracking-widest hover:bg-[#acc8a6] transition-colors mt-4 rounded-xl"
+        className="bg-btn-bg text-btn-text px-10 py-4 font-[family-name:var(--font-inter)] text-sm uppercase tracking-widest hover:bg-btn-bg-hover transition-colors mt-4 rounded-xl"
       >
         Book Appointment
       </a>
@@ -71,7 +71,7 @@ export function MobileMenu({ links }: { links?: readonly NavLink[] }) {
     <>
       <button
         onClick={toggle}
-        className="md:hidden relative z-50 w-8 h-8 flex flex-col items-center justify-center gap-1.5"
+        className="md:hidden relative z-50 w-11 h-11 flex flex-col items-center justify-center gap-1.5 focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-black rounded"
         aria-label={isOpen ? "Close menu" : "Open menu"}
       >
         <span

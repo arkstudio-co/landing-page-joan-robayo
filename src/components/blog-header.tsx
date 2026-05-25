@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { MobileMenu } from "./mobile-menu";
 
 const BLOG_NAV_LINKS = [
@@ -11,7 +12,7 @@ export function BlogHeader() {
   return (
     <header className="bg-black/95 backdrop-blur-sm border-b border-gold/20 shadow-[0_4px_20px_rgba(206,152,97,0.1)] fixed top-0 w-full z-50">
       <nav className="flex justify-between items-center h-24 px-4 md:px-16 max-w-[1440px] mx-auto">
-        <a href="/">
+        <Link href="/">
           <div className="text-gold font-[family-name:var(--font-noto-serif)]">
             <Image
               alt="JoanRobayo Tattoo Logo"
@@ -21,7 +22,7 @@ export function BlogHeader() {
               className="h-16 w-auto object-contain"
             />
           </div>
-        </a>
+        </Link>
         <div className="hidden md:flex items-center space-x-12">
           {BLOG_NAV_LINKS.map((link) => (
             <a
@@ -38,7 +39,7 @@ export function BlogHeader() {
             href="https://wa.me/573146148297?text=Hola!%20quiero%20cotizar%20mi%20proximo%20tattoo"
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-[#9CB198] text-black px-8 py-3 font-[family-name:var(--font-inter)] text-xs uppercase tracking-widest scale-95 active:opacity-80 transition-transform hover:bg-[#acc8a6] inline-block rounded-xl"
+            className="bg-btn-bg text-btn-text px-8 py-3 font-[family-name:var(--font-inter)] text-xs uppercase tracking-widest scale-95 active:opacity-80 transition-transform hover:bg-btn-bg-hover inline-block rounded-xl"
           >
             Book Appointment
           </a>

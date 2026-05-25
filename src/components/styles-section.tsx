@@ -8,7 +8,7 @@ function StyleCard({ title, image }: { title: string; image: string }) {
         <Image
           alt={title}
           fill
-          className="object-cover group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700 ease-out rounded-[15px]"
+          className="object-cover group-hover:grayscale-0 group-hover:scale-110 transition-all duration-300 ease-out rounded-[15px]"
           src={image}
           sizes="(max-width: 768px) 100vw, 33vw"
         />

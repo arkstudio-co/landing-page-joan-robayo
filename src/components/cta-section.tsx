@@ -24,7 +24,7 @@ export function CTASection({
           href={buttonHref}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-block bg-[#9CB198] text-black px-12 py-5 font-[family-name:var(--font-inter)] text-xs uppercase tracking-widest hover:bg-[#acc8a6] transition-colors rounded-xl"
+          className="inline-block bg-btn-bg text-btn-text px-12 py-5 font-[family-name:var(--font-inter)] text-xs uppercase tracking-widest hover:bg-btn-bg-hover transition-colors rounded-xl"
         >
           {buttonText}
         </a>

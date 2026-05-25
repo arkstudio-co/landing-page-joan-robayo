@@ -51,19 +51,21 @@ export function PricingFAQ() {
                   >
                     <button
                       onClick={() => setOpenIndex(isOpen ? null : index)}
-                      className="w-full flex items-center justify-between px-6 py-5 text-left font-[family-name:var(--font-inter)] text-sm uppercase tracking-wider text-on-surface hover:text-gold transition-colors"
+                      className="w-full flex items-center justify-between px-6 py-5 text-left font-[family-name:var(--font-inter)] text-sm uppercase tracking-wider text-on-surface hover:text-gold transition-colors focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-black rounded-lg"
                     >
                       <span>{item.question}</span>
                       <AccordionIcon open={isOpen} />
                     </button>
                     <div
-                      className={`overflow-hidden transition-all duration-300 ${
-                        isOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
+                      className={`grid transition-all duration-300 ${
+                        isOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
                       }`}
                     >
-                      <p className="px-6 pb-5 text-on-surface/60 leading-relaxed font-[family-name:var(--font-manrope)]">
-                        {item.answer}
-                      </p>
+                      <div className="overflow-hidden">
+                        <p className="px-6 pb-5 text-on-surface/60 leading-relaxed font-[family-name:var(--font-manrope)]">
+                          {item.answer}
+                        </p>
+                      </div>
                     </div>
                   </div>
                 );
@@ -109,7 +111,7 @@ export function PricingFAQ() {
                     href={`https://wa.me/573146148297?text=Hola!%20quiero%20cotizar%20un%20tatuaje%20tama%C3%B1o%20${encodeURIComponent(tier.title.toLowerCase())}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="block text-center bg-[#9CB198] text-black py-4 font-[family-name:var(--font-inter)] text-xs uppercase tracking-widest hover:bg-[#acc8a6] transition-colors rounded-xl"
+                    className="block text-center bg-btn-bg text-btn-text py-4 font-[family-name:var(--font-inter)] text-xs uppercase tracking-widest hover:bg-btn-bg-hover transition-colors rounded-xl"
                   >
                     Cotizar {tier.title.toLowerCase()}
                   </a>

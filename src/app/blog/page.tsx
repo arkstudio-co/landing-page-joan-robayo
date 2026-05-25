@@ -119,7 +119,7 @@ export default function BlogPage() {
             href="https://wa.me/573146148297?text=Hola!%20quiero%20cotizar%20mi%20proximo%20tattoo"
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-[#9CB198] text-black px-10 py-4 font-[family-name:var(--font-inter)] text-[0.8rem] uppercase tracking-[0.2em] hover:bg-[#acc8a6] transition-all shadow-[0_0_30px_rgba(206,152,97,0.2)] inline-block rounded-xl"
+            className="bg-btn-bg text-btn-text px-10 py-4 font-[family-name:var(--font-inter)] text-[0.8rem] uppercase tracking-[0.2em] hover:bg-btn-bg-hover transition-all shadow-[0_0_30px_rgba(206,152,97,0.2)] inline-block rounded-xl"
           >
             Agenda tu cita
           </a>

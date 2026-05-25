@@ -7,6 +7,12 @@
       "skillPath": "guides/design/landing-page-design/SKILL.md",
       "computedHash": "d9194d6a3cd823ed41ebb3647294837aa8952106693b90aa5d7af0a019cce922"
     },
+    "ui-ux-pro-max": {
+      "source": "nextlevelbuilder/ui-ux-pro-max-skill",
+      "sourceType": "github",
+      "skillPath": ".claude/skills/ui-ux-pro-max/SKILL.md",
+      "computedHash": "6337038fe1fe6bbe1b9f252ab678ee575859190bab6f0f246f4061824eb40875"
+    },
     "vercel-react-best-practices": {
       "source": "vercel-labs/agent-skills",
       "sourceType": "github",
