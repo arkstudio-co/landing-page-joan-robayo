@@ -63,6 +63,8 @@ export function Testimonials() {
   });
   const animFrameRef = useRef<number>(0);
 
+  const lastTimeRef = useRef(0);
+
   const applyOffset = useCallback(() => {
     if (!trackRef.current) return;
     trackRef.current.style.transform = `translateX(${offsetRef.current}px)`;
@@ -73,9 +75,11 @@ export function Testimonials() {
     if (track) {
       halfRef.current = track.scrollWidth / 2;
     }
-    const tick = () => {
+    const tick = (now: number) => {
       if (!dragState.current.isDown) {
-        offsetRef.current -= 0.5;
+        const dt = lastTimeRef.current ? (now - lastTimeRef.current) / 1000 : 0;
+        lastTimeRef.current = now;
+        offsetRef.current -= 30 * dt;
         if (halfRef.current > 0) {
           if (offsetRef.current <= -halfRef.current) {
             offsetRef.current += halfRef.current;

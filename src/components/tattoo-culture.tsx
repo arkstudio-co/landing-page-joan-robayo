@@ -1,4 +1,21 @@
+"use client";
+
+import { useRef, useEffect } from "react";
+
 export function TattooCulture() {
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+    const play = () => video.play().catch(() => {});
+    if (video.readyState >= 2) {
+      play();
+    } else {
+      video.addEventListener("canplay", play, { once: true });
+    }
+  }, []);
+
   return (
     <section className="w-full flex flex-col md:flex-row items-stretch bg-black overflow-hidden">
       <div className="w-full md:w-1/2 flex flex-col justify-center items-center text-center p-6 md:p-12 lg:p-24">
@@ -11,14 +28,15 @@ export function TattooCulture() {
       </div>
       <div className="w-full md:w-1/2 relative aspect-square">
         <video
+          ref={videoRef}
           autoPlay
           className="w-full h-full object-cover grayscale"
           loop
           muted
           playsInline
+          preload="auto"
         >
           <source src="/videos/videotattoojoan-mp4.mp4" type="video/mp4" />
-          <source src="/videos/videotattoojoan.mov" type="video/quicktime" />
           <p className="text-white p-4">
             Tu navegador no soporta la reproducción de video.
           </p>
