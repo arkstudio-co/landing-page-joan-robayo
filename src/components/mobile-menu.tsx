@@ -38,6 +38,7 @@ export function MobileMenu({ links }: { links?: readonly NavLink[] }) {
 
   const overlay = (
     <div
+      onClick={close}
       className={`fixed inset-0 z-50 bg-black/98 flex flex-col items-center justify-center gap-12 transition-all duration-500 ${
         isOpen
           ? "opacity-100 pointer-events-auto"
@@ -48,7 +49,7 @@ export function MobileMenu({ links }: { links?: readonly NavLink[] }) {
         <a
           key={link.label}
           href={link.href}
-          onClick={close}
+          onClick={(e) => { e.stopPropagation(); close(); }}
           className="text-white text-2xl md:text-4xl uppercase tracking-widest main-title hover:text-gold transition-colors"
         >
           {link.label}
@@ -58,7 +59,7 @@ export function MobileMenu({ links }: { links?: readonly NavLink[] }) {
         href="https://wa.me/573146148297?text=Hola!%20quiero%20cotizar%20mi%20proximo%20tattoo"
         target="_blank"
         rel="noopener noreferrer"
-        onClick={close}
+        onClick={(e) => { e.stopPropagation(); close(); }}
         className="bg-[#9CB198] text-black px-10 py-4 font-[family-name:var(--font-inter)] text-sm uppercase tracking-widest hover:bg-[#acc8a6] transition-colors mt-4 rounded-xl"
       >
         Book Appointment
