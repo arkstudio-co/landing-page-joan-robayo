@@ -37,7 +37,7 @@ yarn-error.log*
 .vercel
 
 # large media files
-/public/videos/
+/public/videos/videotattoojoan.mov
 
 # agent workspace
 /.opencode/
