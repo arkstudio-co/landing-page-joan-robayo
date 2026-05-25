@@ -8,12 +8,27 @@ export function TattooCulture() {
   useEffect(() => {
     const video = videoRef.current;
     if (!video) return;
-    const play = () => video.play().catch(() => {});
+
+    const play = () => {
+      video.play().catch(() => {});
+    };
+
     if (video.readyState >= 2) {
       play();
     } else {
       video.addEventListener("canplay", play, { once: true });
     }
+
+    const onInteraction = () => {
+      play();
+    };
+    document.addEventListener("touchstart", onInteraction, { once: true });
+    document.addEventListener("click", onInteraction, { once: true });
+
+    return () => {
+      document.removeEventListener("touchstart", onInteraction);
+      document.removeEventListener("click", onInteraction);
+    };
   }, []);
 
   return (
@@ -26,11 +41,11 @@ export function TattooCulture() {
           Si estás en Medellín y buscas un lugar seguro, atención personalizada y un tattoo de calidad, escríbenos y cotiza tu tattoo.
         </p>
       </div>
-      <div className="w-full md:w-1/2 relative aspect-square">
+      <div className="w-full md:w-1/2 relative aspect-square overflow-hidden">
         <video
           ref={videoRef}
           autoPlay
-          className="w-full h-full object-cover grayscale"
+          className="w-full h-full object-cover"
           loop
           muted
           playsInline
@@ -41,7 +56,7 @@ export function TattooCulture() {
             Tu navegador no soporta la reproducción de video.
           </p>
         </video>
-        <div className="absolute inset-0 bg-black/20" />
+        <div className="absolute inset-0 bg-black/20 grayscale" />
       </div>
     </section>
   );
