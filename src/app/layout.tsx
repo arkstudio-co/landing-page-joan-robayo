@@ -34,10 +34,21 @@ export const metadata: Metadata = {
     "fineline Medellín",
     "tattoo studio Medellín",
     "Joan Robayo",
+    "medellin tattoo",
+    "tattoo near me",
+    "tattoo medellín",
+    "neotraditional tattoo medellin",
+    "tattoo nearby",
+    "tattoo cerca de mi",
+    "tatuajes en medellin",
+    "tattoo neotradicional medellin",
   ],
-  metadataBase: new URL("https://joanrobayotattoo.com"),
+  metadataBase: new URL("https://www.neotraditionaltattoo.com"),
   alternates: {
     canonical: "/",
+  },
+  icons: {
+    icon: "/images/logo2.jpg",
   },
   openGraph: {
     title: "JoanRobayo Tattoo | Tatuajes en Medellín",
@@ -48,10 +59,10 @@ export const metadata: Metadata = {
     siteName: "JoanRobayo Tattoo",
     images: [
       {
-        url: "/images/og-image.jpg",
+        url: "/images/tattoo-medellin-carrusel-2.png",
         width: 1200,
         height: 630,
-        alt: "JoanRobayo Tattoo Studio",
+        alt: "Neotraditional Tattoo Medellin - Tattoo Studio",
       },
     ],
   },
@@ -60,7 +71,7 @@ export const metadata: Metadata = {
     title: "JoanRobayo Tattoo | Tatuajes en Medellín",
     description:
       "Especialistas en Realismo, Neotradicional y Fineline. Tatuajes sólidos y duraderos en Medellín, Colombia.",
-    images: ["/images/og-image.jpg"],
+    images: ["/images/tattoo-medellin-carrusel-2.png"],
   },
 };
 
@@ -90,7 +101,7 @@ export default function RootLayout({
               name: "JoanRobayo Tattoo",
               description:
                 "Especialistas en Realismo, Neotradicional y Fineline. Tatuajes sólidos y duraderos en Medellín, Colombia.",
-              url: "https://joanrobayotattoo.com",
+              url: "https://www.neotraditionaltattoo.com",
               telephone: "+57 3146148297",
               email: "joansr91@gmail.com",
               address: {

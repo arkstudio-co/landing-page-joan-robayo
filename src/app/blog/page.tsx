@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   title: "Journal de Arte | Crónicas de Tinta",
   description:
     "Blog de tatuajes en Medellín: cuidados, cultura, estilo de vida y más. Consejos de expertos para tu próximo tattoo.",
-  keywords: ["tatuajes Medellín", "blog tatuajes", "cuidados tattoo", "tatuador Medellín", "cultura del tatuaje"],
+  keywords: ["tatuajes Medellín", "blog tatuajes", "cuidados tattoo", "tatuador Medellín", "cultura del tatuaje", "medellin tattoo", "tattoo near me", "tattoo medellín", "neotraditional tattoo medellin", "tattoo nearby", "tattoo cerca de mi", "tatuajes en medellin", "tattoo neotradicional medellin"],
   openGraph: {
     title: "Journal de Arte | Crónicas de Tinta",
     description:

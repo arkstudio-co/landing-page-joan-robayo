@@ -74,6 +74,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   return {
     title: `${article.title} | JoanRobayo Tattoo`,
     description: `Artículo sobre ${article.title.toLowerCase()} en nuestro journal de tatuajes.`,
+    keywords: ["tatuajes en medellin", "medellin tattoo", "tattoo near me", "tattoo medellín", "neotraditional tattoo medellin", "tattoo nearby", "tattoo cerca de mi", "tattoo neotradicional medellin"],
   };
 }
 
