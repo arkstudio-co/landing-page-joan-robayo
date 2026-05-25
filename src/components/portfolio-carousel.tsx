@@ -1,24 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import { useCallback, useEffect, useRef } from "react";
+import { useRef, useState, useEffect, useCallback } from "react";
 import { PORTFOLIO_IMAGES } from "@/lib/constants";
-
-function ChevronLeft() {
-  return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} className="w-6 h-6">
-      <path d="M15 18l-6-6 6-6" />
-    </svg>
-  );
-}
-
-function ChevronRight() {
-  return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} className="w-6 h-6">
-      <path d="M9 18l6-6-6-6" />
-    </svg>
-  );
-}
 
 const ITEM_WIDTH = 375;
 const GAP = 16;
@@ -29,57 +13,97 @@ const items = [...PORTFOLIO_IMAGES, ...PORTFOLIO_IMAGES, ...PORTFOLIO_IMAGES];
 export function PortfolioCarousel() {
   const containerRef = useRef<HTMLDivElement>(null);
   const trackRef = useRef<HTMLDivElement>(null);
+  const [isDragging, setIsDragging] = useState(false);
   const offsetRef = useRef(0);
   const animFrameRef = useRef(0);
   const lastTimeRef = useRef(0);
+  const dragState = useRef({
+    startX: 0,
+    startOffset: 0,
+    isDown: false,
+    isTouch: false,
+  });
+
+  const applyOffset = useCallback(() => {
+    if (!trackRef.current) return;
+    trackRef.current.style.transform = `translateX(${offsetRef.current}px)`;
+  }, []);
 
   useEffect(() => {
     offsetRef.current = -SET_WIDTH;
-    if (trackRef.current) {
-      trackRef.current.style.transform = `translateX(${offsetRef.current}px)`;
-    }
+    applyOffset();
 
     const tick = (now: number) => {
-      const dt = lastTimeRef.current ? (now - lastTimeRef.current) / 1000 : 0;
-      lastTimeRef.current = now;
+      if (!dragState.current.isDown) {
+        const dt = lastTimeRef.current ? (now - lastTimeRef.current) / 1000 : 0;
+        lastTimeRef.current = now;
 
-      offsetRef.current -= 30 * dt;
+        offsetRef.current -= 30 * dt;
 
-      if (offsetRef.current <= -SET_WIDTH * 2) {
-        offsetRef.current += SET_WIDTH;
-      } else if (offsetRef.current > 0) {
-        offsetRef.current -= SET_WIDTH;
+        if (offsetRef.current <= -SET_WIDTH * 2) {
+          offsetRef.current += SET_WIDTH;
+        } else if (offsetRef.current > 0) {
+          offsetRef.current -= SET_WIDTH;
+        }
+
+        applyOffset();
       }
-
-      if (trackRef.current) {
-        trackRef.current.style.transform = `translateX(${offsetRef.current}px)`;
-      }
-
       animFrameRef.current = requestAnimationFrame(tick);
     };
 
     animFrameRef.current = requestAnimationFrame(tick);
     return () => cancelAnimationFrame(animFrameRef.current);
+  }, [applyOffset]);
+
+  const handleMouseDown = useCallback((e: React.MouseEvent) => {
+    if (dragState.current.isTouch) return;
+    dragState.current.isDown = true;
+    dragState.current.startX = e.pageX;
+    dragState.current.startOffset = offsetRef.current;
+    setIsDragging(true);
   }, []);
 
-  const goNext = useCallback(() => {
-    offsetRef.current -= STEP;
-    if (offsetRef.current <= -SET_WIDTH * 2) {
-      offsetRef.current += SET_WIDTH;
-    }
-    if (trackRef.current) {
-      trackRef.current.style.transform = `translateX(${offsetRef.current}px)`;
-    }
+  const handleMouseMove = useCallback((e: React.MouseEvent) => {
+    if (!dragState.current.isDown || dragState.current.isTouch) return;
+    e.preventDefault();
+    const delta = e.pageX - dragState.current.startX;
+    offsetRef.current = dragState.current.startOffset + delta;
+    applyOffset();
+  }, [applyOffset]);
+
+  const handleMouseUp = useCallback(() => {
+    if (dragState.current.isTouch) return;
+    dragState.current.isDown = false;
+    setIsDragging(false);
   }, []);
 
-  const goPrev = useCallback(() => {
-    offsetRef.current += STEP;
-    if (offsetRef.current > 0) {
-      offsetRef.current -= SET_WIDTH;
-    }
-    if (trackRef.current) {
-      trackRef.current.style.transform = `translateX(${offsetRef.current}px)`;
-    }
+  const handleMouseLeave = useCallback(() => {
+    if (dragState.current.isTouch) return;
+    dragState.current.isDown = false;
+    setIsDragging(false);
+  }, []);
+
+  const handleTouchStart = useCallback((e: React.TouchEvent) => {
+    dragState.current.isTouch = true;
+    dragState.current.isDown = true;
+    dragState.current.startX = e.touches[0].pageX;
+    dragState.current.startOffset = offsetRef.current;
+    setIsDragging(true);
+  }, []);
+
+  const handleTouchMove = useCallback((e: React.TouchEvent) => {
+    if (!dragState.current.isDown) return;
+    const delta = e.touches[0].pageX - dragState.current.startX;
+    offsetRef.current = dragState.current.startOffset + delta;
+    applyOffset();
+  }, [applyOffset]);
+
+  const handleTouchEnd = useCallback(() => {
+    dragState.current.isDown = false;
+    setIsDragging(false);
+    setTimeout(() => {
+      dragState.current.isTouch = false;
+    }, 400);
   }, []);
 
   return (
@@ -92,17 +116,19 @@ export function PortfolioCarousel() {
           Escríbenos, recibe una asesoría y aparta tu cita con nosotros
         </p>
       </div>
-      <div ref={containerRef} className="relative select-none max-w-[90%] mx-auto group overflow-hidden">
-        <button
-          onClick={goPrev}
-          className="absolute left-4 top-1/2 -translate-y-1/2 z-20 bg-black/60 hover:bg-gold text-white hover:text-black p-4 transition-all opacity-100 md:opacity-0 md:group-hover:opacity-100 border border-white/10 rounded-full"
-          aria-label="Previous"
-        >
-          <ChevronLeft />
-        </button>
+      <div ref={containerRef} className="relative select-none max-w-[90%] mx-auto overflow-hidden">
         <div
           ref={trackRef}
-          className="flex gap-4 will-change-transform"
+          className={`flex gap-4 will-change-transform ${
+            isDragging ? "cursor-grabbing" : "cursor-grab"
+          }`}
+          onMouseDown={handleMouseDown}
+          onMouseMove={handleMouseMove}
+          onMouseUp={handleMouseUp}
+          onMouseLeave={handleMouseLeave}
+          onTouchStart={handleTouchStart}
+          onTouchMove={handleTouchMove}
+          onTouchEnd={handleTouchEnd}
         >
           {items.map((src, i) => (
             <div
@@ -112,20 +138,13 @@ export function PortfolioCarousel() {
               <Image
                 alt={`Work ${(i % PORTFOLIO_IMAGES.length) + 1}`}
                 fill
-                className="object-cover shadow-xl rounded-xl"
+                className="object-cover shadow-xl rounded-xl pointer-events-none"
                 src={src}
                 sizes="375px"
               />
             </div>
           ))}
         </div>
-        <button
-          onClick={goNext}
-          className="absolute right-4 top-1/2 -translate-y-1/2 z-20 bg-black/60 hover:bg-gold text-white hover:text-black p-4 transition-all opacity-100 md:opacity-0 md:group-hover:opacity-100 border border-white/10 rounded-full"
-          aria-label="Next"
-        >
-          <ChevronRight />
-        </button>
       </div>
       <div className="flex justify-center mt-12">
         <a
