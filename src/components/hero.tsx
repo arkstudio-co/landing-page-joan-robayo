@@ -24,12 +24,6 @@ export function Hero() {
           <br />
           EN MEDELLÍN
         </h1>
-        <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-gold/30 rounded-full px-4 py-2 mb-8">
-          <span className="text-gold text-sm">★★★★★</span>
-          <span className="text-on-surface/80 text-sm font-[family-name:var(--font-inter)]">
-            5.0 en Google
-          </span>
-        </div>
         <div className="flex flex-col md:flex-row gap-6 justify-start">
           <a
             href="https://wa.me/573146148297?text=Hola!%20quiero%20cotizar%20mi%20proximo%20tattoo"

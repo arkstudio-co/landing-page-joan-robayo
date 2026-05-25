@@ -61,7 +61,7 @@ export function MobileMenu({ links }: { links?: readonly NavLink[] }) {
             key={link.label}
             href={link.href}
             onClick={close}
-            className="text-white text-4xl uppercase tracking-widest main-title hover:text-gold transition-colors"
+            className="text-white text-2xl md:text-4xl uppercase tracking-widest main-title hover:text-gold transition-colors"
           >
             {link.label}
           </a>

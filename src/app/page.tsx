@@ -1,6 +1,5 @@
 import { Header } from "@/components/header";
 import { Hero } from "@/components/hero";
-import { SocialProof } from "@/components/social-proof";
 import { CategoryNav } from "@/components/category-nav";
 import { StylesSection } from "@/components/styles-section";
 import { HowItWorks } from "@/components/how-it-works";
@@ -18,7 +17,6 @@ export default function Home() {
       <Header />
       <main>
         <Hero />
-        <SocialProof />
         <CategoryNav />
         <StylesSection />
         <HowItWorks />
