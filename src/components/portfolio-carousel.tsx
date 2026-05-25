@@ -24,71 +24,63 @@ const ITEM_WIDTH = 375;
 const GAP = 16;
 const STEP = ITEM_WIDTH + GAP;
 const SET_WIDTH = PORTFOLIO_IMAGES.length * STEP;
-
 const items = [...PORTFOLIO_IMAGES, ...PORTFOLIO_IMAGES, ...PORTFOLIO_IMAGES];
 
 export function PortfolioCarousel() {
+  const containerRef = useRef<HTMLDivElement>(null);
   const trackRef = useRef<HTMLDivElement>(null);
-  const intervalRef = useRef<ReturnType<typeof setInterval>>(undefined);
+  const offsetRef = useRef(0);
+  const animFrameRef = useRef(0);
+  const lastTimeRef = useRef(0);
 
-  const resetScroll = useCallback(() => {
-    const track = trackRef.current;
-    if (!track) return;
-    if (track.scrollLeft >= SET_WIDTH * 2) {
-      track.style.scrollBehavior = "auto";
-      track.scrollLeft -= SET_WIDTH;
-      requestAnimationFrame(() => {
-        track.style.scrollBehavior = "";
-      });
-    } else if (track.scrollLeft < 0) {
-      track.style.scrollBehavior = "auto";
-      track.scrollLeft += SET_WIDTH;
-      requestAnimationFrame(() => {
-        track.style.scrollBehavior = "";
-      });
+  useEffect(() => {
+    offsetRef.current = -SET_WIDTH;
+    if (trackRef.current) {
+      trackRef.current.style.transform = `translateX(${offsetRef.current}px)`;
+    }
+
+    const tick = (now: number) => {
+      const dt = lastTimeRef.current ? (now - lastTimeRef.current) / 1000 : 0;
+      lastTimeRef.current = now;
+
+      offsetRef.current -= 30 * dt;
+
+      if (offsetRef.current <= -SET_WIDTH * 2) {
+        offsetRef.current += SET_WIDTH;
+      } else if (offsetRef.current > 0) {
+        offsetRef.current -= SET_WIDTH;
+      }
+
+      if (trackRef.current) {
+        trackRef.current.style.transform = `translateX(${offsetRef.current}px)`;
+      }
+
+      animFrameRef.current = requestAnimationFrame(tick);
+    };
+
+    animFrameRef.current = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(animFrameRef.current);
+  }, []);
+
+  const goNext = useCallback(() => {
+    offsetRef.current -= STEP;
+    if (offsetRef.current <= -SET_WIDTH * 2) {
+      offsetRef.current += SET_WIDTH;
+    }
+    if (trackRef.current) {
+      trackRef.current.style.transform = `translateX(${offsetRef.current}px)`;
     }
   }, []);
 
-  const startAutoScroll = useCallback(() => {
-    clearInterval(intervalRef.current);
-    intervalRef.current = setInterval(() => {
-      const track = trackRef.current;
-      if (!track) return;
-      track.scrollLeft += 0.5;
-      resetScroll();
-    }, 20);
-  }, [resetScroll]);
-
-  useEffect(() => {
-    const track = trackRef.current;
-    if (track) {
-      track.scrollLeft = SET_WIDTH;
-    }
-    startAutoScroll();
-    return () => clearInterval(intervalRef.current);
-  }, [startAutoScroll]);
-
-  const goNext = useCallback(() => {
-    const track = trackRef.current;
-    if (!track) return;
-    clearInterval(intervalRef.current);
-    track.scrollTo({ left: track.scrollLeft + STEP, behavior: "smooth" });
-    setTimeout(() => {
-      resetScroll();
-      startAutoScroll();
-    }, 400);
-  }, [resetScroll, startAutoScroll]);
-
   const goPrev = useCallback(() => {
-    const track = trackRef.current;
-    if (!track) return;
-    clearInterval(intervalRef.current);
-    track.scrollTo({ left: track.scrollLeft - STEP, behavior: "smooth" });
-    setTimeout(() => {
-      resetScroll();
-      startAutoScroll();
-    }, 400);
-  }, [resetScroll, startAutoScroll]);
+    offsetRef.current += STEP;
+    if (offsetRef.current > 0) {
+      offsetRef.current -= SET_WIDTH;
+    }
+    if (trackRef.current) {
+      trackRef.current.style.transform = `translateX(${offsetRef.current}px)`;
+    }
+  }, []);
 
   return (
     <section className="py-20 overflow-hidden bg-black border-y border-primary/10">
@@ -100,22 +92,22 @@ export function PortfolioCarousel() {
           Escríbenos, recibe una asesoría y aparta tu cita con nosotros
         </p>
       </div>
-      <div className="relative select-none max-w-[90%] mx-auto group">
+      <div ref={containerRef} className="relative select-none max-w-[90%] mx-auto group overflow-hidden">
         <button
           onClick={goPrev}
-          className="absolute left-4 top-1/2 -translate-y-1/2 z-20 bg-black/60 hover:bg-gold text-white hover:text-black p-4 transition-all opacity-0 group-hover:opacity-100 border border-white/10 rounded-full"
+          className="absolute left-4 top-1/2 -translate-y-1/2 z-20 bg-black/60 hover:bg-gold text-white hover:text-black p-4 transition-all opacity-100 md:opacity-0 md:group-hover:opacity-100 border border-white/10 rounded-full"
           aria-label="Previous"
         >
           <ChevronLeft />
         </button>
         <div
           ref={trackRef}
-          className="flex gap-4 overflow-x-auto no-scrollbar"
+          className="flex gap-4 will-change-transform"
         >
           {items.map((src, i) => (
             <div
               key={i}
-              className="flex-none w-[375px] h-[525px] relative transition-transform duration-500 hover:scale-110 hover:z-10"
+              className="flex-none w-[375px] h-[525px] relative"
             >
               <Image
                 alt={`Work ${(i % PORTFOLIO_IMAGES.length) + 1}`}
@@ -129,21 +121,12 @@ export function PortfolioCarousel() {
         </div>
         <button
           onClick={goNext}
-          className="absolute right-4 top-1/2 -translate-y-1/2 z-20 bg-black/60 hover:bg-gold text-white hover:text-black p-4 transition-all opacity-0 group-hover:opacity-100 border border-white/10 rounded-full"
+          className="absolute right-4 top-1/2 -translate-y-1/2 z-20 bg-black/60 hover:bg-gold text-white hover:text-black p-4 transition-all opacity-100 md:opacity-0 md:group-hover:opacity-100 border border-white/10 rounded-full"
           aria-label="Next"
         >
           <ChevronRight />
         </button>
       </div>
-      <style>{`
-        .no-scrollbar {
-          -ms-overflow-style: none;
-          scrollbar-width: none;
-        }
-        .no-scrollbar::-webkit-scrollbar {
-          display: none;
-        }
-      `}</style>
       <div className="flex justify-center mt-12">
         <a
           href="https://wa.me/573146148297?text=Hola!%20quiero%20agendar%20una%20asesor%C3%ADa"
@@ -157,4 +140,3 @@ export function PortfolioCarousel() {
     </section>
   );
 }
-
