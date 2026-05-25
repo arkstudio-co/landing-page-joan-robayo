@@ -53,119 +53,92 @@ export function Testimonials() {
   const items = [...TESTIMONIALS, ...TESTIMONIALS];
   const trackRef = useRef<HTMLDivElement>(null);
   const [isDragging, setIsDragging] = useState(false);
+  const offsetRef = useRef(0);
+  const halfRef = useRef(0);
   const dragState = useRef({
     startX: 0,
-    scrollLeft: 0,
+    startOffset: 0,
     isDown: false,
     isTouch: false,
   });
-  const autoScrollRef = useRef<ReturnType<typeof setInterval>>(undefined);
+  const animFrameRef = useRef<number>(0);
 
-  const loopTrack = useCallback((track: HTMLDivElement) => {
-    const half = track.scrollWidth / 2;
-    if (track.scrollLeft >= half) {
-      track.style.scrollBehavior = "auto";
-      track.scrollLeft -= half;
-      requestAnimationFrame(() => {
-        track.style.scrollBehavior = "smooth";
-      });
-    } else if (track.scrollLeft <= 0) {
-      track.style.scrollBehavior = "auto";
-      track.scrollLeft += half;
-      requestAnimationFrame(() => {
-        track.style.scrollBehavior = "smooth";
-      });
-    }
+  const applyOffset = useCallback(() => {
+    if (!trackRef.current) return;
+    trackRef.current.style.transform = `translateX(${offsetRef.current}px)`;
   }, []);
 
-  const startAutoScroll = useCallback(() => {
-    clearInterval(autoScrollRef.current);
-    autoScrollRef.current = setInterval(() => {
-      const track = trackRef.current;
-      if (!track || dragState.current.isDown) return;
-      track.scrollLeft += 0.5;
-      loopTrack(track);
-    }, 20);
-  }, [loopTrack]);
-
   useEffect(() => {
-    startAutoScroll();
-    return () => clearInterval(autoScrollRef.current);
-  }, [startAutoScroll]);
+    const track = trackRef.current;
+    if (track) {
+      halfRef.current = track.scrollWidth / 2;
+    }
+    const tick = () => {
+      if (!dragState.current.isDown) {
+        offsetRef.current -= 0.5;
+        if (halfRef.current > 0) {
+          if (offsetRef.current <= -halfRef.current) {
+            offsetRef.current += halfRef.current;
+          }
+        }
+        applyOffset();
+      }
+      animFrameRef.current = requestAnimationFrame(tick);
+    };
+    animFrameRef.current = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(animFrameRef.current);
+  }, [applyOffset]);
 
   const handleMouseDown = useCallback((e: React.MouseEvent) => {
     if (dragState.current.isTouch) return;
-    const track = trackRef.current;
-    if (!track) return;
-    setIsDragging(true);
     dragState.current.isDown = true;
-    dragState.current.startX = e.pageX - track.offsetLeft;
-    dragState.current.scrollLeft = track.scrollLeft;
-    track.style.scrollBehavior = "auto";
-    clearInterval(autoScrollRef.current);
+    dragState.current.startX = e.pageX;
+    dragState.current.startOffset = offsetRef.current;
+    setIsDragging(true);
   }, []);
 
   const handleMouseMove = useCallback((e: React.MouseEvent) => {
     if (!dragState.current.isDown || dragState.current.isTouch) return;
-    const track = trackRef.current;
-    if (!track) return;
     e.preventDefault();
-    const x = e.pageX - track.offsetLeft;
-    const walk = x - dragState.current.startX;
-    track.scrollLeft = dragState.current.scrollLeft - walk;
-  }, []);
+    const delta = e.pageX - dragState.current.startX;
+    offsetRef.current = dragState.current.startOffset + delta;
+    applyOffset();
+  }, [applyOffset]);
 
   const handleMouseUp = useCallback(() => {
     if (dragState.current.isTouch) return;
-    const track = trackRef.current;
-    if (!track) return;
-    setIsDragging(false);
     dragState.current.isDown = false;
-    loopTrack(track);
-    startAutoScroll();
-  }, [loopTrack, startAutoScroll]);
+    setIsDragging(false);
+  }, []);
 
   const handleMouseLeave = useCallback(() => {
     if (dragState.current.isTouch) return;
-    setIsDragging(false);
     dragState.current.isDown = false;
-    const track = trackRef.current;
-    if (!track) return;
-    loopTrack(track);
-    startAutoScroll();
-  }, [loopTrack, startAutoScroll]);
+    setIsDragging(false);
+  }, []);
 
   const handleTouchStart = useCallback((e: React.TouchEvent) => {
     dragState.current.isTouch = true;
-    const track = trackRef.current;
-    if (!track) return;
-    setIsDragging(true);
     dragState.current.isDown = true;
-    dragState.current.startX = e.touches[0].pageX - track.offsetLeft;
-    dragState.current.scrollLeft = track.scrollLeft;
-    track.style.scrollBehavior = "auto";
-    clearInterval(autoScrollRef.current);
+    dragState.current.startX = e.touches[0].pageX;
+    dragState.current.startOffset = offsetRef.current;
+    setIsDragging(true);
   }, []);
 
   const handleTouchMove = useCallback((e: React.TouchEvent) => {
-    const track = trackRef.current;
-    if (!track) return;
-    const x = e.touches[0].pageX - track.offsetLeft;
-    const walk = x - dragState.current.startX;
-    track.scrollLeft = dragState.current.scrollLeft - walk;
-  }, []);
+    if (!dragState.current.isDown) return;
+    const delta = e.touches[0].pageX - dragState.current.startX;
+    offsetRef.current = dragState.current.startOffset + delta;
+    applyOffset();
+  }, [applyOffset]);
 
   const handleTouchEnd = useCallback(() => {
-    const track = trackRef.current;
-    if (!track) return;
-    setIsDragging(false);
     dragState.current.isDown = false;
-    loopTrack(track);
+    setIsDragging(false);
     setTimeout(() => {
       dragState.current.isTouch = false;
     }, 400);
-    startAutoScroll();
-  }, [loopTrack, startAutoScroll]);
+  }, []);
 
   return (
     <section
@@ -175,7 +148,6 @@ export function Testimonials() {
           'linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.9)), url("/images/fondo-testimonios.jpg")',
         backgroundSize: "cover",
         backgroundPosition: "center center",
-        backgroundAttachment: "fixed",
       }}
     >
       <div className="max-w-[85%] mx-auto">
@@ -187,12 +159,13 @@ export function Testimonials() {
             LO QUE DICEN NUESTROS CLIENTES
           </h2>
         </div>
-        <div className="relative">
+        <div className="relative overflow-hidden">
           <div
             ref={trackRef}
-            className={`flex gap-8 overflow-x-auto w-full no-scrollbar ${
+            className={`flex gap-8 will-change-transform ${
               isDragging ? "cursor-grabbing" : "cursor-grab"
             }`}
+            style={{ transform: "translateX(0px)" }}
             onMouseDown={handleMouseDown}
             onMouseMove={handleMouseMove}
             onMouseUp={handleMouseUp}
@@ -233,12 +206,8 @@ export function Testimonials() {
         .scroll-gradient-left, .scroll-gradient-right {
           pointer-events: none !important;
         }
-        .no-scrollbar {
-          -ms-overflow-style: none;
-          scrollbar-width: none;
-        }
-        .no-scrollbar::-webkit-scrollbar {
-          display: none;
+        .will-change-transform {
+          will-change: transform;
         }
       `}</style>
     </section>
