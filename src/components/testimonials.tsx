@@ -53,9 +53,13 @@ export function Testimonials() {
   const items = [...TESTIMONIALS, ...TESTIMONIALS];
   const trackRef = useRef<HTMLDivElement>(null);
   const [isDragging, setIsDragging] = useState(false);
-  const dragState = useRef({ startX: 0, scrollLeft: 0, isDown: false });
+  const dragState = useRef({
+    startX: 0,
+    scrollLeft: 0,
+    isDown: false,
+    isTouch: false,
+  });
   const autoScrollRef = useRef<ReturnType<typeof setInterval>>(undefined);
-  const isHovering = useRef(false);
 
   const loopTrack = useCallback((track: HTMLDivElement) => {
     const half = track.scrollWidth / 2;
@@ -78,7 +82,7 @@ export function Testimonials() {
     clearInterval(autoScrollRef.current);
     autoScrollRef.current = setInterval(() => {
       const track = trackRef.current;
-      if (!track || dragState.current.isDown || isHovering.current) return;
+      if (!track || dragState.current.isDown) return;
       track.scrollLeft += 0.5;
       loopTrack(track);
     }, 20);
@@ -90,6 +94,7 @@ export function Testimonials() {
   }, [startAutoScroll]);
 
   const handleMouseDown = useCallback((e: React.MouseEvent) => {
+    if (dragState.current.isTouch) return;
     const track = trackRef.current;
     if (!track) return;
     setIsDragging(true);
@@ -101,8 +106,9 @@ export function Testimonials() {
   }, []);
 
   const handleMouseMove = useCallback((e: React.MouseEvent) => {
+    if (!dragState.current.isDown || dragState.current.isTouch) return;
     const track = trackRef.current;
-    if (!dragState.current.isDown || !track) return;
+    if (!track) return;
     e.preventDefault();
     const x = e.pageX - track.offsetLeft;
     const walk = x - dragState.current.startX;
@@ -110,26 +116,19 @@ export function Testimonials() {
   }, []);
 
   const handleMouseUp = useCallback(() => {
+    if (dragState.current.isTouch) return;
     const track = trackRef.current;
     if (!track) return;
     setIsDragging(false);
     dragState.current.isDown = false;
     loopTrack(track);
-    if (!isHovering.current) {
-      startAutoScroll();
-    }
+    startAutoScroll();
   }, [loopTrack, startAutoScroll]);
 
-  const handleMouseEnter = useCallback(() => {
-    isHovering.current = true;
-  }, []);
-
   const handleMouseLeave = useCallback(() => {
-    isHovering.current = false;
-    if (dragState.current.isDown) {
-      setIsDragging(false);
-      dragState.current.isDown = false;
-    }
+    if (dragState.current.isTouch) return;
+    setIsDragging(false);
+    dragState.current.isDown = false;
     const track = trackRef.current;
     if (!track) return;
     loopTrack(track);
@@ -137,6 +136,7 @@ export function Testimonials() {
   }, [loopTrack, startAutoScroll]);
 
   const handleTouchStart = useCallback((e: React.TouchEvent) => {
+    dragState.current.isTouch = true;
     const track = trackRef.current;
     if (!track) return;
     setIsDragging(true);
@@ -161,6 +161,9 @@ export function Testimonials() {
     setIsDragging(false);
     dragState.current.isDown = false;
     loopTrack(track);
+    setTimeout(() => {
+      dragState.current.isTouch = false;
+    }, 400);
     startAutoScroll();
   }, [loopTrack, startAutoScroll]);
 
@@ -193,7 +196,6 @@ export function Testimonials() {
             onMouseDown={handleMouseDown}
             onMouseMove={handleMouseMove}
             onMouseUp={handleMouseUp}
-            onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
             onTouchStart={handleTouchStart}
             onTouchMove={handleTouchMove}
