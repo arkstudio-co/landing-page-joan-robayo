@@ -55,38 +55,39 @@ export function Testimonials() {
   const [isDragging, setIsDragging] = useState(false);
   const dragState = useRef({ startX: 0, scrollLeft: 0, isDown: false });
   const autoScrollRef = useRef<ReturnType<typeof setInterval>>(undefined);
+  const isHovering = useRef(false);
 
-  const resetScroll = useCallback(() => {
-    const track = trackRef.current;
-    if (!track) return;
+  const loopTrack = useCallback((track: HTMLDivElement) => {
     const half = track.scrollWidth / 2;
     if (track.scrollLeft >= half) {
       track.style.scrollBehavior = "auto";
-      track.scrollLeft = 0;
+      track.scrollLeft -= half;
       requestAnimationFrame(() => {
         track.style.scrollBehavior = "smooth";
       });
     } else if (track.scrollLeft <= 0) {
       track.style.scrollBehavior = "auto";
-      track.scrollLeft = half;
+      track.scrollLeft += half;
       requestAnimationFrame(() => {
         track.style.scrollBehavior = "smooth";
       });
     }
   }, []);
 
+  const startAutoScroll = useCallback(() => {
+    clearInterval(autoScrollRef.current);
+    autoScrollRef.current = setInterval(() => {
+      const track = trackRef.current;
+      if (!track || dragState.current.isDown || isHovering.current) return;
+      track.scrollLeft += 0.5;
+      loopTrack(track);
+    }, 20);
+  }, [loopTrack]);
+
   useEffect(() => {
-    const startAuto = () => {
-      autoScrollRef.current = setInterval(() => {
-        const track = trackRef.current;
-        if (!track || dragState.current.isDown) return;
-        track.scrollLeft += 0.5;
-        resetScroll();
-      }, 20);
-    };
-    startAuto();
+    startAutoScroll();
     return () => clearInterval(autoScrollRef.current);
-  }, [resetScroll]);
+  }, [startAutoScroll]);
 
   const handleMouseDown = useCallback((e: React.MouseEvent) => {
     const track = trackRef.current;
@@ -113,18 +114,33 @@ export function Testimonials() {
     if (!track) return;
     setIsDragging(false);
     dragState.current.isDown = false;
-    resetScroll();
-    autoScrollRef.current = setInterval(() => {
-      const t = trackRef.current;
-      if (!t || dragState.current.isDown) return;
-      t.scrollLeft += 0.5;
-      resetScroll();
-    }, 20);
-  }, [resetScroll]);
+    loopTrack(track);
+    if (!isHovering.current) {
+      startAutoScroll();
+    }
+  }, [loopTrack, startAutoScroll]);
+
+  const handleMouseEnter = useCallback(() => {
+    isHovering.current = true;
+  }, []);
+
+  const handleMouseLeave = useCallback(() => {
+    isHovering.current = false;
+    if (dragState.current.isDown) {
+      setIsDragging(false);
+      dragState.current.isDown = false;
+    }
+    const track = trackRef.current;
+    if (!track) return;
+    loopTrack(track);
+    startAutoScroll();
+  }, [loopTrack, startAutoScroll]);
 
   const handleTouchStart = useCallback((e: React.TouchEvent) => {
     const track = trackRef.current;
     if (!track) return;
+    setIsDragging(true);
+    dragState.current.isDown = true;
     dragState.current.startX = e.touches[0].pageX - track.offsetLeft;
     dragState.current.scrollLeft = track.scrollLeft;
     track.style.scrollBehavior = "auto";
@@ -142,14 +158,11 @@ export function Testimonials() {
   const handleTouchEnd = useCallback(() => {
     const track = trackRef.current;
     if (!track) return;
-    resetScroll();
-    autoScrollRef.current = setInterval(() => {
-      const t = trackRef.current;
-      if (!t || dragState.current.isDown) return;
-      t.scrollLeft += 0.5;
-      resetScroll();
-    }, 20);
-  }, [resetScroll]);
+    setIsDragging(false);
+    dragState.current.isDown = false;
+    loopTrack(track);
+    startAutoScroll();
+  }, [loopTrack, startAutoScroll]);
 
   return (
     <section
@@ -180,7 +193,8 @@ export function Testimonials() {
             onMouseDown={handleMouseDown}
             onMouseMove={handleMouseMove}
             onMouseUp={handleMouseUp}
-            onMouseLeave={handleMouseUp}
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
             onTouchStart={handleTouchStart}
             onTouchMove={handleTouchMove}
             onTouchEnd={handleTouchEnd}
