@@ -50,7 +50,7 @@ export function MobileMenu({ links }: { links?: readonly NavLink[] }) {
         />
       </button>
       <div
-        className={`fixed inset-0 z-40 bg-black/98 flex flex-col items-center justify-center gap-12 transition-all duration-500 ${
+        className={`fixed inset-0 z-50 bg-black/98 flex flex-col items-center justify-center gap-12 transition-all duration-500 ${
           isOpen
             ? "opacity-100 pointer-events-auto"
             : "opacity-0 pointer-events-none"
