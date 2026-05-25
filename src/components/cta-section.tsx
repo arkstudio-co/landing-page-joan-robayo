@@ -17,7 +17,7 @@ export function CTASection({
         <h2 className="text-2xl md:text-4xl main-title text-on-surface uppercase mb-4">
           {title}
         </h2>
-        <p className="text-on-surface/60 max-w-2xl mx-auto mb-10 font-[family-name:var(--font-manrope)] leading-relaxed">
+        <p className="text-on-surface/60 max-w-2xl mx-auto mb-10 font-[family-name:var(--font-inter)] leading-relaxed">
           {description}
         </p>
         <a

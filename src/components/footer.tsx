@@ -21,13 +21,13 @@ export function Footer() {
               href={link.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-400 uppercase text-[10px] tracking-[0.2em] hover:text-white transition-colors duration-300 font-[family-name:var(--font-noto-serif)] italic"
+              className="text-gray-400 uppercase text-[10px] tracking-[0.2em] hover:text-white transition-colors duration-300 font-[family-name:var(--font-cinzel)] italic"
             >
               {link.label}
             </a>
           ))}
         </div>
-        <p className="text-gold font-[family-name:var(--font-noto-serif)] text-sm italic subtitle uppercase tracking-widest opacity-60">
+        <p className="text-gold font-[family-name:var(--font-cinzel)] text-sm italic subtitle uppercase tracking-widest opacity-60">
           &copy; 2021 Todos los derechos reservados - JoanRobayo Tattoo
         </p>
       </div>

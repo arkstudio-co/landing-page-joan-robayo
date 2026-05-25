@@ -31,11 +31,11 @@ html {
   --color-btn-text: #1a1a1a;
 
   --font-label-caps: var(--font-inter);
-  --font-headline-lg: var(--font-noto-serif);
-  --font-body-lg: var(--font-manrope);
-  --font-headline-xl: var(--font-noto-serif);
-  --font-headline-md: var(--font-noto-serif);
-  --font-body-md: var(--font-manrope);
+  --font-headline-lg: var(--font-cinzel);
+  --font-body-lg: var(--font-inter);
+  --font-headline-xl: var(--font-cinzel);
+  --font-headline-md: var(--font-cinzel);
+  --font-body-md: var(--font-inter);
   --font-cinzel: var(--font-cinzel);
   --font-playfair: var(--font-playfair);
 

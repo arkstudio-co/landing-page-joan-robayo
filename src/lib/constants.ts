@@ -5,15 +5,15 @@ export const NAV_LINKS = [
 ] as const;
 
 export const STYLES = [
-  { title: "Realismo", image: "/images/realismo.jpg.png" },
-  { title: "Neotradicional", image: "/images/neotradicional.jpg.png" },
-  { title: "Línea Fina", image: "/images/lineafina.jpg.png" },
+  { title: "Realismo", image: "/images/realismo.png" },
+  { title: "Neotradicional", image: "/images/neotradicional.png" },
+  { title: "Línea Fina", image: "/images/lineafina.png" },
 ] as const;
 
 export const CATEGORIES = [
-  { title: "ARTIST", image: "/images/artist.jpg.jpg" },
-  { title: "CONTACT", image: "/images/contact.jpg.jpg" },
-  { title: "PAINTS", image: "/images/paints.jpg.jpg" },
+  { title: "ARTIST", image: "/images/artist.jpg" },
+  { title: "CONTACT", image: "/images/contact.jpg" },
+  { title: "PAINTS", image: "/images/paints.jpg" },
 ] as const;
 
 export interface Testimonial {

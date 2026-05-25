@@ -35,7 +35,7 @@ export function HowItWorks() {
           <h2 className="text-2xl md:text-4xl main-title text-on-surface mt-3 uppercase">
             Tu tatuaje en 3 pasos
           </h2>
-          <p className="text-on-surface/60 mt-4 max-w-2xl mx-auto font-[family-name:var(--font-manrope)]">
+          <p className="text-on-surface/60 mt-4 max-w-2xl mx-auto font-[family-name:var(--font-inter)]">
             Desde tu primera idea hasta el resultado final, te acompañamos en todo el proceso.
           </p>
         </div>
@@ -53,7 +53,7 @@ export function HowItWorks() {
               <h3 className="text-xl font-semibold text-on-surface mb-3 main-title uppercase">
                 {item.title}
               </h3>
-              <p className="text-on-surface/60 leading-relaxed font-[family-name:var(--font-manrope)]">
+              <p className="text-on-surface/60 leading-relaxed font-[family-name:var(--font-inter)]">
                 {item.description}
               </p>
             </div>

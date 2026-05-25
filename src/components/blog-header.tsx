@@ -13,7 +13,7 @@ export function BlogHeader() {
     <header className="bg-black/95 backdrop-blur-sm border-b border-gold/20 shadow-[0_4px_20px_rgba(206,152,97,0.1)] fixed top-0 w-full z-50">
       <nav className="flex justify-between items-center h-24 px-4 md:px-16 max-w-[1440px] mx-auto">
         <Link href="/">
-          <div className="text-gold font-[family-name:var(--font-noto-serif)]">
+          <div className="text-gold font-[family-name:var(--font-cinzel)]">
             <Image
               alt="JoanRobayo Tattoo Logo"
               src="/images/logo.png"
@@ -28,7 +28,7 @@ export function BlogHeader() {
             <a
               key={link.label}
               href={link.href}
-              className="text-gray-300 uppercase text-xs font-semibold tracking-widest hover:text-gold transition-all duration-300 ease-in-out font-[family-name:var(--font-noto-serif)]"
+              className="text-gray-300 uppercase text-xs font-semibold tracking-widest hover:text-gold transition-all duration-300 ease-in-out font-[family-name:var(--font-cinzel)]"
             >
               {link.label}
             </a>

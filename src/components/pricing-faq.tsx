@@ -37,7 +37,7 @@ export function PricingFAQ() {
               <h3 className="text-xl main-title text-on-surface uppercase">
                 Preguntas frecuentes
               </h3>
-              <p className="text-on-surface/50 text-sm mt-2 font-[family-name:var(--font-manrope)]">
+              <p className="text-on-surface/50 text-sm mt-2 font-[family-name:var(--font-inter)]">
                 Resolvemos tus dudas
               </p>
             </div>
@@ -62,7 +62,7 @@ export function PricingFAQ() {
                       }`}
                     >
                       <div className="overflow-hidden">
-                        <p className="px-6 pb-5 text-on-surface/60 leading-relaxed font-[family-name:var(--font-manrope)]">
+                        <p className="px-6 pb-5 text-on-surface/60 leading-relaxed font-[family-name:var(--font-inter)]">
                           {item.answer}
                         </p>
                       </div>
@@ -78,7 +78,7 @@ export function PricingFAQ() {
               <h3 className="text-xl main-title text-on-surface uppercase">
                 Precios
               </h3>
-              <p className="text-on-surface/50 text-sm mt-2 font-[family-name:var(--font-manrope)]">
+              <p className="text-on-surface/50 text-sm mt-2 font-[family-name:var(--font-inter)]">
                 Inversión transparente
               </p>
             </div>
@@ -90,7 +90,7 @@ export function PricingFAQ() {
                 >
                   <div className="mb-6">
                     <h4 className="text-xl main-title text-on-surface uppercase mb-1">{tier.title}</h4>
-                    <p className="text-on-surface/50 text-sm font-[family-name:var(--font-manrope)]">
+                    <p className="text-on-surface/50 text-sm font-[family-name:var(--font-inter)]">
                       {tier.description}
                     </p>
                   </div>
@@ -99,7 +99,7 @@ export function PricingFAQ() {
                   </div>
                   <ul className="space-y-3 mb-8">
                     {tier.features.map((feature) => (
-                      <li key={feature} className="flex items-center justify-center gap-3 text-on-surface/70 text-sm font-[family-name:var(--font-manrope)]">
+                      <li key={feature} className="flex items-center justify-center gap-3 text-on-surface/70 text-sm font-[family-name:var(--font-inter)]">
                         <span className="text-gold shrink-0">
                           <CheckIcon />
                         </span>

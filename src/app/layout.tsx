@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Cinzel, Playfair_Display, Inter, Manrope, Noto_Serif } from "next/font/google";
+import { Cinzel, Playfair_Display, Inter } from "next/font/google";
 import "./globals.css";
 import { Footer } from "@/components/footer";
 import { WhatsAppButton } from "@/components/whatsapp-button";
@@ -19,18 +19,6 @@ const playfair = Playfair_Display({
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
-  display: "swap",
-});
-
-const manrope = Manrope({
-  subsets: ["latin"],
-  variable: "--font-manrope",
-  display: "swap",
-});
-
-const notoSerif = Noto_Serif({
-  subsets: ["latin"],
-  variable: "--font-noto-serif",
   display: "swap",
 });
 
@@ -71,7 +59,7 @@ export default function RootLayout({
   return (
     <html
       lang="es"
-      className={`${cinzel.variable} ${playfair.variable} ${inter.variable} ${manrope.variable} ${notoSerif.variable} dark`}
+      className={`${cinzel.variable} ${playfair.variable} ${inter.variable} dark`}
     >
       <body className="bg-background text-on-background min-h-screen flex flex-col">
         <script

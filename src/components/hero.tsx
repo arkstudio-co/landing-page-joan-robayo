@@ -8,7 +8,7 @@ export function Hero() {
           alt="Hero Tattoo Art"
           fill
           className="object-cover object-[center_30%]"
-          src="/images/hero.jpg.png"
+          src="/images/hero.png"
           sizes="100vw"
           preload
         />
