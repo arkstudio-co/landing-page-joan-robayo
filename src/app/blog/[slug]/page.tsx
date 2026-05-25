@@ -26,8 +26,8 @@ const ARTICLES = {
   "cuidar-tatuaje-manera-correcta": {
     title: "Cómo cuidar su tatuaje de una manera correcta",
     category: "Cuidados",
-    date: "",
-    readTime: "",
+    date: "1 Noviembre, 2021",
+    readTime: "10 min",
     heroImage: "/images/hero-cuidados2.jpg",
     heroAlt: "Interior de estudio de tatuaje boutique con iluminación cálida y detalles dorados",
     bodyImages: [
@@ -118,7 +118,7 @@ function ArticleBody({ slug, article }: { slug: string; article: Article }) {
                     href="https://wa.me/573146148297?text=Hola!%20Quiero%20cotizar%20mi%20nuevo%20tattoo"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="bg-btn-bg text-btn-text px-12 py-4 font-cinzel text-xl tracking-widest hover:bg-btn-bg-hover hover:scale-105 transition-all duration-500 shadow-[0_0_30px_rgba(206,152,97,0.2)] rounded-xl"
+                    className="bg-btn-bg text-btn-text px-12 py-4 font-cinzel text-xl tracking-widest hover:bg-btn-bg-hover hover:scale-105 transition-all duration-300 shadow-[0_0_30px_rgba(206,152,97,0.2)] rounded-xl focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-black"
                   >
                     Agenda tu cita
                   </a>
@@ -165,7 +165,7 @@ function ArticleBody({ slug, article }: { slug: string; article: Article }) {
         <p className="mb-12 font-bold text-xl italic text-white">Lee con atención y sigue paso a paso las recomendaciones.</p>
 
         <div className="my-16 grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div className="relative h-[400px] rounded-[15px] overflow-hidden grayscale hover:grayscale-0 transition-all duration-700">
+          <div className="relative h-[400px] rounded-[15px] overflow-hidden grayscale hover:grayscale-0 transition duration-300">
             <Image fill className="object-cover" alt={article.bodyImages[0].alt} src={article.bodyImages[0].src} sizes="(max-width: 768px) 100vw, 50vw" />
           </div>
           <div className="flex flex-col justify-center">
@@ -324,7 +324,7 @@ function ArticleBody({ slug, article }: { slug: string; article: Article }) {
                   href="https://wa.me/573146148297?text=Hola!%20Quiero%20cotizar%20mi%20nuevo%20tattoo"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-btn-bg text-btn-text px-12 py-4 font-cinzel text-xl tracking-widest hover:bg-btn-bg-hover hover:scale-105 transition-all duration-500 shadow-[0_0_30px_rgba(206,152,97,0.2)] rounded-xl"
+                  className="bg-btn-bg text-btn-text px-12 py-4 font-cinzel text-xl tracking-widest hover:bg-btn-bg-hover hover:scale-105 transition-all duration-300 shadow-[0_0_30px_rgba(206,152,97,0.2)] rounded-xl focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-black"
                 >
                   Agenda tu cita
                 </a>

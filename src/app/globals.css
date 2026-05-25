@@ -111,9 +111,14 @@ body {
 }
 
 .hero-input:focus {
-  outline: none !important;
   border-bottom-color: #ce9861 !important;
   --tw-ring-color: transparent !important;
+}
+
+.hero-input:focus-visible {
+  outline: 2px solid #ce9861;
+  outline-offset: 4px;
+  border-radius: 0;
 }
 
 .hide-scrollbar {

@@ -27,8 +27,8 @@ export function Footer() {
             </a>
           ))}
         </div>
-        <p className="text-gold font-[family-name:var(--font-cinzel)] text-sm italic subtitle uppercase tracking-widest opacity-60">
-          &copy; 2021 Todos los derechos reservados - JoanRobayo Tattoo
+        <p className="text-gold/80 font-[family-name:var(--font-cinzel)] text-sm italic subtitle uppercase tracking-widest">
+          &copy; {new Date().getFullYear()} Todos los derechos reservados - JoanRobayo Tattoo
         </p>
       </div>
     </footer>

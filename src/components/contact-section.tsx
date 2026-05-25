@@ -181,9 +181,17 @@ export function ContactSection() {
                 </p>
               )}
               {status === "error" && (
-                <p className="text-red-400 text-sm mt-4 text-center">
-                  Error al enviar. Intenta de nuevo.
-                </p>
+                <div className="mt-4 text-center">
+                  <p className="text-red-400 text-sm mb-3">
+                    Error al enviar. Intenta de nuevo.
+                  </p>
+                  <button
+                    onClick={() => setStatus("idle")}
+                    className="text-gold text-xs uppercase tracking-widest underline hover:text-white transition-colors"
+                  >
+                    Reintentar
+                  </button>
+                </div>
               )}
             </div>
           </form>

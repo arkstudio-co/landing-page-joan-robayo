@@ -8,6 +8,7 @@ export const metadata: Metadata = {
   title: "Journal de Arte | Crónicas de Tinta",
   description:
     "Blog de tatuajes en Medellín: cuidados, cultura, estilo de vida y más. Consejos de expertos para tu próximo tattoo.",
+  keywords: ["tatuajes Medellín", "blog tatuajes", "cuidados tattoo", "tatuador Medellín", "cultura del tatuaje"],
   openGraph: {
     title: "Journal de Arte | Crónicas de Tinta",
     description:
@@ -48,7 +49,7 @@ export default function BlogPage() {
   return (
     <>
       <BlogHeader />
-      <header className="relative h-[819px] flex items-center overflow-hidden pt-24">
+      <header className="relative min-h-dvh md:min-h-[70vh] flex items-center overflow-hidden pt-24">
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent z-10" />
           <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-transparent to-black/30 z-10" />
@@ -59,7 +60,7 @@ export default function BlogPage() {
             alt="Interior de estudio de tatuaje boutique en Medellín con muebles de roble oscuro, sillas vintage de cuero y detalles dorados bajo iluminación dramática"
             src="/images/hero-blog.jpg"
             sizes="100vw"
-            preload
+            priority
             quality={90}
           />
         </div>
@@ -79,7 +80,7 @@ export default function BlogPage() {
                 <div className="overflow-hidden rounded-[15px] mb-6 relative aspect-[4/5]">
                   <Image
                     fill
-                    className="object-cover transition-transform duration-700 group-hover:scale-110"
+                    className="object-cover transition-transform duration-300 group-hover:scale-110"
                     alt={article.title}
                     src={article.image}
                     sizes="(max-width: 768px) 100vw, 33vw"
@@ -119,7 +120,7 @@ export default function BlogPage() {
             href="https://wa.me/573146148297?text=Hola!%20quiero%20cotizar%20mi%20proximo%20tattoo"
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-btn-bg text-btn-text px-10 py-4 font-[family-name:var(--font-inter)] text-[0.8rem] uppercase tracking-[0.2em] hover:bg-btn-bg-hover transition-all shadow-[0_0_30px_rgba(206,152,97,0.2)] inline-block rounded-xl"
+            className="bg-btn-bg text-btn-text px-10 py-4 font-[family-name:var(--font-inter)] text-[0.8rem] uppercase tracking-[0.2em] hover:bg-btn-bg-hover transition-colors shadow-[0_0_30px_rgba(206,152,97,0.2)] inline-block rounded-xl focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-black"
           >
             Agenda tu cita
           </a>

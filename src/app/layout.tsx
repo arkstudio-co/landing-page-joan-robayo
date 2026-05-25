@@ -35,6 +35,10 @@ export const metadata: Metadata = {
     "tattoo studio Medellín",
     "Joan Robayo",
   ],
+  metadataBase: new URL("https://joanrobayotattoo.com"),
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
     title: "JoanRobayo Tattoo | Tatuajes en Medellín",
     description:
@@ -42,12 +46,21 @@ export const metadata: Metadata = {
     locale: "es_CO",
     type: "website",
     siteName: "JoanRobayo Tattoo",
+    images: [
+      {
+        url: "/images/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "JoanRobayo Tattoo Studio",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "JoanRobayo Tattoo | Tatuajes en Medellín",
     description:
       "Especialistas en Realismo, Neotradicional y Fineline. Tatuajes sólidos y duraderos en Medellín, Colombia.",
+    images: ["/images/og-image.jpg"],
   },
 };
 
@@ -62,6 +75,12 @@ export default function RootLayout({
       className={`${cinzel.variable} ${playfair.variable} ${inter.variable} dark`}
     >
       <body className="bg-background text-on-background min-h-screen flex flex-col">
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[9999] focus:bg-btn-bg focus:text-btn-text focus:px-6 focus:py-3 focus:rounded-xl focus:text-sm focus:uppercase focus:tracking-widest focus:outline-none"
+        >
+          Saltar al contenido principal
+        </a>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

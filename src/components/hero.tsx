@@ -10,7 +10,7 @@ export function Hero() {
           className="object-cover object-[center_30%]"
           src="/images/hero.png"
           sizes="100vw"
-          preload
+          priority
         />
         <div className="absolute inset-0 hero-gradient" />
         <div className="absolute inset-0 hero-left-overlay" />
@@ -29,7 +29,7 @@ export function Hero() {
             href="https://wa.me/573146148297?text=Hola!%20quiero%20cotizar%20mi%20proximo%20tattoo"
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-btn-bg text-btn-text px-10 py-5 font-[family-name:var(--font-inter)] text-xs uppercase tracking-widest hover:bg-btn-bg-hover transition-colors inline-block text-center rounded-xl"
+            className="bg-btn-bg text-btn-text px-10 py-5 font-[family-name:var(--font-inter)] text-xs uppercase tracking-widest hover:bg-btn-bg-hover transition-colors inline-block text-center rounded-xl focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-black"
           >
             Agenda tu cita gratis
           </a>
@@ -37,7 +37,7 @@ export function Hero() {
             href="https://wa.me/573146148297?text=Hola!%20quiero%20saber%20m%C3%A1s%20sobre%20sus%20servicios"
             target="_blank"
             rel="noopener noreferrer"
-            className="border border-gold text-gold px-10 py-5 font-[family-name:var(--font-inter)] text-xs uppercase tracking-widest hover:bg-gold/10 transition-colors inline-block text-center rounded-xl"
+            className="border border-gold text-gold px-10 py-5 font-[family-name:var(--font-inter)] text-xs uppercase tracking-widest hover:bg-gold/10 transition-colors inline-block text-center rounded-xl focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-black"
           >
             Walk-in
           </a>
