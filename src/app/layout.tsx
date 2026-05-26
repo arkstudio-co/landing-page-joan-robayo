@@ -102,6 +102,7 @@ export default function RootLayout({
               description:
                 "Especialistas en Realismo, Neotradicional y Fineline. Tatuajes sólidos y duraderos en Medellín, Colombia.",
               url: "https://www.neotraditionaltattoo.com",
+              image: "https://www.neotraditionaltattoo.com/images/tattoo-medellin-carrusel-2.png",
               telephone: "+57 3146148297",
               email: "joansr91@gmail.com",
               address: {
@@ -119,6 +120,7 @@ export default function RootLayout({
                 },
               ],
               priceRange: "$$",
+              sameAs: ["https://www.instagram.com/joanrobayo/"],
             }),
           }}
         />
