@@ -49,7 +49,7 @@ export function TattooCulture() {
           loop
           muted
           playsInline
-          preload="auto"
+          preload="metadata"
         >
           <source src="/videos/videotattoojoan-mp4.mp4" type="video/mp4" />
           <p className="text-white p-4">

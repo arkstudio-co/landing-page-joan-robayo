@@ -27,12 +27,12 @@ export function MobileMenu({ links }: { links?: readonly NavLink[] }) {
 
   useEffect(() => {
     if (isOpen) {
-      document.body.style.overflow = "hidden";
+      document.documentElement.classList.add("overflow-hidden");
     } else {
-      document.body.style.overflow = "";
+      document.documentElement.classList.remove("overflow-hidden");
     }
     return () => {
-      document.body.style.overflow = "";
+      document.documentElement.classList.remove("overflow-hidden");
     };
   }, [isOpen]);
 

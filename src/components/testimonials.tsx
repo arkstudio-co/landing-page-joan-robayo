@@ -71,7 +71,10 @@ export function Testimonials() {
 
   const applyOffset = useCallback(() => {
     if (!trackRef.current) return;
-    trackRef.current.style.transform = `translateX(${offsetRef.current}px)`;
+    if (!trackRef.current.style.contain) {
+      trackRef.current.style.contain = "layout style paint";
+    }
+    trackRef.current.style.transform = `translate3d(${offsetRef.current}px, 0, 0)`;
   }, []);
 
   useEffect(() => {
@@ -176,49 +179,51 @@ export function Testimonials() {
   }, []);
 
   return (
-    <section
-      className="py-16 overflow-hidden"
-      style={{
-        backgroundImage:
-          'linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.9)), url("/images/fondo-testimonios.jpg")',
-        backgroundSize: "cover",
-        backgroundPosition: "center center",
-      }}
-    >
-      <div className="max-w-[85%] mx-auto">
-        <div className="text-center mb-12">
-          <span className="font-[family-name:var(--font-inter)] text-primary uppercase subtitle text-sm tracking-widest">
-            TESTIMONIOS
-          </span>
-          <h2 className="text-2xl md:text-4xl text-on-surface mt-4 uppercase main-title">
-            LO QUE DICEN NUESTROS CLIENTES
-          </h2>
-        </div>
-        <div className="relative overflow-hidden">
-          <div
-            ref={trackRef}
-            className={`flex gap-8 will-change-transform ${
-              isDragging ? "cursor-grabbing" : "cursor-grab"
-            }`}
-            style={{ transform: "translateX(0px)", touchAction: "pan-y" }}
-            onMouseDown={handleMouseDown}
-            onMouseMove={handleMouseMove}
-            onMouseUp={handleMouseUp}
-            onMouseLeave={handleMouseLeave}
-            onTouchStart={handleTouchStart}
-            onTouchMove={handleTouchMove}
-            onTouchEnd={handleTouchEnd}
-            onKeyDown={handleKeyDown}
-            tabIndex={0}
-            role="region"
-            aria-label="Testimonios de clientes"
-          >
-            {items.map((r, i) => (
-              <TestimonialCard key={`${r.name}-${i}`} {...r} />
-            ))}
+    <section className="py-16 overflow-hidden relative">
+      <Image
+        alt=""
+        fill
+        className="object-cover"
+        src="/images/fondo-testimonios.jpg"
+        sizes="100vw"
+      />
+      <div className="absolute inset-0 bg-gradient-to-b from-black/85 to-black/90" />
+      <div className="relative z-10">
+        <div className="max-w-[85%] mx-auto">
+          <div className="text-center mb-12">
+            <span className="font-[family-name:var(--font-inter)] text-primary uppercase subtitle text-sm tracking-widest">
+              TESTIMONIOS
+            </span>
+            <h2 className="text-2xl md:text-4xl text-on-surface mt-4 uppercase main-title">
+              LO QUE DICEN NUESTROS CLIENTES
+            </h2>
           </div>
-          <div className="scroll-gradient-left" />
-          <div className="scroll-gradient-right" />
+          <div className="relative overflow-hidden">
+            <div
+              ref={trackRef}
+              className={`flex gap-8 will-change-transform ${
+                isDragging ? "cursor-grabbing" : "cursor-grab"
+              }`}
+              style={{ transform: "translateX(0px)", touchAction: "pan-y" }}
+              onMouseDown={handleMouseDown}
+              onMouseMove={handleMouseMove}
+              onMouseUp={handleMouseUp}
+              onMouseLeave={handleMouseLeave}
+              onTouchStart={handleTouchStart}
+              onTouchMove={handleTouchMove}
+              onTouchEnd={handleTouchEnd}
+              onKeyDown={handleKeyDown}
+              tabIndex={0}
+              role="region"
+              aria-label="Testimonios de clientes"
+            >
+              {items.map((r, i) => (
+                <TestimonialCard key={`${r.name}-${i}`} {...r} />
+              ))}
+            </div>
+            <div className="scroll-gradient-left" />
+            <div className="scroll-gradient-right" />
+          </div>
         </div>
       </div>
       <style>{`
