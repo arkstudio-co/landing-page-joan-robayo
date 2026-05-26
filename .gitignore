@@ -36,12 +36,6 @@ yarn-error.log*
 # vercel
 .vercel
 
-# image backup (original large files)
-/public/images-backup/
-
-# utility scripts
-/scripts/
-
 # large media files
 /public/videos/videotattoojoan.mov
 

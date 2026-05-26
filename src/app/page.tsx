@@ -4,7 +4,7 @@ import { CategoryNav } from "@/components/category-nav";
 import { StylesSection } from "@/components/styles-section";
 import { HowItWorks } from "@/components/how-it-works";
 import { TattooCulture } from "@/components/tattoo-culture";
-import { TestimonialsWrapper } from "@/components/testimonials-wrapper";
+import { Testimonials } from "@/components/testimonials";
 import { PortfolioCarouselWrapper } from "@/components/portfolio-carousel-wrapper";
 import { PricingFAQ } from "@/components/pricing-faq";
 import { CTASection } from "@/components/cta-section";
@@ -21,7 +21,7 @@ export default function Home() {
         <StylesSection />
         <HowItWorks />
         <TattooCulture />
-        <TestimonialsWrapper />
+        <Testimonials />
         <PortfolioCarouselWrapper />
         <PricingFAQ />
         <CTASection

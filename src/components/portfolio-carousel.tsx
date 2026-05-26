@@ -31,10 +31,7 @@ export function PortfolioCarousel() {
 
   const applyOffset = useCallback(() => {
     if (!trackRef.current) return;
-    if (!trackRef.current.style.contain) {
-      trackRef.current.style.contain = "layout style paint";
-    }
-    trackRef.current.style.transform = `translate3d(${offsetRef.current}px, 0, 0)`;
+    trackRef.current.style.transform = `translateX(${offsetRef.current}px)`;
   }, []);
 
   useEffect(() => {
