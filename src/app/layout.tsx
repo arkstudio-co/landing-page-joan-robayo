@@ -47,9 +47,6 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/",
   },
-  icons: {
-    icon: "/images/logo2.jpg",
-  },
   openGraph: {
     title: "JoanRobayo Tattoo | Tatuajes en Medellín",
     description:
