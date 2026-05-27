@@ -7,6 +7,7 @@ export function WhatsAppButton() {
       className="fixed bottom-6 right-6 z-40 bg-[#25D366] hover:bg-[#20bd5a] text-white p-5 rounded-full shadow-lg transition-all hover:scale-110 active:scale-95"
       aria-label="Contactar por WhatsApp"
     >
+      <span className="sr-only">Join chat</span>
       <svg
         width="36"
         height="36"
