@@ -1,24 +1,46 @@
 'use client';
+import { useEffect, useCallback } from 'react';
+
+const WHATSAPP_URL = 'https://wa.me/573146148297?text=Hola!%20quiero%20cotizar%20un%20nuevo%20tattoo';
 
 export function WhatsAppButton() {
-  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+  const handleClick = useCallback((e: MouseEvent) => {
     e.preventDefault();
-    window.dataLayer?.push({ event: 'whatsapp_floating_click' });
+    console.log('[WA] Click detectado');
+    if (window.dataLayer) {
+      console.log('[WA] dataLayer existe, haciendo push');
+      window.dataLayer.push({ event: 'whatsapp_floating_click' });
+      console.log('[WA] Push completado');
+    } else {
+      console.log('[WA] dataLayer NO existe');
+    }
+    if (typeof window.gtag !== 'undefined') {
+      console.log('[WA] Enviando gtag directo');
+      window.gtag('event', 'whatsapp_floating_click', { component: 'floating_button' });
+    } else {
+      console.log('[WA] gtag no disponible');
+    }
     setTimeout(() => {
-      window.open(
-        'https://wa.me/573146148297?text=Hola!%20quiero%20cotizar%20un%20nuevo%20tattoo',
-        '_blank',
-        'noopener,noreferrer'
-      );
+      window.open(WHATSAPP_URL, '_blank', 'noopener,noreferrer');
     }, 300);
-  };
+  }, []);
+
+  useEffect(() => {
+    const el = document.querySelector<HTMLAnchorElement>('a[aria-label="Contactar por WhatsApp"]');
+    if (!el) {
+      console.log('[WA] Elemento no encontrado');
+      return;
+    }
+    console.log('[WA] Adjuntando listener DOM');
+    el.addEventListener('click', handleClick);
+    return () => el.removeEventListener('click', handleClick);
+  }, [handleClick]);
 
   return (
     <a
-      href="https://wa.me/573146148297?text=Hola!%20quiero%20cotizar%20un%20nuevo%20tattoo"
+      href={WHATSAPP_URL}
       target="_blank"
       rel="noopener noreferrer"
-      onClick={handleClick}
       className="fixed bottom-6 right-6 z-40 bg-[#25D366] hover:bg-[#20bd5a] text-white p-5 rounded-full shadow-lg transition-all hover:scale-110 active:scale-95"
       aria-label="Contactar por WhatsApp"
     >
