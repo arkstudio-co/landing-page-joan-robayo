@@ -1,9 +1,24 @@
+'use client';
+
 export function WhatsAppButton() {
+  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    window.dataLayer?.push({ event: 'whatsapp_floating_click' });
+    setTimeout(() => {
+      window.open(
+        'https://wa.me/573146148297?text=Hola!%20quiero%20cotizar%20un%20nuevo%20tattoo',
+        '_blank',
+        'noopener,noreferrer'
+      );
+    }, 300);
+  };
+
   return (
     <a
       href="https://wa.me/573146148297?text=Hola!%20quiero%20cotizar%20un%20nuevo%20tattoo"
       target="_blank"
       rel="noopener noreferrer"
+      onClick={handleClick}
       className="fixed bottom-6 right-6 z-40 bg-[#25D366] hover:bg-[#20bd5a] text-white p-5 rounded-full shadow-lg transition-all hover:scale-110 active:scale-95"
       aria-label="Contactar por WhatsApp"
     >
