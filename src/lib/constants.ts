@@ -90,6 +90,26 @@ export const CONTACT_INFO = {
   phone: "+57 3146148297",
 } as const;
 
+export const FOOTER_CONTACT = {
+  phone: "3146148297",
+  email: "joansr91@gmail.com",
+  instagram: "@joanrobayo",
+  instagramUrl: "https://www.instagram.com/joanrobayo/",
+} as const;
+
+export const FOOTER_LOCATION = {
+  street: "Cra. 43B #8-31",
+  neighborhood: "El Poblado",
+  city: "Medellín",
+  department: "Antioquia",
+  country: "Colombia",
+} as const;
+
+export const FOOTER_HOURS = {
+  weekdays: "Lunes–sábados 10am–8pm",
+  holidays: "Domingo y festivos atención bajo cita previa",
+} as const;
+
 export const FORMSPREE_ENDPOINT = "https://formspree.io/f/meennjyn";
 
 export const FOOTER_LINKS = [
