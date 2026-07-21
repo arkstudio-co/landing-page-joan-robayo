@@ -37,11 +37,6 @@ export function BlogSection() {
             <BlogCard key={post.slug} {...post} />
           ))}
         </div>
-        <div className="text-center pt-8">
-          <p className="main-title text-2xl md:text-4xl text-on-surface">
-            Transformemos tu idea en un tattoo increíble
-          </p>
-        </div>
       </div>
     </section>
   );

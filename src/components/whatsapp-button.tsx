@@ -1,25 +1,13 @@
 'use client';
 import { useEffect, useCallback } from 'react';
+import { sendGTMEvent } from '@next/third-parties/google';
 
 const WHATSAPP_URL = 'https://wa.me/573146148297?text=Hola!%20quiero%20cotizar%20un%20nuevo%20tattoo';
 
 export function WhatsAppButton() {
   const handleClick = useCallback((e: MouseEvent) => {
     e.preventDefault();
-    console.log('[WA] Click detectado');
-    if (window.dataLayer) {
-      console.log('[WA] dataLayer existe, haciendo push');
-      window.dataLayer.push({ event: 'whatsapp_floating_click' });
-      console.log('[WA] Push completado');
-    } else {
-      console.log('[WA] dataLayer NO existe');
-    }
-    if (typeof window.gtag !== 'undefined') {
-      console.log('[WA] Enviando gtag directo');
-      window.gtag('event', 'whatsapp_floating_click', { component: 'floating_button' });
-    } else {
-      console.log('[WA] gtag no disponible');
-    }
+    sendGTMEvent({ event: 'whatsapp_floating_click', component: 'floating_button' });
     setTimeout(() => {
       window.open(WHATSAPP_URL, '_blank', 'noopener,noreferrer');
     }, 300);

@@ -10,12 +10,6 @@ export const STYLES = [
   { title: "Línea Fina", image: "/images/lineafina.png" },
 ] as const;
 
-export const CATEGORIES = [
-  { title: "ARTIST", image: "/images/artist.jpg" },
-  { title: "CONTACT", image: "/images/contact.jpg" },
-  { title: "PAINTS", image: "/images/paints.jpg" },
-] as const;
-
 export interface Testimonial {
   name: string;
   text: string;
@@ -134,47 +128,4 @@ export const HOW_IT_WORKS_STEPS = [
   
 ] as const;
 
-export const FAQ_ITEMS = [
-  {
-    question: "¿Duele hacerse un tatuaje?",
-    answer:
-      "La sensación varía según la zona del cuerpo y tu umbral de dolor. La mayoría lo describe como una molestia soportable. Usamos técnicas y equipos modernos para minimizar las molestias. Además, zonas con más carne duelen menos que áreas óseas.",
-  },
-  {
-    question: "¿Cómo sé qué estilo de tatuaje me queda mejor?",
-    answer:
-      "Durante tu consulta gratis analizamos tu idea, la zona del cuerpo y el resultado que buscas. Te recomendamos el estilo que mejor se adapte: realismo, neotradicional o línea fina. También podemos combinar estilos.",
-  },
-  {
-    question: "¿Cuánto tiempo dura una sesión?",
-    answer:
-      "Depende del tamaño y complejidad del diseño. Una sesión típica dura entre 2 y 4 horas. Los trabajos grandes pueden requerir múltiples sesiones con intervalos de 2 a 4 semanas para permitir la cicatrización.",
-  },
-  {
-    question: "¿Cómo cuido mi tatuaje después?",
-    answer:
-      "Te daremos instrucciones detalladas por escrito. Lo básico: mantenerlo limpio, hidratado con crema especial, evitar el sol, no rascar, no sumergir en agua (piscina, mar, tina) durante las primeras 2-3 semanas.",
-  },
-  {
-    question: "¿Aceptan pagos con tarjeta?",
-    answer:
-      "Sí, aceptamos efectivo y transferencias bancarias. Consulta los métodos de pago disponibles al momento de agendar tu cita.",
-  },
-] as const;
 
-export interface PricingTier {
-  title: string;
-  description: string;
-  price: string;
-  popular?: boolean;
-  features: string[];
-}
-
-export const PRICING_TIERS: PricingTier[] = [
-  {
-    title: "minimal",
-    description: "Tatuajes pequeños y minimalistas. Ideal para tu primer diseño o detalles sutiles.",
-    price: "Desde $200.000 COP",
-    features: ["Diseño personalizado", "1 sesión", "Línea fina", "Revisión gratuita"],
-  },
-] as const;
