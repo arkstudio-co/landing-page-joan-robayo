@@ -24,15 +24,15 @@ daba3d7 Rebrand to JoanRobayo Tattoo, add nav links with smooth scroll and Whats
 3d671a5 Initial commit: landing page for Ark Studio (tattoo studio)
 ```
 
-## Current State (Sesión 004 — Completed)
+## Current State (Sesión 005 — Completed)
 
 ### Completed this session
-- ✅ **Blog hero image**: replaced `foto-principal-blog.jpg` → `hero-blog.jpg`
-- ✅ **Blog cards**: wrapped in `<Link>` for full-card clickability to `/blog/:slug`
-- ✅ **Consejos article images**: swapped body images from `consejos-1/3` → `consejos-4.jpg` + `consejos-5.png` under "Sin aspirina" section
-- ✅ **Image normalization**: `consejos-5.PNG` → `consejos-5.png`
-- ✅ **Build**: 0 errors in all 4 routes (home, blog listing, 3 article pages)
-- ✅ **Commits**: 6 new commits covering blog articles, local images, header refactors
+- ✅ **Footer redesign**: 4-column grid layout (Logo | Contáctanos | Encuéntranos | Horarios)
+- ✅ **Contact data**: added `FOOTER_CONTACT`, `FOOTER_LOCATION`, `FOOTER_HOURS` constants
+- ✅ **Footer info**: phone (clickeable), email (clickeable), @joanrobayo (Instagram), full address, hours
+- ✅ **Build**: 0 errors
+- ✅ **Commit & push**: `17c5d85` — "feat: redesign footer with contact info"
+- ✅ **Session status**: saved
 
 ### In Progress
 - (none)
@@ -40,7 +40,6 @@ daba3d7 Rebrand to JoanRobayo Tattoo, add nav links with smooth scroll and Whats
 ### Pending for next session
 - Page transition animations (View Transitions API)
 - Analytics (Vercel Analytics or similar)
-- sitemap.xml + robots.txt
 - PWA (manifest, service worker)
 - Lighthouse audit
 - Image blurDataURL placeholders
