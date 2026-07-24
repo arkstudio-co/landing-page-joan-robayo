@@ -6,11 +6,17 @@ Built with **Next.js 16** + **Tailwind v4**.
 
 ## Git
 - **Remote**: `https://github.com/arkstudio-co/landing-page-joan-robayo.git`
-- **Branch**: `main` (11 commits, 6 ahead of origin)
+- **Branch**: `main` (12 commits)
 - **Auth**: Classic PAT stored in Windows Credential Manager (user: `ArkStudio`)
 
 ## Commits (most recent first)
 ```
+4289f6f feat: optimize SEO with descriptive alt texts across hero, styles, and portfolio carousel
+5835e26 docs: update session status to Sesión 005
+17c5d85 feat: redesign footer with contact info (Contáctanos, Encuéntranos, Horarios)
+8cb341e refactor: clean up landing page - remove CategoryNav, PricingFAQ, fix GTM issues, reorder sections
+d621566 fix: use DOM listener + gtag direct call for WhatsApp GTM event
+bf0b204 fix: add 'use client' and dataLayer push for WhatsApp GTM event
 9852c97 Update blog listing with new hero image and clickable cards; swap consejos article images
 8eba515 Update cuidar article with local images and add consejos article content
 edb5d36 Add consejos article page with local images and refined layout
@@ -24,14 +30,15 @@ daba3d7 Rebrand to JoanRobayo Tattoo, add nav links with smooth scroll and Whats
 3d671a5 Initial commit: landing page for Ark Studio (tattoo studio)
 ```
 
-## Current State (Sesión 005 — Completed)
+## Current State (Sesión 006 — Completed)
 
 ### Completed this session
-- ✅ **Footer redesign**: 4-column grid layout (Logo | Contáctanos | Encuéntranos | Horarios)
-- ✅ **Contact data**: added `FOOTER_CONTACT`, `FOOTER_LOCATION`, `FOOTER_HOURS` constants
-- ✅ **Footer info**: phone (clickeable), email (clickeable), @joanrobayo (Instagram), full address, hours
+- ✅ **SEO optimization**: descriptive alt texts for hero, styles section, and portfolio carousel
+- ✅ **PORTFOLIO_ALT_TEXTS**: 16 unique alt texts with keyword distribution in `constants.ts`
+- ✅ **Hero alt**: "Tatuajes en Medellín | Tattoo studio Joan Robayo - Especialistas en realismo, neotradicional y fineline"
+- ✅ **Style cards alt**: descriptive by style (Realismo, Neotradicional, Línea Fina)
 - ✅ **Build**: 0 errors
-- ✅ **Commit & push**: `17c5d85` — "feat: redesign footer with contact info"
+- ✅ **Commit & push**: `4289f6f` — "feat: optimize SEO with descriptive alt texts across hero, styles, and portfolio carousel"
 - ✅ **Session status**: saved
 
 ### In Progress
