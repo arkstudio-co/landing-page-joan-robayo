@@ -65,6 +65,25 @@ export const PORTFOLIO_IMAGES = Array.from({ length: 16 }, (_, i) =>
   carouselPath(i + 1)
 );
 
+export const PORTFOLIO_ALT_TEXTS = [
+  "Tatuaje realismo Medellín | Retrato realista tattoo por Joan Robayo en estudio Medellín",
+  "Tatuaje neotradicional Medellín | Neotraditional tattoo con flores y detalles en El Poblado",
+  "Tatuajes fineline Medellín | Línea fina tattoo delicado por tatuador en Medellín",
+  "Dónde tatuarse en Medellín | Tattoo realismo negro y gris por Joan Robayo tattoo studio",
+  "Tatuajes en Medellín | Neotraditional tattoo de animales en estudio de tattoo El Poblado",
+  "Medellin tattoo | Tatuaje realista a color por Joan Robayo tattoo artist en Colombia",
+  "Tattoo near me Medellín | Tatuajes fineline minimalistas en estudio cerca a ti",
+  "Neotraditional tattoo medellin | Tatuaje floral neotradicional por Joan Robayo",
+  "Tatuajes realismo Medellín | Retrato hiperrealista tattoo en estudio profesional",
+  "Tattoo medellin | Tatuaje neotradicional con calavera por tatuador experto",
+  "Tatuaje fineline Medellín | Línea fina tattoo geométrico en El Poblado Medellín",
+  "Tatuajes en Medellín Colombia | Dónde tatuarse realismo y neotradicional seguro",
+  "Tattoo neotradicional medellin | Neotraditional tattoo de aves por Joan Robayo",
+  "Medellin tattoo studio | Tatuaje realista de naturaleza por tatuador en Medellín",
+  "Tattoo near me | Tatuajes personalizados en estudio Joan Robayo Medellín",
+  "Tatuajes en Medellín | Neotraditional tattoo de serpiente por Joan Robayo artista",
+];
+
 export const BLOG_POSTS = [
   {
     slug: "bases-comportamiento-adecuado-estudio",

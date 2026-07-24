@@ -6,7 +6,7 @@ function StyleCard({ title, image }: { title: string; image: string }) {
     <div className="group relative overflow-hidden shadow-2xl transition-transform duration-500 hover:-translate-y-2">
       <div className="relative aspect-[3/4] overflow-hidden">
         <Image
-          alt={title}
+          alt={title === "Realismo" ? "Tatuajes Realismo Medellín | Realismo tattoo por Joan Robayo en estudio Medellín" : title === "Neotradicional" ? "Tatuaje Neotradicional Medellín | Neotraditional tattoo por tatuador en El Poblado" : "Tatuajes Fineline Medellín | Línea fina tattoo delicado por Joan Robayo"}
           fill
           className="object-cover group-hover:grayscale-0 group-hover:scale-110 transition-all duration-300 ease-out rounded-[15px]"
           src={image}

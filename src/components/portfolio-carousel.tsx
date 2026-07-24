@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { useRef, useState, useEffect, useCallback } from "react";
-import { PORTFOLIO_IMAGES } from "@/lib/constants";
+import { PORTFOLIO_IMAGES, PORTFOLIO_ALT_TEXTS } from "@/lib/constants";
 
 const ITEM_WIDTH = 375;
 const GAP = 16;
@@ -171,7 +171,7 @@ export function PortfolioCarousel() {
               className="flex-none w-[375px] h-[525px] relative"
             >
               <Image
-                alt={`Work ${(i % PORTFOLIO_IMAGES.length) + 1}`}
+                alt={PORTFOLIO_ALT_TEXTS[i % PORTFOLIO_IMAGES.length]}
                 fill
                 className="object-cover shadow-xl rounded-xl pointer-events-none"
                 src={src}

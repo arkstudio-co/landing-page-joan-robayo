@@ -5,7 +5,7 @@ export function Hero() {
     <section className="relative min-h-dvh md:h-[90vh] flex items-center overflow-hidden pt-24">
       <div className="absolute inset-0 z-0">
         <Image
-          alt="Hero Tattoo Art"
+          alt="Tatuajes en Medellín | Tattoo studio Joan Robayo - Especialistas en realismo, neotradicional y fineline"
           fill
           className="object-cover object-[center_30%]"
           src="/images/hero.png"
